@@ -1,0 +1,16 @@
+
+.pagination{
+    padding: 25px 0px 25px 70px;
+    height: 30px;
+    align-items: center;
+}
+.pagination a{
+    color: #1AB3D7;
+    text-decoration: none;
+    padding: 0px 5px 0px 5px ;
+}
+
+.pagination .right-arrow{
+    margin-top: 2px;
+    opacity: 0.6;
+}
