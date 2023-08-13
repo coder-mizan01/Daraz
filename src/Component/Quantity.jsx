@@ -1,28 +1,26 @@
-import React, { useState } from "react";
+
+import React,{useState} from "react";
+
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
-//css
-import "../CSS/Quantity.css"
+const Quantity = ({ onChange }) => {
+  const [Quantity, setQuantity] = useState(1);
 
-const Quantity = ({onChange}) => {
-  const [Quantity, setQuantity] = useState(0);
-
-  const handleDecrease = () =>{
-     if(Quantity > 0){
+  const handleDecrease = () => {
+    if (Quantity > 1) {
       setQuantity(Quantity - 1);
       onChange(Quantity - 1);
-     }
-  }
-
-  const handleIncrease = () =>{
-    if(Quantity > 1){
-      setQuantity(Quantity + 1);
-      onChange(Quantity -1);
     }
-  }
+  };
+
+  const handleIncrease = () => {
+    setQuantity(Quantity + 1);
+    onChange(Quantity + 1); // Update with the increased value
+  };
+
   return (
     <>
-    <button onClick={handleDecrease} disabled={Quantity === 0}>
+    <button onClick={handleDecrease} disabled={Quantity === 1}>
         <AiOutlineMinus />
       </button>
   {" "}

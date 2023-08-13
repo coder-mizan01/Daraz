@@ -20,6 +20,7 @@ import shopnow from "../Images/shopnow.jpg"
 import Images from "../Component/Images";
 import Quantity from "../Component/Quantity";
 import Pagination from "../Component/Pagination";
+import AddToCart from "../Component/AddToCart";
 
 const API = "http://localhost:4000/api/v1/product/get-product";
 
@@ -40,7 +41,8 @@ const SingleProduct = () => {
       setProductQuantity(newproductQuantity);
   }
 
-  console.log(productQuantity);
+
+
 
   return (
     <>
@@ -65,8 +67,7 @@ const SingleProduct = () => {
               </div>
 
               <div className="Single-Product-buttons">
-                <button className="buy-now">Buy Now</button>
-                <button className="add-to-cart">Add To Cart</button>
+                <AddToCart product={SingleProduct} quantity={productQuantity} />
               </div>
 
             </div>

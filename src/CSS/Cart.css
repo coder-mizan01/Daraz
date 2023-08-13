@@ -1,0 +1,14 @@
+
+
+.cart-heading{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    padding: 10px;
+    align-items: center;
+    border-top:  1px solid black;
+}
+
+.cart-items img{
+    width: 100px;
+    height: 100px;
+}

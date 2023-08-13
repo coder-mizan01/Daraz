@@ -9,7 +9,6 @@ import { GlobalProductHook } from '../Context/ProductContext';
 //icons 
 import {AiFillStar,AiOutlineStar} from 'react-icons/ai'
 
-//image link - http://localhost:4000/api/v1/product/product-photo/${pro._id}
 
 const Products = () => {
 
@@ -24,7 +23,7 @@ const Products = () => {
             <Link to={`/SingleProduct/${slug}`}>
               <img
                 className="home-pro-img"
-                src={``}
+                src={`http://localhost:4000/api/v1/product/product-photo/${pro._id}`}
                 alt=""
               />
 
