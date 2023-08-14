@@ -22,7 +22,7 @@ import Quantity from "../Component/Quantity";
 import Pagination from "../Component/Pagination";
 import AddToCart from "../Component/AddToCart";
 
-const API = "http://localhost:4000/api/v1/product/get-product";
+const API = "https://daraz-api.onrender.com/api/v1/product/get-product";
 
 const SingleProduct = () => {
   const { slug } = useParams();

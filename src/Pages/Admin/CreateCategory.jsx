@@ -32,7 +32,7 @@ const CreateCategory = () => {
   const handleDelete = async(id) =>{
 
     try {
-      const {data} = await axios.delete(`http://localhost:4000/api/v1/category/delete-category/${id}`);
+      const {data} = await axios.delete(`https://daraz-api.onrender.com/api/v1/category/delete-category/${id}`);
       if(data.success){
         console.log('this item is delete');
         getAllCategories();
@@ -48,7 +48,7 @@ const CreateCategory = () => {
   const updateCategories = async(id) =>{
 
     try {
-      const data = await axios.put(`http://localhost:4000/api/v1/category/delete-category/${id}`);
+      const data = await axios.put(`https://daraz-api.onrender.com/api/v1/category/delete-category/${id}`);
       if(data.success){
 
       }
@@ -61,7 +61,7 @@ const CreateCategory = () => {
   const getAllCategories = async () => {
     try {
       const { data } = await axios.get(
-      "http://localhost:4000/api/v1/category/categories"
+      "https://daraz-api.onrender.com/api/v1/category/categories"
     );
  
       if (data?.success) {

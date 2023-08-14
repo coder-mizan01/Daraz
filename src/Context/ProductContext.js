@@ -12,7 +12,7 @@ const ProductContextProvider = ({children}) => {
 
     const getAllProducts = async() =>{
         try {
-         const {data} = await axios.get("http://localhost:4000/api/v1/product/get-product");
+         const {data} = await axios.get("https://daraz-api.onrender.com/api/v1/product/get-product");
          if(data.success){
             setProducts(data.products);
            console.log('success');
