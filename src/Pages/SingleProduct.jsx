@@ -34,7 +34,7 @@ const SingleProduct = () => {
   }, []);
 
   //product quantity state
-  const [productQuantity,setProductQuantity] = useState(0);
+  const [productQuantity,setProductQuantity] = useState(1);
 
 
   const handleQuantity = (newproductQuantity) =>{

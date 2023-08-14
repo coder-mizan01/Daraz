@@ -74,7 +74,7 @@ const Router = () => {
    
      </Routes>
 
-     <Footer />
+   <Footer />
     </BrowserRouter>
   )
 }

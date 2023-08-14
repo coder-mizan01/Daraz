@@ -14,9 +14,12 @@ const CartItems = ({_id,price,quantity}) => {
           <img src={`http://localhost:4000/api/v1/product/product-photo/${_id}`} alt="" />
           <p>{price}</p>
           <p>{quantity}</p>
-          <p>{price*quantity}</p>
           <p><FaTrash  onClick={()=>{DeleteToCart(_id)}} /></p>
+          <p>{price*quantity}</p>
+
           </div>
+
+
     </>
   )
 }

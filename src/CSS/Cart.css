@@ -1,14 +1,35 @@
 
-
-.cart-heading{
+.cart-heading {
     display: grid;
     grid-template-columns: repeat(5,1fr);
     padding: 10px;
     align-items: center;
-    border-top:  1px solid black;
+    margin: 5px 5px;
+    background-color: #FFFFFF;
+
 }
+
+
 
 .cart-items img{
     width: 100px;
     height: 100px;
+}
+
+.cart-total-value{
+   display: flex;
+   justify-content: end;
+   width: 95%;
+}
+
+.cart-total{
+    background-color: #FFFFFF;
+    padding: 25px 100px 25px 10px;
+
+}
+
+.cart-total div {
+    margin: 0;
+    padding: 0px 10px 0px 10px;
+
 }
