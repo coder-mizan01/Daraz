@@ -50,6 +50,7 @@ const SingleProduct = () => {
         <div id="Single-Product-Page">
           <Pagination Products={SingleProduct} />
           <div className="Single-Product">
+
             <div className="Images">
               <Images SingleProduct={SingleProduct} />
             </div>
@@ -58,7 +59,7 @@ const SingleProduct = () => {
               <p className="description">{SingleProduct.description}</p>
               <p className="star"> <AiFillStar /><AiFillStar /> <AiFillStar /><AiFillStar /><AiOutlineStar /> <span>74 ratings</span> <span><AiOutlineHeart /></span>  </p>
               <p className="brand"> brand: {SingleProduct.brand} | more product from {SingleProduct.brand}</p>
-              <img src={shopnow} alt="dasdasda" />
+              <img src={shopnow} alt="dasdasda" className="img-fluid" />
               <p className="discount-price">৳{SingleProduct.price}</p>
               <p className="price"> <del>৳ 210</del> -52%</p>
               <hr />

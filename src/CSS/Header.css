@@ -169,10 +169,30 @@ li {
   display: inline-block;
 }
 
+.cart{
+position: relative;
+padding: 8px;
+overflow: visible;
+z-index: 1;
+}
 
-.cartIcon {
+.cartIcon{
   font-size: 1.6rem;
   color: #212121;
+
+}
+
+.cart span{
+  background-color: #F57224;
+  padding: 0px 8px;
+  color: white;
+  position: absolute;
+  border-radius: 50%;
+  bottom: 0px;
+  right: 0px;
+  top: 20px;
+  overflow: visible;
+  z-index: 1;
 }
 
 .cart-poster-div div img {

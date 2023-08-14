@@ -11,7 +11,7 @@ const Products = () => {
 
  const handleProductDelete = async(id)=>{
    try {
-    const {data} = axios.delete(`http://localhost:4000/api/v1/product/delete-product/${id}`);
+    const {data} = axios.delete(`https://daraz-api.onrender.com/api/v1/product/delete-product/${id}`);
     if(data.success){
       console.log('product is delete');
       setProducts();

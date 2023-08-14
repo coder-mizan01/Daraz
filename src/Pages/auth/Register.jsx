@@ -18,7 +18,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        " http://localhost:4000/api/v1/auth/register",
+        "https://daraz-api.onrender.com/api/v1/auth/register",
         { name, email, password, phone }
       );
       if(res.data.success){

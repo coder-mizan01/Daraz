@@ -19,6 +19,8 @@ const CartReducer = (state,action) => {
   }
  }
 
+ 
+
  if(action.type === "DELETE_TO_CART"){
   let updatedCart;
 

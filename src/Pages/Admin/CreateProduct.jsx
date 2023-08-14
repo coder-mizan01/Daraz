@@ -27,7 +27,7 @@ const CreateProduct = () => {
       productData.append("subcategory", subcategory);
       productData.append("brand",brand)
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/product/create-product",
+        "https://daraz-api.onrender.com/api/v1/product/create-product",
         productData
       );
       if (data?.success) {

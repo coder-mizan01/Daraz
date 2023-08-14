@@ -92,8 +92,10 @@
     }
     .product{
         margin: 6px;
-        background-color: #FFFFFF;  
+        background-color: #FFFFFF; 
+        text-align: center; 
     }
+
     
     .home-pro-img{
         width: 100px;

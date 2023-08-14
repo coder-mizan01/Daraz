@@ -67,13 +67,21 @@ hr{
     margin-right: 25px;
 }
 
+.quantity button{
+    border: none;
+    padding: 5px 10px;
+}
+
+.quantity p{
+    padding: 5px;
+}
 
 .Single-Product-buttons{
     display: flex;
     justify-content:flex-start
 }
 .Single-Product-buttons .buy-now{
-    margin-right: 10px;
+  margin-right: 10px;
   padding: 8px 80px;
   color: #EFF0F5;
   border: none;
@@ -91,8 +99,66 @@ hr{
     background: #FAFAFA;
     margin: -10px;
     padding: 10px;
- } 
+} 
 
- .other-Information div{
-   
- }
+
+
+@media(max-width:1168px){
+    .Single-Product{
+        grid-template-columns: 1fr 1fr;
+    }
+    .other-Information{
+        display: none;
+    }
+
+    .Single-Product-buttons .add-to-cart{
+        padding: 8px 40px;  
+    }
+    .Single-Product-buttons .buy-now{
+        padding: 8px 40px;
+    }
+}
+
+
+@media(max-width:768px){
+    .Single-Product{
+        grid-template-columns: 1fr;
+    }
+    .other-Information{
+        display: none;
+    }
+
+    .Images{
+        display: flex;
+        justify-content: center;
+    }
+
+    .Single-Product-buttons .add-to-cart{
+        padding: 8px 30px;  
+    }
+    .Single-Product-buttons .buy-now{
+        padding: 8px 30px;
+    }
+
+}
+
+
+
+@media(max-width:468px){
+.Images img{
+    width: 150px;
+    height: 150px;
+    }
+
+    .Single-Product-Details img{
+        width: 150px;
+        height: auto;
+    }
+
+    .Single-Product-buttons .add-to-cart{
+        padding: 8px 20px;  
+    }
+    .Single-Product-buttons .buy-now{
+        padding: 8px 20px;
+    }
+}

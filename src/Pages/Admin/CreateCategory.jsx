@@ -16,7 +16,7 @@ const CreateCategory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
       try {
-        const { data } = await axios.post("http://localhost:4000/api/v1/category/create-category", { name });
+        const { data } = await axios.post("https://daraz-api.onrender.com/api/v1/category/create-category", { name });
         if (data?.success) {
            console.log(name);
            getAllCategories();

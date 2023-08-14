@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Profile = () => {
+const Profile = ({state}) => {
+  console.log(state);
   return (
     <div>Profile</div>
   )

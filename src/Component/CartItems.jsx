@@ -11,10 +11,10 @@ const CartItems = ({_id,price,quantity}) => {
   return (
     <>
           <div className='cart-heading'> 
-          <img src={`http://localhost:4000/api/v1/product/product-photo/${_id}`} alt="" />
+          <img src={`https://daraz-api.onrender.com/api/v1/product/product-photo/${_id}`} alt="" />
           <p>{price}</p>
-          <p>{quantity}</p>
-          <p><FaTrash  onClick={()=>{DeleteToCart(_id)}} /></p>
+          <p className='cart-price'>{quantity}</p>
+          <p className='detele-icon'><FaTrash  onClick={()=>{DeleteToCart(_id)}} /></p>
           <p>{price*quantity}</p>
 
           </div>

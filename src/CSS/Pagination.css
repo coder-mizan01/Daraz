@@ -14,3 +14,14 @@
     margin-top: 2px;
     opacity: 0.6;
 }
+
+@media(max-width:768px){
+    .pagination {
+        padding: 20px 0px 20px 19px;
+        height: 30px;
+        align-items: center;
+    }
+    .pagination a{
+        font-size: 11px;
+    }
+}

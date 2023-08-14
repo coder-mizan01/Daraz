@@ -1,14 +1,13 @@
 import React from "react";
 import { GlobalAuthHook } from "../../Context/authContext";
-import { Routes , Route , Outlet} from "react-router-dom";
+import { Outlet} from "react-router-dom";
 
 //Pages
-import Orders from "./Orders";
-import Profile from "./Profile";
+
 import UserMenu from "../../Component/UserMenu";
 
 const Dashboard = () => {
-  const [state, setState] = GlobalAuthHook();
+  const [state] = GlobalAuthHook();
 
   return (
     <>
@@ -20,7 +19,7 @@ const Dashboard = () => {
                  <UserMenu />
               </div>
               <div className="col-md-9">
-               <Outlet />
+               <Outlet state={state} />
         
               </div>
             </div>

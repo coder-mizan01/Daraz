@@ -29,6 +29,7 @@ app.use("/api/v1/product",productRoute);
 
 // Define a route
 app.get('/', (req, res) => {
+  res.setHeader("Access-Control-Allow-Credentials","true")
   res.send('Hello, world!');
 });
 

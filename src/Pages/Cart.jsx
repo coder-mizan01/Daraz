@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { GlobalCartHook } from "../Context/CartContext";
 
@@ -23,7 +23,7 @@ const Cart = () => {
   return (
     <>
       {Cart.length === 0 ? (
-        <h1>Cart is empty</h1>
+        <h1 style={{textAlign:'center'}}>Cart is empty</h1>
       ) : (
         <div className="cart">
           <div className="cart-heading">

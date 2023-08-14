@@ -48,24 +48,26 @@
     background-color: black;
     color: white;
     margin : 0px 5px;
+    padding: 10px 20px;
+    border-radius: 8px; 
     border:none;
 }
 
-@media(max-width : 990px) {
-    .top-footer{
-        grid-template-columns: 1fr;         
-    }
-}
 
 @media(max-width : 768px) {
     .top-footer{
-        padding: 0;      
+        grid-template-columns: 1fr;
+        padding: 0;    
     }
    .content-left{
     padding-top: 10px;
    }
    .content-center{
    padding-top: 10px;
+}
+
+.footer-buttons button{
+    padding: 10px;
 }
 
 

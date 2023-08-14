@@ -1,12 +1,12 @@
 import React from 'react'
-//image id : http://localhost:4000/api/v1/product/product-photo/${_id}
+//image id : 
 
 const Images = ({SingleProduct}) => {
     const {_id} = SingleProduct;
 
   return (
     <>
-    <img src={``} alt="" />
+    <img className='img-fluid' src={`https://daraz-api.onrender.com/api/v1/product/product-photo/${_id}`} alt="" />
     </>
   )
 }

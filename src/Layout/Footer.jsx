@@ -45,8 +45,7 @@ const Footer = () => {
 
             <div className="happy-shopping-image">
             <img src="happy-shopping.png" alt="" /><br />
-           {/** <a>হ্যাপি শপিং</a><br />
-            <a>অ্যাপ ডাউনলোড করুন</a>*/} 
+
             </div>
 
             <div className="footer-buttons">
