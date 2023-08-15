@@ -1,6 +1,5 @@
-## Project Title and Description
+## Project Description
 
-The Daraz 
 i am deploying a website whichs UI is like Daraz and strong backend functionality .
 
 ## live site at 
