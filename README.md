@@ -1,10 +1,12 @@
 
-
 ## live site at 
 
 https://daraz-5pko.onrender.com/
 
 wait 5-10 seconds to load the product 
+
+##feauters
+Singup, login , cart functionality , SingleProduct Page , Category wise Product , Admin Dashboard , etc 
 
 ## Available Scripts
 
