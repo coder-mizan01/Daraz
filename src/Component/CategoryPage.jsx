@@ -44,7 +44,7 @@ const CategoryPage = ({ products }) => {
                 <Link to={`/SingleProduct/${slug}`}>
                   <img
                     className="home-pro-img"
-                    src={`http://localhost:4000/api/v1/product/product-photo/${pro._id}`}
+                    src={`https://daraz-api.onrender.com/api/v1/product/product-photo/${pro._id}`}
                     alt=""
                   />
 

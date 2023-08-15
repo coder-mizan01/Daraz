@@ -16,7 +16,7 @@ const Products = () => {
   return (
     <>
     <div className="products">
-      {products?.map((pro) => {
+      {products? products.map((pro) => {
         const {slug,description,price,_id} = pro
         return (
           <div className="product" key={_id}>
@@ -35,7 +35,7 @@ const Products = () => {
             </Link>
           </div>
         );
-      })}
+      }) : <h3>...Loading</h3> }
     </div>
     </>
   )
