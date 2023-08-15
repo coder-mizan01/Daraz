@@ -1,3 +1,7 @@
+## Project Title and Description
+
+The Daraz 
+i am deploying a website whichs UI is like Daraz and strong backend functionality .
 
 ## live site at 
 
@@ -6,6 +10,7 @@ https://daraz-5pko.onrender.com/
 wait 5-10 seconds to load the product 
 
 ##feauters
+
 Singup, login , cart functionality , SingleProduct Page , Category wise Product , Admin Dashboard , etc 
 
 ## Available Scripts
