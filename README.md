@@ -1,6 +1,10 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## live site at 
+
+https://daraz-5pko.onrender.com/
+
+wait 5-10 seconds to load the product 
 
 ## Available Scripts
 
