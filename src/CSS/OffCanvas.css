@@ -1,0 +1,87 @@
+
+.responsive-menu{
+    display: none;
+} 
+
+.GiHamburgerMenu{
+  color: #F85606;
+  font-size: 1.8rem;
+}
+
+.demo{
+  color: #F85606;
+  font-size: 1.8rem;
+}
+
+.offcan-header{
+  margin: 10px 0px 20px 0px;
+  padding: 0px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.none{
+  display: none;
+}
+
+.offcan{
+  display: block;
+  position: fixed;
+  top: 0%;
+  z-index: 10;
+  opacity: 1;
+  width: 18rem;
+  height: 100vh;
+  margin-left: -10px;
+  background-color: white;
+
+}
+
+
+.offcan-side-nav ul>li{
+  position: relative;
+  width: 90%;
+  padding: 5px 0px;
+  cursor: pointer;
+}
+
+.offcan-side-nav ul>li>a{
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+.offcan-side-nav ul>li>.dropdown{
+  display: none;
+  position: absolute;
+  top: 10px;
+  width: 220px;
+  background-color: white;
+  box-shadow: -5px 0 0px rgba(240, 240, 240, 0.9);
+  left: 90%;
+}
+
+.offcan-side-nav ul>li:hover> ul.dropdown{
+  display: block;
+}
+/*
+.offcan-side-nav ul>li>.dropdown{
+  display: none;
+}
+
+.offcan-side-nav ul>li:hover.dropdown{
+  display: block;
+}
+  */
+  
+@media only screen and (max-width: 768px) {
+
+    .responsive-menu{
+      display: block;
+      margin: 0px 10px 0px 0px;
+    }
+  
+  }
+  
+  

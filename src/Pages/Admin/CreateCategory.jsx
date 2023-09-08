@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Button, Modal } from 'antd';
+import { Modal } from 'antd';
 
 //compoenr
 import Form from "../../Component/Form";

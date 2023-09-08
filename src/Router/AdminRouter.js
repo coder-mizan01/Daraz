@@ -3,14 +3,13 @@ import React, { useEffect, useState } from 'react';
 import Dashboard from "../Pages/Admin/AdminDashboard"
 import Spinner from '../Component/Spinner';
 import axios from 'axios';
-import { Outlet } from 'react-router-dom';
 
 //global Hook
 import { GlobalAuthHook } from '../Context/authContext'
 
 const AdminRouter = () => {
     const [ok ,setOk]= useState(false);
-    const [state,setState] = GlobalAuthHook();
+    const [state] = GlobalAuthHook();
 
     useEffect(()=>{
 

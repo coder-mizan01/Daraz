@@ -12,10 +12,14 @@ const AddToCart = ({product,quantity}) => {
    //use callback function to get arguments
    const {AddToCart} =GlobalCartHook();
 
+   const setAlert  = () =>{
+    alert('please click on the add to cart button')
+   }
+
   return (
     <>
-    <Link to='/cart'>
-      <button className="buy-now">Buy Now</button>
+    <Link >
+      <button className="buy-now" onClick={setAlert} >Buy Now</button>
       </Link>
 
       <Link to='/cart'>

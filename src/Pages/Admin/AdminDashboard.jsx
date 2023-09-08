@@ -4,7 +4,7 @@ import AdminMenu from "../../Component/AdminMenu";
 import {Outlet} from "react-router-dom";
 
 const AdminDashboard = () => {
-  const [state, setState] = GlobalAuthHook();
+  const [state] = GlobalAuthHook();
 
 
   return (
