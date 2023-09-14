@@ -1,12 +1,19 @@
-import React from "react";
+import React,{useState} from "react";
 import { NavLink } from "react-router-dom";
 
+//icons
+import {IoIosArrowForward} from "react-icons/io"
 
 //css
 
 import "../CSS/Cover.css"
 
 const Cover = () => {
+
+  const [isFashionHovered, setisFashionHovered] = useState(false);
+  const [isHealthBeautyHovered, setIsHealthBeautyHovered] = useState(false);
+
+
   return (
     <>
   <section id="cover">
@@ -16,7 +23,7 @@ const Cover = () => {
         
         <ul>
 
-          <li><NavLink to="/">Women's & Girls' Fashion</NavLink>
+          <li onMouseOver={()=>setisFashionHovered(true)} onMouseLeave={()=>{setisFashionHovered(false)}} ><NavLink to="/">Women's & Girls' Fashion {isFashionHovered && <IoIosArrowForward />}  </NavLink>
            <ul className="dropdown">
             <li> <NavLink to="fashion/traditionalwears">Traditional wear</NavLink></li>
             <li> <NavLink to="fashion/westernwears">Western wears</NavLink></li>
@@ -24,7 +31,7 @@ const Cover = () => {
            </li>
 
            
-           <li><NavLink to="/">Health & Beauty</NavLink></li>
+           <li onMouseOver={()=>setIsHealthBeautyHovered(true)}  onMouseLeave={()=>setIsHealthBeautyHovered(false)}><NavLink to="/">Health & Beauty {isHealthBeautyHovered && <IoIosArrowForward />}</NavLink></li>
 
           
            <li><NavLink to="/">Electronic Accessories</NavLink>
@@ -67,13 +74,13 @@ const Cover = () => {
   </div>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src="slide1.jpg" className="d-block w-100" alt="..." />
+      <img src="slide1.jpg" className="" alt="..." />
     </div>
     <div className="carousel-item">
-      <img src="slide2.jpg" className="d-block w-100" alt="..." />
+      <img src="slide2.jpg" className="" alt="..." />
     </div>
     <div className="carousel-item">
-      <img src="slide3.jpg" className="d-block w-100" alt="..." />
+      <img src="slide3.jpg" className="" alt="..." />
     </div>
   </div>
 

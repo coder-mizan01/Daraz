@@ -48,7 +48,7 @@ const Header = () => {
             <div className="cart">
               <NavLink to="/cart">
                 <BsCartCheck className="cartIcon" />
-                 <span>{Cart.length}</span>
+                 {Cart.length !== 0 && <span> {Cart.length}</span>}
               </NavLink>
             </div>
 

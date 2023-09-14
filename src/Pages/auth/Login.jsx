@@ -1,41 +1,49 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate ,useLocation} from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 //global hook
 import { GlobalAuthHook } from "../../Context/authContext";
 
 //css
-import "../../CSS/Register.css";
+import "../../CSS/Login.css";
 import "react-toastify/dist/ReactToastify.css";
+
+//icons
+import { FaRegEye } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa"
 
 
 const Register = () => {
 
-  const [state,setState] = GlobalAuthHook();
+  const [state, setState] = GlobalAuthHook();
   const navigate = useNavigate();
   const location = useLocation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+
+  const [click, setClick] = useState(false);
 
   const handleRegistration = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(
         "https://daraz-api.onrender.com/api/v1/auth/login",
-        { email,password, }
+        { email, password, }
       );
-      if(res.data.success){
+      if (res.data.success) {
         toast.success('user is Login');
         setState({
           ...state,
-          user : res.data.user,
-          token : res.data.token,
+          user: res.data.user,
+          token: res.data.token,
         })
-        localStorage.setItem("auth",JSON.stringify(res.data))
-        navigate(location.state || '/')   
-      }else{
+        localStorage.setItem("auth", JSON.stringify(res.data))
+        navigate(location.state || '/')
+      } else {
         toast.error(res.data.message)
       }
     } catch (error) {
@@ -44,26 +52,28 @@ const Register = () => {
   };
 
   return (
-    <div className="register">
+    <div className="login">
       <ToastContainer />
-      <form onSubmit={handleRegistration}>
+      <form onSubmit={handleRegistration} className="login-form">
 
 
         <div className="mb-3">
+          <label htmlFor="">Email</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="form-control "
+            className="form-control"
             id="exampleInputEmail1"
             placeholder="Enter your email"
             autoComplete="none"
             required
           />
         </div>
-        <div className="mb-3">
+        <div className="password-div">
+          <label htmlFor="">Password</label>
           <input
-            type="password"
+            type={click ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="form-control"
@@ -72,14 +82,21 @@ const Register = () => {
             autoComplete="none"
             required
           />
+          <div className="hide-show-password" onClick={() => setClick(!click)} > {click ? <FaRegEye type="checkbox" className="see" /> : <FaRegEyeSlash className="dont-see" />} </div>
         </div>
 
 
-        <button type="submit" className="btn btn-primary">
-          Submit
+        <button type="submit" className="sign-in-btn">
+          Signup
         </button>
 
       </form>
+
+      <p className="">not a member please
+        <Link to='/Register'>
+          Register
+        </Link>
+      </p>
 
     </div>
   );

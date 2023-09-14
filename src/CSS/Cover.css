@@ -1,12 +1,14 @@
 
 
+
+
 #cover{
     display: flex;
     flex-direction: row;
   }
   
   .menubar{
-    width: 20%;
+    width: 23%;
     text-align: end;
     justify-content: end;
     display: inline-grid;
@@ -15,7 +17,7 @@
   }
   
   .side-nav{
-    width: 200px;
+    width: 230px;
     background-color: #FFFFFF;
     margin: 0 auto;
   }
@@ -29,6 +31,10 @@
   .side-nav ul li{
     position: relative;
   }
+
+  .side-nav ul li:hover{
+    background-color: #F5F5F5;
+  }
   
   .side-nav ul li a{
     display: block;
@@ -40,16 +46,16 @@
   
   }
   
-  .side-nav ul li a:hover > a{
-    background-color:#ccc;
+  .side-nav>ul>li>a:hover{
+    color:#FA5807;
   }
   
   .side-nav ul li ul.dropdown{
     display: none;
     position: absolute;
     background-color: #FFFFFF;
-    top: 0;
-    left: 200px;
+    top: 0px;
+    left:100%;
     width: 200px;
     z-index: 9999;
   }
@@ -65,9 +71,16 @@
 
   
   .carousel{
-    width: 80%;
+    width: 77%;
     height: auto;
     
+  }
+
+  .carousel-inner img{
+    width: 100%;
+    height: 379px;
+    background-position: center;
+    background-size: cover;
   }
   
   @media only screen and (max-width: 1115px) {
@@ -79,6 +92,10 @@
     width: 100%;
     height: auto;
     
+  }
+
+  .carousel-inner img{
+    height: auto;
   }
    }
 

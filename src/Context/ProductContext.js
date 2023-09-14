@@ -7,13 +7,13 @@ const ProductContext = createContext();
 
 
 
-
+//https://daraz-api.onrender.com/api/v1/product/get-product
 const ProductContextProvider = ({children}) => {
     const [products , setProducts] = useState([]);
 
     const getAllProducts = async() =>{
         try {
-         const {data} = await axios.get("https://daraz-api.onrender.com/api/v1/product/get-product");
+         const {data} = await axios.get("");
          if(data.success){
             setProducts(data.products);
            console.log('success');

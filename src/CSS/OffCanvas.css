@@ -8,10 +8,6 @@
   font-size: 1.8rem;
 }
 
-.demo{
-  color: #F85606;
-  font-size: 1.8rem;
-}
 
 .offcan-header{
   margin: 10px 0px 20px 0px;
@@ -21,22 +17,30 @@
   align-items: center;
 }
 
-.none{
-  display: none;
-}
-
 .offcan{
-  display: block;
+  background-color: white;
+  left: -300px;
+  width: 0px;
+  height: 100vh;
+  transition: 0.5s;
   position: fixed;
   top: 0%;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.show-offcan{
+  left: 0px;
+  width: 300px;
+  position: fixed;
+  transition: 0.5s;
   z-index: 10;
   opacity: 1;
-  width: 18rem;
+  background: white;
   height: 100vh;
-  margin-left: -10px;
-  background-color: white;
-
+  top: 0;
 }
+
 
 
 .offcan-side-nav ul>li{
@@ -65,15 +69,7 @@
 .offcan-side-nav ul>li:hover> ul.dropdown{
   display: block;
 }
-/*
-.offcan-side-nav ul>li>.dropdown{
-  display: none;
-}
 
-.offcan-side-nav ul>li:hover.dropdown{
-  display: block;
-}
-  */
   
 @media only screen and (max-width: 768px) {
 
@@ -81,6 +77,7 @@
       display: block;
       margin: 0px 10px 0px 0px;
     }
+
   
   }
   

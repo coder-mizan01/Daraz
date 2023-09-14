@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate ,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+
+//icons
+import { FaRegEye } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa"
+
 //css
 import "../../CSS/Register.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,6 +18,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
+  const [seePassword,setSeePassword] = useState(false);
 
   const handleRegistration = async (e) => {
     e.preventDefault();
@@ -21,11 +27,11 @@ const Register = () => {
         "https://daraz-api.onrender.com/api/v1/auth/register",
         { name, email, password, phone }
       );
-      if(res.data.success){
+      if (res.data.success) {
 
         toast.success('user is created')
         navigate('/Login')
-      }else{
+      } else {
         toast.error(res.data.message)
       }
     } catch (error) {
@@ -36,8 +42,9 @@ const Register = () => {
   return (
     <div className="register">
       <ToastContainer />
-      <form onSubmit={handleRegistration}>
-        <div className="mb-3">
+      <form onSubmit={handleRegistration} className="register-form" >
+        <div className="">
+          <label htmlFor="">Name</label>
           <input
             type="text"
             value={name}
@@ -50,7 +57,8 @@ const Register = () => {
           />
         </div>
 
-        <div className="mb-3">
+        <div className="">
+          <label htmlFor="">Email</label>
           <input
             type="email"
             value={email}
@@ -62,20 +70,8 @@ const Register = () => {
             required
           />
         </div>
-        <div className="mb-3">
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="form-control"
-            id="exampleInputPassword1"
-            placeholder="Enter your password"
-            autoComplete="none"
-            required
-          />
-        </div>
-
-        <div className="mb-3">
+        <div className="">
+          <label htmlFor="">Phone Number</label>
           <input
             type="text"
             value={phone}
@@ -88,13 +84,34 @@ const Register = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
-          Submit
+
+
+        <div className="password">
+          <label htmlFor="">Password</label>
+          <input
+            type={seePassword ? "text" : "password"}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="form-control "
+            id="exampleInputPassword1"
+            placeholder="Enter your password"
+            autoComplete="none"
+            required
+          />
+          <div className="hide-show-password" onClick={()=>setSeePassword(!seePassword)} >{seePassword ?<FaRegEye />:<FaRegEyeSlash />  } </div>
+        </div>
+
+        <button type="submit" className="sign-up-btn">
+          Signup
         </button>
       </form>
-      <Link to='/Login'>
-        <button className="btn btn-success">Login</button>
-      </Link>
+
+        <p className="">Already member
+        <Link to='/Login'>
+          login
+        </Link>
+        </p>
+
     </div>
   );
 };

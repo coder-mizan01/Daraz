@@ -1,3 +1,19 @@
+
+.empty-cart-div{
+  text-align: center;
+  margin: 20px 5px;
+
+}
+
+.empty-cart-div h1{
+  margin: 0px;
+}
+
+.empty-cart-div a{
+  color: black;
+}
+
+
 .cart-heading {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

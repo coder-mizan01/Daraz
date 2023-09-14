@@ -1,13 +1,87 @@
-
-.register{
+.register {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 70vh;
     flex-direction: column;
+    background-color: #EFF0F5;
+
 }
 
-.form-control{
-    width: 350px;
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FFFFFF;
+    width: 700px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+
+.register-form label {
+    font-size: 14px;
+    padding-left: 4px;
+}
+
+.register-form div {
+    margin: 0px 0px 10px 10px;
+    text-indent: 0px;
+}
+
+.form-control {
+    width: 450px;
     outline: none;
+}
+
+.password {
+    position: relative;
+}
+
+.password .hide-show-password {
+    position: absolute;
+    top: 52%;
+    right: 35%;
+}
+
+.sign-up-btn {
+    width: 120px;
+    margin: 10px 0px 0px 10px;
+    background: #F85606;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 10px 0px;
+}
+
+.register p {
+    margin-top: 10px;
+}
+
+
+@media(max-width:768px) {
+    .register-form {
+        width: 500px;
+    }
+
+    .form-control{
+        width: 100px;
+    }
+
+    .password .hide-show-password {
+        position: absolute;
+        top: 52%;
+        right: 5%;
+    }
+
+}
+
+@media(max-width:518px) {
+    .register-form {
+        width: 380px;
+    }
+    .form-control{
+        width: 100px;
+        outline: none;
+    }
 }

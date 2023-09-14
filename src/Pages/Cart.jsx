@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 import { GlobalCartHook } from "../Context/CartContext";
 
@@ -23,7 +24,13 @@ const Cart = () => {
   return (
     <>
       {Cart.length === 0 ? (
-        <h1 style={{textAlign:'center'}}>Cart is empty</h1>
+          <>
+          <div  className="empty-cart-div">
+          <img src="icon_empty_cart.png" alt="" />
+          <h1 >Cart is empty</h1>
+          <Link to='/'>please go for shopping</Link>
+        </div>
+          </>
       ) : (
         <div className="cart">
           <div className="cart-heading">
