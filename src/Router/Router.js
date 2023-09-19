@@ -54,7 +54,6 @@ const Router = () => {
         <Route path='/admin/dashboard/createproduct' element={<CreateProduct />} />
         <Route path='/admin/dashboard/products' element={<Products />} />
         <Route path='/admin/dashboard/users' element={<Users />} />
-
       </Route>
 
         <Route path='/' element={<Home />} />

@@ -22,7 +22,7 @@ const AddToCart = ({product,quantity}) => {
       <button className="buy-now" onClick={setAlert} >Buy Now</button>
       </Link>
 
-      <Link to='/cart'>
+      <Link to=''>
       <button className="add-to-cart" onClick={()=>AddToCart(_id,price,product,quantity)}>Add To Cart</button>
       </Link>
     </>

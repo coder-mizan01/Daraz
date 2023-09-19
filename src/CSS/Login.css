@@ -26,7 +26,15 @@
 
 .form-control{
     width: 450px;
+}
+.form-control:focus{
     outline: none;
+    offset: none;
+}
+
+.form-control:active{
+    outline: none;
+    offset: none;
 }
 
 .password-div{
@@ -45,7 +53,7 @@
 .sign-in-btn{
     width: 120px;
     margin: 15px 0px 0px 0px;
-    background: #F85606;
+    background: #222836;
     border: none;
     border-radius: 5px;
     color: #FFFFFF;

@@ -7,16 +7,20 @@ import "../CSS/Products.css"
 import { GlobalProductHook } from '../Context/ProductContext';
 
 //icons 
-import {AiFillStar,AiOutlineStar} from 'react-icons/ai'
+import {AiFillStar,AiOutlineStar} from 'react-icons/ai';
+
+//component
+import Spinner from './Spinner';
 
 
 const Products = () => {
 
     const {products} = GlobalProductHook();
+    
   return (
     <>
     <div className="products">
-      {products? products.map((pro) => {
+      {products.length !== 0 ? products.map((pro) => {
         const {slug,description,price,_id} = pro
         return (
           <div className="product" key={_id}>
@@ -35,7 +39,8 @@ const Products = () => {
             </Link>
           </div>
         );
-      }) : <h3>...Loading</h3> }
+      }) : <Spinner /> }
+    
     </div>
     </>
   )

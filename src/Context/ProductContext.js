@@ -5,7 +5,7 @@ import axios  from "axios";
 
 const ProductContext = createContext();
 
-
+//
 
 const ProductContextProvider = ({children}) => {
     const [products , setProducts] = useState([]);
@@ -15,8 +15,6 @@ const ProductContextProvider = ({children}) => {
          const {data} = await axios.get("https://daraz-api.onrender.com/api/v1/product/get-product");
          if(data.success){
             setProducts(data.products);
-           console.log('success');
-           
          }
         } catch (error) {
          console.log(error.message);

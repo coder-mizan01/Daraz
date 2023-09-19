@@ -36,25 +36,27 @@
     width: 100%;
     height: auto;
 }
+
 .pro-content{
     box-sizing: border-box;
     padding: 12px 7px 8px 7px;
 }
-.pro-content .desc{
 
+.pro-content .desc{
    color: black;
    font-size: 15px;
    margin: 1px 0px;
    line-height:2ch;
 }
 
-.pro-content .price{
+.pro-content>.price{
     margin: 0px;
     padding: 0px;
     line-height:3ch;
     font-size: 1.2rem;
     font-weight: 500;
-    color: #F85606;
+    color: #222836;
+
 }
 .pro-content .price::first-letter{
     font-size: 1.5rem;

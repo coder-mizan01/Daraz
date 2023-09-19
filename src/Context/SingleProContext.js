@@ -13,14 +13,14 @@ const SingleProductContextProvider = ({children}) =>{
           const {data} = await axios.get(url);
           if(data.success){
             SetSingleProduct(data.singleProduct);
-            console.log(data.singleProduct);
+
           }
         } catch (error) {
           console.log(error.message);
         }
       }
 
-      return   <SingleProductContext.Provider value={{ SingleProduct, getSingleProduct }}>
+      return <SingleProductContext.Provider value={{ SingleProduct, getSingleProduct }}>
       {children}
     </SingleProductContext.Provider>
 }
