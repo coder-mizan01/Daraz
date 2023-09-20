@@ -16,7 +16,7 @@ const TopHeader = () => {
   const handleLogOut = () =>{
     setState({
       user : null,
-      token : "",
+      token : null,
     })
     localStorage.removeItem("auth")
   }

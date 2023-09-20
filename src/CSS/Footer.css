@@ -1,73 +1,66 @@
 
 
-.top-footer{
-    background-color: #2E2E54;
+#footer{
+    background-color: #222;
     display: grid;
-    padding: 20px 70px 20px 70px;
+    padding: 50px 70px 50px 70px;
     grid-template-columns: 1fr 1fr 2fr;
+  
 }
 
-.top-footer .content-left a {
+#footer .content-left a {
     display: block;
 }
 
 
-.top-footer .content-center a {
+#footer .content-center a {
     display: block;
 }
 
-.top-footer a{
+#footer a{
     color: white;
-    font-size: 0.8rem;
+    opacity: 0.8;
+    font-size: 1rem;
     text-decoration: none;
 }
-.top-footer h3{
-    font-size: 1.3rem;
+
+#footer a:hover{
+    text-decoration: underline;
+}
+#footer h3{
+    font-size: 1.5rem;
     color: white;
 }
-.content-right .scan-image img{
-    width: 110px;
-    height: auto;
-    border-radius: 10px;
+
+
+.content-right .footer-form input{
+    width: 200px;
+    padding: 5px;
+    outline: none;
+    margin: 0px;
+    border: none;
 }
 
-.content-right .scan-image,.happy-shopping-image{
-  display: inline-block;
-  color: white;
-  margin: 12px;
+.content-right .footer-form button{
+    padding: 5px 8px;
+    margin: 0px;
+    border: none;
+    background-color: #ddd;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
-
-.content-right .happy-shopping-image img{
-    width: 50px;
-    height: auto;
-}
-.footer-buttons{
-    display: block;
-}
-.footer-buttons button{
-    background-color: black;
-    color: white;
-    margin : 0px 5px;
-    padding: 10px 20px;
-    border-radius: 8px; 
-    border:none;
-}
-
 
 @media(max-width : 768px) {
-    .top-footer{
+    #footer{
         grid-template-columns: 1fr;
-        padding: 0;    
+        padding: 0;
+        text-align: center;
     }
    .content-left{
     padding-top: 10px;
    }
    .content-center{
    padding-top: 10px;
-}
-
-.footer-buttons button{
-    padding: 10px;
 }
 
 

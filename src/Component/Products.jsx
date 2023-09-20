@@ -34,7 +34,7 @@ const Products = () => {
             <div className="pro-content">
               <p className="desc">{description}</p>
               <p className="price">৳{price}</p>
-              <p className="star"> <AiFillStar /><AiFillStar /> <AiFillStar /><AiFillStar /><AiOutlineStar /> <span>(167)</span></p>
+              
             </div>
             </Link>
           </div>

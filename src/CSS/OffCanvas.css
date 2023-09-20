@@ -4,7 +4,7 @@
 } 
 
 .GiHamburgerMenu{
-  color: #F85606;
+  color: #222836;
   font-size: 1.8rem;
 }
 
@@ -41,10 +41,14 @@
   top: 0;
 }
 
+.btn-close{
+  color: #222836;
+}
 
 
 .offcan-side-nav ul>li{
   position: relative;
+  list-style-type: none;
   width: 90%;
   padding: 5px 0px;
   cursor: pointer;

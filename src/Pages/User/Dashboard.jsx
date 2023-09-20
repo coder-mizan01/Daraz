@@ -9,11 +9,23 @@ import { GlobalAuthHook } from "../../Context/authContext";
 import "../../CSS/Dashboard.css"
 
 const Dashboard = () => {
-  const [state] = GlobalAuthHook();
-  console.log(state); 
+  const [state,setState] = GlobalAuthHook();
+
+  
+  console.log(state);
+
+
+
+  const handleLogOut = () =>{
+    setState({
+      user : null,
+      token : null,
+    })
+    localStorage.removeItem("auth")
+  }
   return (
     <>
-      {state?.user.role === 0 ? (
+      {state?.user?.role === 0 ? (
         <>
           <div className="dashboard">
 
@@ -39,6 +51,10 @@ const Dashboard = () => {
                 <button className="nav-link" id="voucher-tab" data-bs-toggle="tab" data-bs-target="#voucher-tab-pane" type="button" role="tab" aria-controls="voucher-tab-pane" aria-selected="false">My Voucher</button>
               </li>
 
+              <li className="nav-item" role="presentation"  >
+                <button onClick={handleLogOut}  className="nav-link" id="logout-tab" data-bs-toggle="tab" data-bs-target="#logout-tab-pane" type="button" role="tab" aria-controls="logout-tab-pane" aria-selected="false">LogOut</button>
+              </li>
+
             </ul>
             </div>
 
@@ -56,6 +72,7 @@ const Dashboard = () => {
               <div className="tab-pane fade" id="wishlist-tab-pane" role="tabpanel" aria-labelledby="wishlist-tab" tabIndex={0}><><h2>you have no wislist </h2></></div>
               <div className="tab-pane fade" id="balance-tab-pane" role="tabpanel" aria-labelledby="balance-tab" tabIndex={0}><><h2>you have no balance </h2></></div>
               <div className="tab-pane fade" id="voucher-tab-pane" role="tabpanel" aria-labelledby="voucher-tab" tabIndex={0}><><h2>you have no voucher </h2></></div>
+              <div className="tab-pane fade" id="logout-tab-pane" role="tabpanel" aria-labelledby="logout-tab" tabIndex={0}><><h2>you have no voucher </h2></></div>
             </div>
           </div>
 

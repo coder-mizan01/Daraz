@@ -40,19 +40,19 @@ label{
   width: 90%;
   margin: 0px auto;
 }
-
-.product {
+/*
+.product{
   margin: 6px;
   background-color: #ffffff;
+  border: 1px;
+  border-radius: 5px;
+  border-color: rgb(241 245 249/var(--tw-border-opacity));
 }
 
 .product a {
   text-decoration: none;
 }
 
-.product:hover {
-  box-shadow: 0px 0px 5px #888888;
-}
 
 .product-img {
   display: flex;
@@ -66,25 +66,29 @@ label{
   width: 100%;
   height: auto;
 }
-.pro-content {
-  box-sizing: border-box;
-  padding: 12px 7px 8px 7px;
-}
-.pro-content .desc {
-  color: black;
-  font-size: 15px;
-  margin: 1px 0px;
-  line-height: 2ch;
-}
 
-.pro-content .price {
-  margin: 0px;
-  padding: 0px;
-  line-height: 3ch;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #f85606;
-}
+.pro-content {
+    box-sizing: border-box;
+    padding: 12px 7px 8px 7px;
+  }
+  .pro-content .desc {
+    color: black;
+    font-size: 18px;
+    opacity: 0.8;
+    margin: 1px 0px;
+    line-height: 2ch;
+  }
+  
+  .pro-content .price {
+    margin: 0px;
+    padding: 0px;
+    line-height: 3ch;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: black;
+    opacity: 0.7;
+  }
+
 .pro-content .price::first-letter {
   font-size: 1.5rem;
   font-weight: 800;
@@ -92,7 +96,7 @@ label{
 
 .pro-content .star {
   font-size: 12px;
-  color: #faca51;
+  color: black;
 }
 .pro-content .star span {
   color: black;
@@ -132,3 +136,4 @@ label{
     margin: 1px 0px;
   }
 }
+*/

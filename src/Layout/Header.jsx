@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 //Layout
-import TopHeader from "./TopHeader";
 import OffCanvas from "./OffCanvas"
 //icons
 import { BsCartCheck } from "react-icons/bs";
@@ -26,13 +25,9 @@ const Header = () => {
   const [state] = GlobalAuthHook();
   console.log(state);
 
-  const [mouse , setMouse]= useState(false)
   return (
     <>
       <header id="header">
-        <TopHeader />
-
-        <div className="bottom-header">
 
           <OffCanvas />
 
@@ -44,7 +39,7 @@ const Header = () => {
           </div>
 
           <div className="searchBar">
-            <input type="text" placeholder="Search in daraz" />
+            <input type="text" placeholder="Search in shopee" />
             <button type="search">
               <AiOutlineSearch className="searchIcon" style={{ color: "white" }} />
             </button>
@@ -60,16 +55,14 @@ const Header = () => {
             </div>
 
             <div className="user">
-              {state.user && state.token !== null ? <FaUserCircle className="user-icon" />
+              {state.user && state.token !== null ? <Link to='/dashboard'> <FaUserCircle className="user-icon"  /> </Link>
                 : <Link to='/register'><button className="user-btn">Sign up</button></Link>}
             </div>
             
   
-
-
           </div>
-        </div>
       </header>
+
     </>
   );
 };

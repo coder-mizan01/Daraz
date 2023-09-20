@@ -9,16 +9,20 @@
     margin: 0px auto 30px auto;
     padding: 10px;
     background-color: #FFFFFF;
-    grid-template-columns: 1.1fr 1.8fr 1.1fr;
+    grid-template-columns: 1fr 1.8fr;
 }
 
 .Images img{
     width: 300px;
     height: 300px;
 }
-.Single-Product-Details{
 
+.thumbnails .thumb-img{
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgba(36, 20, 20, 0.1);
 }
+
 .Single-Product-Details p{
     margin: 8px 5px;
 }
@@ -92,14 +96,8 @@ hr{
     padding: 8px 80px;
     color: #EFF0F5;
     border: none;
-    background: #f57224;
+    background: #222836;
   }
-
-.other-Information{
-    background: #FAFAFA;
-    margin: -10px;
-    padding: 10px;
-} 
 
 
 
@@ -128,9 +126,10 @@ hr{
         display: none;
     }
 
-    .Images{
-        display: flex;
-        justify-content: center;
+    .thumbnails .thumb-img{
+    
+        width: 50px;
+        height: 50px;
     }
 
     .Single-Product-buttons .add-to-cart{
