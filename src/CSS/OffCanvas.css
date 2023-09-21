@@ -11,10 +11,19 @@
 
 .offcan-header{
   margin: 10px 0px 20px 0px;
-  padding: 0px 5px;
+  padding: 0px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.offcan-header a{
+  width: 140px;
+  height: auto;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #222836;
+  text-decoration: none;
 }
 
 .offcan{

@@ -6,13 +6,16 @@ const Images = ({SingleProduct}) => {
 
   return (
     <>
+    <div className="Images">
     <img className='img-fluid' src={`https://daraz-api.onrender.com/api/v1/product/product-photo/${_id}`} alt="" />
-
     <div className='thumbnails'>
-      <img className='thumb-img' src={`https://daraz-api.onrender.com/api/v1/product/product-photo/${_id}`} alt=""/>
+      <img onClick={()=>alert('feauter will added')} className='thumb-img' src={`https://daraz-api.onrender.com/api/v1/product/product-photo/${_id}`} alt=""/>
       
 
     </div>
+    </div>
+    
+
     </>
   )
 }

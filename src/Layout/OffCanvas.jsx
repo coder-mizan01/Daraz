@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 //css
 import "../CSS/OffCanvas.css"
@@ -28,11 +28,7 @@ const OffCanvas = () => {
           className={click ? 'offcan' : "show-offcan"}
         >
           <div className="offcan-header">
-            <img
-              src="DarazaLogo.png"
-              alt="darazlogo"
-              style={{ width: "150px", height: "auto" }}
-            />
+            <Link to='/'>Shopee</Link>
             <button
               type="button"
               className="btn-close"

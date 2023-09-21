@@ -1,48 +1,4 @@
-/*#topheader {
-  background-color: #ececec;
-  display: flex;
-  justify-content: center;
-}
 
-li {
-  list-style-type: none;
-}
-
-#topheader a {
-  font-size: 11.5px;
-  font-family: Roboto-Regular, "Helvetica Neue", Helvetica, Tahoma, Arial,sans-serif;
-  padding: 4px 15px;
-  text-decoration: none;
-  color: #212121;
-}
-
-#topheader a:hover {
-  color: #f2a078;
-  transition: 0.3s;
-  text-decoration: underline;
-}
-
-.responisve-none{
- color: blue;
-}
-
-@media only screen and (max-width: 990px) {
-
-  #topheader a:nth-child(2){
-    display: none;
-  }
-  #topheader a:nth-child(7){
-    display: none;
-  }
-}
-@media only screen and (max-width: 768px) {
-    #topheader a {
-      font-size: 6px;
-      padding: 3px 6px;
-    }
- 
-  }*/
-/*Bottom Header*/
 
 #header {
   display: flex;

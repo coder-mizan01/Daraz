@@ -34,7 +34,7 @@ const SingleProduct = () => {
       setProductQuantity(newproductQuantity);
   }
 
-
+ console.log(SingleProduct);
 
 
   return (
@@ -44,23 +44,23 @@ const SingleProduct = () => {
           <Pagination Products={SingleProduct} />
           <div className="Single-Product">
 
-            <div className="Images">
               <Images SingleProduct={SingleProduct} />
-            </div>
             
             <div className="Single-Product-Details">
-              <p className="description">{SingleProduct.description}</p>
-              <p className="star"> <AiFillStar /><AiFillStar /> <AiFillStar /><AiFillStar /><AiOutlineStar />  </p>
+              <p className="title">{SingleProduct.title}</p>
               <p className="brand"> brand: {SingleProduct.brand} | more product from {SingleProduct.brand}</p>
-              <p className="discount-price">৳{SingleProduct.price}</p>
-              <p className="price"> <del>৳ 210</del> -52%</p>
+              <p className="sub-category">{SingleProduct.subcategory}</p>
+              <p>in stock : {SingleProduct.quantity}</p>
+              <p className="star"> <AiFillStar /><AiFillStar /> <AiFillStar /><AiFillStar /><AiOutlineStar />  </p>
+              <p className="discount-price">TK. {SingleProduct.price}</p>
+              <p className="price"> <del> 210</del> -52%</p>
               <hr />
               <div className="quantity">
                  <p> Quantity : </p>  <Quantity onChange={handleQuantity} />
               </div>
 
               <div className="Single-Product-buttons">
-                <AddToCart product={SingleProduct} quantity={productQuantity} />
+                <AddToCart product={SingleProduct} quantity={productQuantity} name={'Add TO Cart'} />
               </div>
 
             </div>
