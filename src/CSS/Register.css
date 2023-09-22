@@ -1,8 +1,9 @@
+
 .register {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: auto;
     flex-direction: column;
     background-color: #EFF0F5;
 
@@ -16,10 +17,12 @@
     width: 700px;
     box-sizing: border-box;
     padding: 10px 20px;
+    margin-top: 50px;
 }
 
 .register-form label {
-    font-size: 14px;
+    display: block;
+    font-size: 16px;
     padding-left: 4px;
 }
 
@@ -28,20 +31,29 @@
     text-indent: 0px;
 }
 
-.form-control {
+.input-field{
     width: 450px;
     outline: none;
+    border: 1px solid rgba(215,215,215,0.9);
+    border-radius: 5px;
+    padding: 8px 10px;
 }
 
-.password {
-    position: relative;
+.password .input-field{
+   border-right: none;
+   border-top-right-radius: none;
+   border-bottom-right-radius: none;
+   width: 418px;
 }
 
-.password .hide-show-password {
-    position: absolute;
-    top: 52%;
-    right: 35%;
+.password .hide-show-password{
+    border: none;
+    padding: 9px 15px;
+    margin: 0px -8px;
+    
 }
+
+
 
 .sign-up-btn {
     width: 120px;
@@ -54,7 +66,7 @@
     padding: 10px 0px;
 }
 
-.register p {
+.register p{
     margin-top: 10px;
 }
 
@@ -64,24 +76,27 @@
         width: 500px;
     }
 
-    .form-control{
-        width: 100px;
+    .input-field{
+        width: 350px;
     }
 
-    .password .hide-show-password {
-        position: absolute;
-        top: 52%;
-        right: 5%;
-    }
+    .password .input-field{
+        width: 316px;
+     }
 
 }
 
-@media(max-width:518px) {
+@media(max-width:490px) {
     .register-form {
-        width: 380px;
+        width: 300px;
     }
-    .form-control{
-        width: 100px;
+    .input-field{
+        width: 250px;
         outline: none;
     }
+
+    .password .input-field{
+        width: 220px;
+     }
+
 }

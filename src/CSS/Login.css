@@ -19,35 +19,34 @@
 }
 
 .login-form label{
+    display: block;
     font-size: 14px;
     padding-left: 4px;
 }
 
 
-.form-control{
+.input-field{
     width: 450px;
-}
-.form-control:focus{
     outline: none;
-    offset: none;
+    border: 1px solid rgba(215,215,215,0.9);
+    border-radius: 5px;
+    padding: 8px 10px;
 }
 
-.form-control:active{
-    outline: none;
-    offset: none;
+.password .input-field{
+    border-right: none;
+    border-top-right-radius: none;
+    border-bottom-right-radius: none;
+    width: 418px;
+ }
+
+ 
+.password .hide-show-password{
+    border: none;
+    padding: 9px 15px;
+    margin: 0px -8px;
+    
 }
-
-.password-div{
-    position: relative;
-
-}
-
-.login-form .hide-show-password{
-  position: absolute;
-  top: 45%;
-  left: 64%;
-}
-
 
 
 .sign-in-btn{
@@ -65,8 +64,32 @@
     margin-top:10px;
 }
 
-@media(max-width:768px){
-    .login-form{
+@media(max-width:768px) {
+    .login-form {
         width: 500px;
     }
+
+    .input-field{
+        width: 350px;
+    }
+
+    .password .input-field{
+        width: 316px;
+     }
+
+}
+
+@media(max-width:490px) {
+    .login-form{
+        width: 300px;
+    }
+    .input-field{
+        width: 250px;
+        outline: none;
+    }
+
+    .password .input-field{
+        width: 220px;
+     }
+
 }

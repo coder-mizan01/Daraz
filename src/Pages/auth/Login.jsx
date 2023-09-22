@@ -63,26 +63,26 @@ const Register = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="form-control"
+            className="input-field"
             id="exampleInputEmail1"
             placeholder="Enter your email"
             autoComplete="none"
             required
           />
         </div>
-        <div className="password-div">
+        <div className="password">
           <label htmlFor="">Password</label>
           <input
             type={click ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="form-control"
+            className="input-field"
             id="exampleInputPassword1"
             placeholder="Enter your password"
             autoComplete="none"
             required
           />
-          <div className="hide-show-password" onClick={() => setClick(!click)} > {click ? <FaRegEye type="checkbox" className="see" /> : <FaRegEyeSlash className="dont-see" />} </div>
+          <button type="button" className="hide-show-password" onClick={() => setClick(!click)} > {click ? <FaRegEye type="checkbox" className="see" /> : <FaRegEyeSlash className="dont-see" />} </button>
         </div>
 
 

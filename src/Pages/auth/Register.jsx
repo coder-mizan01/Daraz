@@ -49,7 +49,7 @@ const Register = () => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="form-control "
+            className="input-field "
             id="exampleInputName"
             placeholder="Enter your Name"
             autoComplete="none"
@@ -63,7 +63,7 @@ const Register = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="form-control "
+            className="input-field "
             id="exampleInputEmail1"
             placeholder="Enter your email"
             autoComplete="none"
@@ -76,7 +76,7 @@ const Register = () => {
             type="text"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="form-control "
+            className="input-field "
             id="exampleInputPhone"
             placeholder="Enter your Phone"
             autoComplete="none"
@@ -92,13 +92,13 @@ const Register = () => {
             type={seePassword ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="form-control "
+            className="input-field"
             id="exampleInputPassword1"
             placeholder="Enter your password"
             autoComplete="none"
             required
           />
-          <div className="hide-show-password" onClick={()=>setSeePassword(!seePassword)} >{seePassword ?<FaRegEye />:<FaRegEyeSlash />  } </div>
+          <button type="button" className="hide-show-password" onClick={()=>setSeePassword(!seePassword)} >{seePassword ?<FaRegEye />:<FaRegEyeSlash />  } </button>
         </div>
 
         <button type="submit" className="sign-up-btn">

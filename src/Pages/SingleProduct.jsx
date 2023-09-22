@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { SingleProductGlobalContext } from "../Context/SingleProContext";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //css
 import "../CSS/SingleProduct.css";
@@ -34,12 +35,14 @@ const SingleProduct = () => {
       setProductQuantity(newproductQuantity);
   }
 
- console.log(SingleProduct);
+
 
 
   return (
     <>
+    
       {SingleProduct !== undefined ? (
+       
         <div id="Single-Product-Page">
           <Pagination Products={SingleProduct} />
           <div className="Single-Product">
@@ -49,8 +52,8 @@ const SingleProduct = () => {
             <div className="Single-Product-Details">
               <p className="title">{SingleProduct.title}</p>
               <p className="brand"> brand: {SingleProduct.brand} | more product from {SingleProduct.brand}</p>
-              <p className="sub-category">{SingleProduct.subcategory}</p>
-              <p>in stock : {SingleProduct.quantity}</p>
+              <p className="sub-category">  category : <Link to='/'>{SingleProduct.category}</Link></p>
+              <p> in stock : {SingleProduct.quantity} pice</p>
               <p className="star"> <AiFillStar /><AiFillStar /> <AiFillStar /><AiFillStar /><AiOutlineStar />  </p>
               <p className="discount-price">TK. {SingleProduct.price}</p>
               <p className="price"> <del> 210</del> -52%</p>

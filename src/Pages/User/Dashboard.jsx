@@ -79,7 +79,7 @@ const Dashboard = () => {
         </>
       ) : (
         <>
-          <h2>You are admin sir , this page is for user</h2>
+          <h2>you have to sign in to access this page</h2>
         </>
       )}
     </>

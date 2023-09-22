@@ -22,7 +22,7 @@ const Products = () => {
     
   return (
     <>
-    <div className={products.length !== 0 ? 'products' : '' }>
+    <div className={products.length !== 0 ? 'products' : ''}>
       {products.length !== 0 ? products.map((pro) => {
         const {slug,description,price,_id} = pro  
         return (

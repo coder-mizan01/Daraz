@@ -62,12 +62,12 @@
 .cart-user-div{
   flex: 23%;
   display: flex;
-  justify-content:flex-end;
+  justify-content:space-evenly;
   align-items: center;
 
 }
 
-.cart-user-div div{
+.cart-user-div .cart{
   display: inline-block;
   margin: 0px 15px;
 
@@ -105,28 +105,37 @@ z-index: 1;
   
 }
 
-.user{
-position: relative;
-padding: 8px;
-overflow: visible;
-z-index: 1;
-
-}
 .user-icon{
   font-size: 1.7rem;
   color: black;
 }
 
-.user-btn{
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  color: #FFFFFF;
-  background-color: #222836;
-  font-weight: 500;
+.homepage-register-login{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
 }
 
+.homepage-register-login .icon{
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
 
+.homepage-register-login div p {
+   margin: 0px;
+   font-size: 1rem;
+   color: black;
+   line-height: 0.3cm;
+}
+
+.homepage-register-login div a{
+  font-size: 12px;
+  color: black;
+
+  
+}
 
 @media only screen and (max-width: 1115px) {
   .logo{
