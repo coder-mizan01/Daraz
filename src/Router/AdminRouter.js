@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
-import Dashboard from "../Pages/Admin/AdminDashboard"
-import Spinner from '../Component/Spinner';
+import AdminDashboard from "../Pages/Admin/AdminDashboard"
+import Login from "../Pages/auth/Login"
 import axios from 'axios';
 
 //global Hook
@@ -31,7 +31,7 @@ const AdminRouter = () => {
     },[state?.token])
 
 
-  return ok ? <Dashboard /> : <Spinner />
+  return ok ? <AdminDashboard /> : <Login />
 
 }
 

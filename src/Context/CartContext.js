@@ -1,8 +1,8 @@
 import { createContext, useContext, useReducer } from "react";
 
 //reducer
-
 import CartReducer from "../Reducer/CartReducer";
+
 
  const CartContext = createContext();
 
@@ -41,4 +41,3 @@ import CartReducer from "../Reducer/CartReducer";
 
  export {CartContextProvider,GlobalCartHook}
  
- export default CartContext

@@ -9,15 +9,18 @@ import { SingleProductContextProvider } from "./Context/SingleProContext";
 import { CartContextProvider } from "./Context/CartContext";
 //css
 import "./CSS/index.css";
+import { FilterContextProvider } from "./Context/FilterContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
     <AuthContextProvider>
       <ProductContextProvider>
         <SingleProductContextProvider>
+           <FilterContextProvider>
           <CartContextProvider>
           <App />
           </CartContextProvider >
+          </FilterContextProvider>
         </SingleProductContextProvider>
       </ProductContextProvider>
     </AuthContextProvider>

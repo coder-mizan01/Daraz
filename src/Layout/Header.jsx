@@ -56,7 +56,7 @@ const Header = () => {
 
             <div className="user">
               {state.user && state.token !== null ? <Link to='/dashboard'> <FaUserCircle className="user-icon"  /> </Link>
-                :<div className="homepage-register-login"><FaUserPlus className="icon" />
+                :<div className="homepage-register-login"><FaUserPlus  className="icon" />
                 
                  <div>
                   <p>Account</p>

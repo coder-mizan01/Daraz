@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 import Dashboard from "../Pages/User/Dashboard"
-import Spinner from '../Component/Spinner';
+//import Spinner from '../Component/Spinner';
+import Login from "../Pages/auth/Login"
 import axios from 'axios';
 
 //global Hook
@@ -31,7 +32,7 @@ const PrivateRouter = () => {
     },[state?.token])
 
 
-  return ok ? <Dashboard /> : <Spinner />
+  return ok ? <Dashboard /> : <Login />
 
 }
 

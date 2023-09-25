@@ -1,20 +1,14 @@
 import React from "react";
+
+
+//global hook
 import { GlobalAuthHook } from "../../Context/authContext";
-//import { Outlet} from "react-router-dom";
 
-//Pages
-
-//import UserMenu from "../../Component/UserMenu";
 
 import "../../CSS/Dashboard.css"
 
 const Dashboard = () => {
   const [state,setState] = GlobalAuthHook();
-
-  
-  console.log(state);
-
-
 
   const handleLogOut = () =>{
     setState({
@@ -23,9 +17,12 @@ const Dashboard = () => {
     })
     localStorage.removeItem("auth")
   }
+
+
+  console.log(state);
   return (
     <>
-      {state?.user?.role === 0 ? (
+      {state?.user !== null ? (
         <>
           <div className="dashboard">
 
@@ -36,7 +33,7 @@ const Dashboard = () => {
                 <button className="nav-link active" id="account-tab" data-bs-toggle="tab" data-bs-target="#account-tab-pane" type="button" role="tab" aria-controls="account-tab-pane" aria-selected="true">My Account</button>
               </li>
               <li className="nav-item" role="presentation">
-                <button className="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders-tab-pane" type="button" role="tab" aria-controls="orders-tab-pane" aria-selected="false">My Orders</button>
+                <button className="nav-link " id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders-tab-pane" type="button" role="tab" aria-controls="orders-tab-pane" aria-selected="false">My Orders</button>
               </li>
               <li className="nav-item" role="presentation">
                 <button className="nav-link" id="wishlist-tab" data-bs-toggle="tab" data-bs-target="#wishlist-tab-pane" type="button" role="tab" aria-controls="wishlist-tab-pane" aria-selected="false">My Wislist</button>
@@ -79,7 +76,7 @@ const Dashboard = () => {
         </>
       ) : (
         <>
-          <h2>you have to sign in to access this page</h2>
+        <h2 style={{textAlign:'center'}}>you have to sign up to access this page</h2>
         </>
       )}
     </>

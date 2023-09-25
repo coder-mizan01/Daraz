@@ -6,16 +6,21 @@ import "../CSS/CategoryPage.css";
 
 //icons
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+
 //component
 import Pagination from "./Pagination";
 import SideFilters from "./SideFilters";
+
+//global hook
+import { GlobalFilterHook } from "../Context/FilterContext";
 
 
 const CategoryPage = ({ products }) => {
   const copyProducts = [...products];
   let SingleProduct;
   SingleProduct = copyProducts[0];
-  console.log(SingleProduct);
+
+  const {changePriceRange} = GlobalFilterHook();
 
   return (
     <>
@@ -23,7 +28,7 @@ const CategoryPage = ({ products }) => {
   
           <Pagination Products={SingleProduct} />
 
-        <select name="" id="">
+        <select name="" id=""  onChange={(e) => changePriceRange(e,products)} >
           <option value="highest">Price (lowest-highest)</option>
           <option value="lowest">Price (highest-lowest)</option>
         </select>

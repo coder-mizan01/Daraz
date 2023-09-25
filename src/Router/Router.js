@@ -23,15 +23,17 @@ import CreateCategory from '../Pages/Admin/CreateCategory';
 import CreateProduct from '../Pages/Admin/CreateProduct';
 import Products from "../Pages/Admin/AdminProducts"
 import Users from '../Pages/Admin/Users'
-import Orders from '../Pages/User/Orders';
-import Profile from '../Pages/User/Profile';
+
 
 //component
 import Header from '../Layout/Header';
 import Footer from '../Layout/Footer';
-import PrivateRouter from './PrivateRouter';
-import AdminRouter from './AdminRouter';
+import BottomMenu from '../Layout/BottomMenu';
 
+
+//Router
+import UserRouter from './UserRouter';
+import AdminRouter from './AdminRouter';
 
 
 
@@ -42,10 +44,8 @@ const Router = () => {
 
      <Routes>
       
-     <Route path='/dashboard' element={<PrivateRouter /> } >
+     <Route path='/dashboard' element={<UserRouter /> } >
         <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/dashboard/profile' element={<Profile />} />
-        <Route path='/dashboard/orders' element={<Orders />} />
       </Route>
 
       <Route path='/admin/dashboard' element={<AdminRouter /> } >
@@ -72,7 +72,7 @@ const Router = () => {
    
    
      </Routes>
-
+   <BottomMenu />
    <Footer />
     </BrowserRouter>
   )
