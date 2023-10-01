@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
+import config from "../config.json"
 import AdminDashboard from "../Pages/Admin/AdminDashboard"
-import Login from "../Pages/auth/Login"
+import Login from "../Pages/auth/Login";
 import axios from 'axios';
 
 //global Hook
@@ -15,7 +16,7 @@ const AdminRouter = () => {
 
         const authCheck = async () => {
           try {
-            const res = await axios.get("https://daraz-api.onrender.com/api/v1/auth/admindashboard")
+            const res = await axios.get(`${config.apiUrl}/api/v1/auth/admindashboard`)
             if(res.data.ok){
               setOk(true)
             }else{

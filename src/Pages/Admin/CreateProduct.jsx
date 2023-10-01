@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import config from "../../config.json"
 
 const CreateProduct = () => {
   const [category, setCategory] = useState("");
@@ -14,7 +15,7 @@ const CreateProduct = () => {
 
    
 
-  const handleCreate = async (e) => {
+  const handleCreateProduct = async (e) => {
     e.preventDefault();
     try {
       const productData = new FormData();
@@ -27,7 +28,7 @@ const CreateProduct = () => {
       productData.append("subcategory", subcategory);
       productData.append("brand",brand)
       const { data } = await axios.post(
-        "https://daraz-api.onrender.com/api/v1/product/create-product",
+        `${config.apiUrl}/api/v1/product/create-product`,
         productData
       );
       if (data?.success) {
@@ -143,7 +144,7 @@ const CreateProduct = () => {
       
 
       <div className="mt-3">
-      <button className="btn btn-primary" onClick={handleCreate}>
+      <button className="btn btn-primary" onClick={handleCreateProduct}>
                   CREATE PRODUCT
                 </button>
       </div>

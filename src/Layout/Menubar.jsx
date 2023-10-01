@@ -11,7 +11,7 @@ import { IoIosArrowForward } from "react-icons/io"
 const Menubar = () => {
 
   const [isHovered, setIsHovered] = useState({ fashion: false, health: false, electronics: false, kids: false, groceries: false, mens: false, baby: false, electronicDevice: false, tv: false, home: false, sports: false, gifts: false });
-  const { fashion, health, electronics, kids, groceries, mens, baby, electronicDevice, tv, home, sports, gifts } = isHovered;
+  const { fashion, health, electronics, kids, groceries, mens, baby, electronicDevice, home, sports, gifts } = isHovered;
   const handleMouseOver = (item) => {
     setIsHovered((prev) => ({
       ...prev,
@@ -37,13 +37,19 @@ const Menubar = () => {
               <ul className="dropdown">
                 <li><NavLink to="ElectronicAccessories/SmartPhones">Smart Phones</NavLink></li>
                 <li><NavLink to="ElectronicAccessories/ComputerAccessories">ComputerAccessories</NavLink></li>
-              </ul>
+              </ul> 
             </li>
 
 
 
 
-            <li onMouseOver={() => { handleMouseOver('health') }} onMouseLeave={() => { handleMouseLeave('health') }} ><NavLink to="/">Health & Cares items {health && <IoIosArrowForward />}</NavLink></li>
+            <li onMouseOver={() => { handleMouseOver('health') }} onMouseLeave={() => { handleMouseLeave('health') }} ><NavLink to="/">Health Cares items {health && <IoIosArrowForward />}</NavLink>
+            <ul className='dropdown'>
+              <li><NavLink to='/healthcare/skincare'>Skin Care</NavLink></li>
+              <li><NavLink to='/'>Hair Care</NavLink></li>
+            </ul>
+            
+            </li>
 
 
             <li onMouseOver={() => { handleMouseOver('fashion') }} onMouseLeave={() => { handleMouseLeave('fashion') }} ><NavLink to="/"> Girls' Fashion items {fashion && <IoIosArrowForward />} </NavLink>
@@ -64,12 +70,24 @@ const Menubar = () => {
 
 
 
-            <li onMouseOver={() => { handleMouseOver('mens') }} onMouseLeave={() => { handleMouseLeave('mens') }}><NavLink to="/">Men's Fashion items{mens && <IoIosArrowForward />}</NavLink></li>
+            <li onMouseOver={() => { handleMouseOver('mens') }} onMouseLeave={() => { handleMouseLeave('mens') }}><NavLink to="/">Men's Fashion items{mens && <IoIosArrowForward />}</NavLink>
+
+             <ul className='dropdown'>
+             <li><NavLink to="/fashion/cloths">Cloths</NavLink></li>
+                <li><NavLink to="/fashion/shoes">Shoes</NavLink></li  >
+              </ul> 
+            
+            </li>
             <li onMouseOver={() => { handleMouseOver('baby') }} onMouseLeave={() => { handleMouseLeave('baby') }}  ><NavLink to="/">Baby Care Items{baby && <IoIosArrowForward />}</NavLink></li>
             <li onMouseOver={() => { handleMouseOver('electronicDevice') }} onMouseLeave={() => { handleMouseLeave('electronicDevice') }}  ><NavLink to="/">Electronics Devices{electronicDevice && <IoIosArrowForward />}</NavLink></li>
            
 
-            <li onMouseOver={() => { handleMouseOver('home') }} onMouseLeave={() => { handleMouseLeave('home') }} ><NavLink to="/">Home & Lifestyle{home && <IoIosArrowForward />}</NavLink></li>
+            <li onMouseOver={() => { handleMouseOver('home') }} onMouseLeave={() => { handleMouseLeave('home') }} ><NavLink to="/">Furniture items{home && <IoIosArrowForward />}</NavLink>
+              <ul className='dropdown'>
+                <li><NavLink to='/furniture/table'>table</NavLink></li>
+                <li><NavLink to='/'>Furniture</NavLink></li>
+              </ul>
+            </li>
             <li onMouseOver={() => { handleMouseOver('sports') }} onMouseLeave={() => { handleMouseLeave('sports') }} ><NavLink to="/">Sports & Outdoors{sports && <IoIosArrowForward />}</NavLink></li>
             <li onMouseOver={() => { handleMouseOver('gifts') }} onMouseLeave={() => { handleMouseLeave('gifts') }} ><NavLink to="/">Gifts & Vouchers{gifts && <IoIosArrowForward />}</NavLink></li>
 

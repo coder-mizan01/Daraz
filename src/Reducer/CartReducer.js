@@ -13,9 +13,12 @@ const CartReducer = (state,action) => {
     quantity,
     title : product.title,
   }
+
+  
   return {
     ...state,
-    Cart : [...state.Cart,CartItems]
+    Cart : [...state.Cart,CartItems],
+  
   }
  }
 

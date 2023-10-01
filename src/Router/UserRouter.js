@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
+import config from "../config.json"
 import Dashboard from "../Pages/User/Dashboard"
 //import Spinner from '../Component/Spinner';
 import Login from "../Pages/auth/Login"
@@ -16,7 +17,7 @@ const PrivateRouter = () => {
 
         const authCheck = async () => {
           try {
-            const res = await axios.get("https://daraz-api.onrender.com/api/v1/auth/userdashboard")
+            const res = await axios.get(`${config.apiUrl}/api/v1/auth/userdashboard`)
             if(res.data.ok){
               setOk(true)
             }else{

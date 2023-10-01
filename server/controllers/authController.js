@@ -111,7 +111,10 @@ const getAllUser = async (req, res) => {
   try {
     //all user 
     const allUser = await User.find()
-    res.status(200).send(allUser)
+    res.status(200).send({
+      success : true,
+      allUser
+    })
   } catch (error) {
     res.status(500).send({
       message: 'error in getAllUser controller' + error

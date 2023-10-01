@@ -3,6 +3,8 @@ import { createContext, useContext, useState , useEffect } from "react";
 
 import axios  from "axios";
 
+import config from "../config.json"
+
 const ProductContext = createContext();
 
 //
@@ -12,7 +14,7 @@ const ProductContextProvider = ({children}) => {
 
     const getAllProducts = async() =>{
         try {
-         const {data} = await axios.get("https://daraz-api.onrender.com/api/v1/product/get-product");
+         const {data} = await axios.get(`${config.apiUrl}/api/v1/product/get-product`);
          if(data.success){
             setProducts(data.products);
          }

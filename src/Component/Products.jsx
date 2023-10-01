@@ -1,4 +1,6 @@
 import React from 'react';
+import config from "../config.json"
+
 import {Link} from "react-router-dom";
 //css
 import "../CSS/Products.css"
@@ -30,14 +32,14 @@ const Products = () => {
             <Link to={`/SingleProduct/${slug}`}>
               <img
                 className="home-pro-img"
-                src={`https://daraz-api.onrender.com/api/v1/product/product-photo/${pro._id}`}
+                src={`${config.apiUrl}/api/v1/product/product-photo/${pro._id}`}
                 alt=""
               />
 
             <div className="pro-content">
               <p className="desc" >{description.slice(0,39)}...</p>
               <div className="price-addcart">
-                <p className='price'>{price}</p>
+                <p className='price'>Tk.{price}</p>
                 <AddToCart product={pro} name={'+add'} quantity={productQuantity} />
               </div>
               

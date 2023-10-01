@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import config from "../../config.json";
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -24,7 +25,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://daraz-api.onrender.com/api/v1/auth/register",
+        `${config.apiUrl}/api/v1/auth/register`,
         { name, email, password, phone }
       );
       if (res.data.success) {

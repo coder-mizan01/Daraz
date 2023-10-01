@@ -14,10 +14,11 @@ const AddToCart = ({product,quantity,name}) => {
 
   return (
     <>
-
+      
       <Link to='/cart'>
-      <button className="add-to-cart" onClick={()=>AddToCart(_id,price,product,quantity)}>{name}</button>
-      </Link>
+  <button className="add-to-cart" onClick={() => AddToCart(_id, price, product, quantity)}>{name}</button>
+</Link>
+
     </>
   );
 };

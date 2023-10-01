@@ -1,5 +1,8 @@
 import React from "react";
 
+//css
+import "./CSS/App.css"
+
 
 import Router from "./Router/Router.js";
 

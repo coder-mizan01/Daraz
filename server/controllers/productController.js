@@ -108,21 +108,23 @@ const productPhotoController = async(req,res)=>{
 const updateProductController =  async(req,res)=>{
   try {
     const { title, description, price, category, shipping, quantity } =
-      req.fields;
-    const {photo} = req.files;
+      req.body;
+    //const {photo} = req.files;
 
-    if(!title || !description || !price || !category || !quantity){
+   /* if(!title || !description || !price || !category || !quantity){
       res.status(404).send({success : false,message : "pleas fill all the fields"});
-    }
+    }*/
 
     const slug = slugify(title);
 
-    const products = await productModel.findByIdAndUpdate(req.params.id , {...req.fields , slug} , {new : true})
+    const products = await productModel.findByIdAndUpdate(req.params.id , 
+      {...req.body , slug} ,
+       {new : true})
 
-    if (photo) {
+    /*if (photo) {
       products.photo.data = fs.readFileSync(photo.path);
       products.photo.contentType = photo.type;
-    }
+    }*/
 
     await products.save();
 

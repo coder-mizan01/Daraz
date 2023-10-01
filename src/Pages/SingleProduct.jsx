@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import config from "../config.json";
 import { SingleProductGlobalContext } from "../Context/SingleProContext";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -16,7 +17,7 @@ import Quantity from "../Component/Quantity";
 import Pagination from "../Component/Pagination";
 import AddToCart from "../Component/AddToCart";
 
-const API = "https://daraz-api.onrender.com/api/v1/product/get-product";
+const API = `${config.apiUrl}/api/v1/product/get-product`;
 
 const SingleProduct = () => {
   const { slug } = useParams();

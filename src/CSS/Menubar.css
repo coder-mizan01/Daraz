@@ -1,13 +1,11 @@
 
-
-
 .menubar{
     width: 21%;
+    height: auto;
     text-align: end;
     justify-content: end;
     display: inline-grid;
     margin: 0px 20px 0px 0px;
-  
   }
   
   .side-nav{
@@ -26,7 +24,8 @@
   
   .side-nav ul li{
     position: relative;
-    margin-bottom: 2px;
+    margin-bottom:5px;
+    padding: 0px 0px 0px 10px
   }
 
   .side-nav ul li:hover{

@@ -34,14 +34,13 @@
 
 .searchBar input {
   width: 100%;
-  padding: 9px 16px 10px 12px;
-  background: #f5f5f5;
-  border: none;
+  padding: 9px 16px 10px 20px;
+  border: 1px solid rgba(0,0,0,0.2);
+  height: 50px;
+  border-radius: 25px;
   outline: none;
-  opacity: 0.5;
+  opacity: 1;
   color: black;
-  border-color: #dee2e6;
-  box-shadow: 0px 1px 1px 2px #ddd;
 
 }
 
@@ -49,9 +48,12 @@
   background-color: #222836;
   color: white;
   font-weight: 800;
-  padding: 9px 16px 10px 16px;
+  width: 35px;
+  height: 35px;
   border: none;
-  right: 0px;
+  border-radius: 100%;
+  right: 10px;
+  top: 7px;
   position: absolute;
 }
 
@@ -59,6 +61,9 @@
   color: #ffffff;
   font-size: 1.2rem;
 }
+
+
+
 
 .cart-user-div{
   flex: 23%;

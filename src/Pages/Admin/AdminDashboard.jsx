@@ -4,6 +4,7 @@ import AdminProduct from "./AdminProducts";
 import CreateProduct from "./CreateProduct";
 import DeletProduct from "./DeleteProduct";
 import UpdateProduct from "./UpdateProduct";
+import Users from "./Users";
 
 //css
 import ".././../CSS/Dashboard.css"
@@ -35,6 +36,12 @@ const AdminDashboard = () => {
               <li className="nav-item" role="presentation">
                 <button className="nav-link " id="deleteproduct-tab" data-bs-toggle="tab" data-bs-target="#deleteproduct-tab-pane" type="button" role="tab" aria-controls="deleteproduct-tab-pane" aria-selected="true">delete product</button>
               </li>
+
+              <li className="nav-item" role="presentation">
+                <button className="nav-link " id="alluser-tab" data-bs-toggle="tab" data-bs-target="#alluser-tab-pane" type="button" role="tab" aria-controls="alluser-tab-pane" aria-selected="true">all user</button>
+              </li>
+
+
             </ul>
           </div>
 
@@ -58,6 +65,11 @@ const AdminDashboard = () => {
 
             <div className="tab-pane fade show " id="deleteproduct-tab-pane" role="tabpanel" aria-labelledby="deleteproduct-tab" tabIndex={0}>
               <DeletProduct />
+
+            </div>
+            
+            <div className="tab-pane fade show " id="alluser-tab-pane" role="tabpanel" aria-labelledby="alluser-tab" tabIndex={0}>
+              <Users />
 
             </div>
           </div>
