@@ -11,10 +11,9 @@ import CartItems from "../Component/CartItems";
 
 const Cart = () => {
   const { Cart } = GlobalCartHook();
-  console.log(Cart.length);
-  //set the shipping charge
-  const Shipping = 50;
 
+  const Shipping = 50;
+  
   //calculate the total price
   let totalprice = 0;
   Cart.forEach((curElm) => {

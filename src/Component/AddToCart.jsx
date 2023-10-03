@@ -15,10 +15,10 @@ const AddToCart = ({product,quantity,name}) => {
   return (
     <>
       
-      <Link to='/cart'>
+      {/**/}<Link to='/cart'>
   <button className="add-to-cart" onClick={() => AddToCart(_id, price, product, quantity)}>{name}</button>
-</Link>
 
+  </Link> 
     </>
   );
 };

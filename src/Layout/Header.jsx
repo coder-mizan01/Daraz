@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -15,12 +15,27 @@ import "../CSS/Header.css";
 //CartHook
 import { GlobalCartHook } from "../Context/CartContext";
 import { GlobalAuthHook } from "../Context/authContext";
+import { GlobalProductHook } from "../Context/ProductContext";
 
 const Header = () => {
   const { Cart } = GlobalCartHook();
   const [state] = GlobalAuthHook();
-  console.log(state);
+  const {products} = GlobalProductHook();
+  console.log(products);
 
+  const [searchValue, setSearchValue] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]);
+   
+  const handleSearch = (e) =>{
+   const  inputValue = e.target.value;
+    setSearchValue(inputValue);
+      
+    const matchingProducts = products.filter((pro)=>{
+      return pro.title.toLowerCase().includes(inputValue.toLowerCase());
+    })
+
+    setFilteredProducts(matchingProducts);
+  }
   return (
     <>
       <header id="header">
@@ -31,13 +46,17 @@ const Header = () => {
         </div>
 
         <div className="searchBar">
-          <input type="text" placeholder="Search in shopee" />
+          <input type="text" placeholder="Search in shopee" value={searchValue}  onChange={handleSearch}  />
           <button type="search">
             <AiOutlineSearch
               className="searchIcon"
               style={{ color: "white" }}
+
             />
           </button>
+          {searchValue.length > 1 && <div className="search-value"><ul> {filteredProducts.map((product,index) => (
+          <li key={index}><Link to={`/SingleProduct/${product.slug}`}>{product.title}</Link></li>
+          ))}</ul></div>} 
         </div>
 
         <div className="cart-user-div">

@@ -5,8 +5,9 @@ import {Link} from "react-router-dom";
 //css
 import "../CSS/Products.css"
 
-//Global Context
+//Global Hook
 import { GlobalProductHook } from '../Context/ProductContext';
+//import { GlobalCartHook } from '../Context/CartContext';
 
 
 
@@ -20,12 +21,15 @@ const Products = () => {
     const {products} = GlobalProductHook();
     let productQuantity = 1;
 
-    console.log(products);
+   
+
+   
     
   return (
     <>
     <div className={products.length !== 0 ? 'products' : ''}>
       {products.length !== 0 ? products.map((pro) => {
+
         const {slug,description,price,_id} = pro  
         return (
           <div className="product" key={_id}>
@@ -38,13 +42,13 @@ const Products = () => {
 
             <div className="pro-content">
               <p className="desc" >{description.slice(0,39)}...</p>
-              <div className="price-addcart">
-                <p className='price'>Tk.{price}</p>
-                <AddToCart product={pro} name={'+add'} quantity={productQuantity} />
-              </div>
-              
             </div>
             </Link>
+                          
+            <div className="price-addcart">
+                <p className='price'>Tk.{price}</p>
+                <AddToCart product={pro} name={'+add'} quantity={productQuantity} />
+            </div>
           </div>
         );
       }) : <Spinner /> }

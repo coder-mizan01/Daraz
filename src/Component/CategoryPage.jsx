@@ -22,6 +22,8 @@ const CategoryPage = ({ products }) => {
 
   const {changePriceRange} = GlobalFilterHook();
 
+  
+
   return (
     <>
       <div className="top-filter">
@@ -37,7 +39,7 @@ const CategoryPage = ({ products }) => {
       <div className="category-page">
 
         <div className="side-filter">
-         <SideFilters products={products} />
+        <SideFilters products={products} />
         </div>
 
         <div className="products-section">

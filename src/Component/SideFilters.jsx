@@ -1,6 +1,13 @@
-import React from 'react'
+import React from 'react';
+
+//css
+import "../CSS/SideFilters.css"
 
 const SideFilters = ({products}) => {
+
+  const data = (value) =>{
+      console.log(value);
+  }
 
   return (
     <>
@@ -11,7 +18,7 @@ const SideFilters = ({products}) => {
             {/* create a a built-in JavaScript data structure that stores unique values.   */}
             {[...new Set(products.map((pro)=> pro.brand))].map((brand,index)=>{
               return <div className="brands" key={index}>
-              <input type="checkbox" value={brand} />
+              <input type="checkbox" className='brand-checkbox' onClick={()=>data(brand)} />
               <label htmlFor="">{brand}</label>
               </div>
             })}
