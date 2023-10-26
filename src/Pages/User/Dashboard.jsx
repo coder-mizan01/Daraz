@@ -1,28 +1,33 @@
 import React from "react";
 
+import { useSelector , useDispatch} from "react-redux";
+import {removeUser} from "../../Redux/Authentication";
 
-//global hook
-import { GlobalAuthHook } from "../../Context/authContext";
-
+import { useNavigate } from "react-router-dom";
 
 import "../../CSS/Dashboard.css"
 
 const Dashboard = () => {
-  const [state,setState] = GlobalAuthHook();
+  
+  const Authentication = useSelector((state)=> state.authentication);
+  const dispatch = useDispatch();
+   console.log(Authentication);
+
+   const navigate = useNavigate();
 
   const handleLogOut = () =>{
-    setState({
-      user : null,
-      token : null,
-    })
-    localStorage.removeItem("auth")
+    dispatch(removeUser())
+    localStorage.removeItem("email");
+    localStorage.removeItem("token");
+    localStorage.removeItem("password")
+    navigate('/')
   }
 
 
-  console.log(state);
+
   return (
     <>
-      {state?.user !== null ? (
+      {Authentication?.user !== null ? (
         <>
           <div className="dashboard">
 
@@ -59,9 +64,9 @@ const Dashboard = () => {
             <div className="tab-content" id="myTabContent">
               <div className="tab-pane fade show active" id="account-tab-pane" role="tabpanel" aria-labelledby="account-tab" tabIndex={0}>
                 <>
-                <h3> Name : {state?.user.name}</h3>
-                <h3> Email : {state?.user.email}</h3>
-                <h3> Pass : {state?.user.password}</h3>
+                
+                <h3> Email : {Authentication?.email}</h3>
+                <h3> Pass : {Authentication?.password}</h3>
                 <p style={{cursor:'pointer',textDecoration:'underline'}} onClick={()=>alert('feauter will updated')}>edit your details</p>
                 </>
               </div>

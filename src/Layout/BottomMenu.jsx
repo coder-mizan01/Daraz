@@ -4,8 +4,11 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 //icons
-import {AiOutlineHome,AiOutlineQuestionCircle,AiOutlineShoppingCart} from "react-icons/ai";
-import {BiUserCircle} from "react-icons/bi"
+import {AiOutlineHome,AiOutlineShoppingCart,AiOutlineMenu} from "react-icons/ai";
+import {BiUserCircle} from "react-icons/bi";
+//icons
+import { GiHamburgerMenu } from "react-icons/gi";
+import {HiOutlineMenu} from "react-icons/hi"
 //css
 import "../CSS/BottomMenu.css"
 
@@ -16,7 +19,7 @@ const BottomMenu = () => {
     <section id='bottom-menu'>
 
            <Link to='/'><AiOutlineHome className='icon' /></Link>
-            <Link to='/'><AiOutlineQuestionCircle className='icon' /></Link>
+            <Link to='/mobile-menu'><HiOutlineMenu className='icon' /></Link>
             <Link to='/cart'><AiOutlineShoppingCart className='icon' /></Link>
             <Link to='/dashboard'><BiUserCircle className='icon'  /></Link>
 

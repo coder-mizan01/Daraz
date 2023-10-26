@@ -1,44 +1,75 @@
 import React from 'react'
+
+//import packages
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
+// Get the server's origin link from the config file
 import config from "../../config.json"
 
 
+//global hook
 import { GlobalProductHook } from '../../Context/ProductContext';
+
+//css
+import "../../CSS/AdminProducts.css"
 
 const Products = () => {
 
+  //get the GlobalProductHook state
   const  {products , setProducts} = GlobalProductHook();
+  
+  //obtain navigate function
+   const navigate = useNavigate();
+  
 
-
+ // handleProductDelete function to delete product
  const handleProductDelete = async(id)=>{
-   try {
-    const {data} = axios.delete(`${config.apiUrl}/api/v1/product/delete-product/${id}`);
-    if(data.success){
-      console.log('product is delete');
-      setProducts();
-    }
-   } catch (error) {
-     console.log(error);
-   }
+  const confirmDelete = window.confirm("Are you sure you want to delte this product?")
+  if(confirmDelete){
+    try {
+      const {data} = axios.delete(`${config.apiUrl}/api/v1/product/delete-product/${id}`);
+      if(data.success){
+        console.log('product is delete');
+        setProducts();
+      }
+     } catch (error) {
+       console.log(error);
+     }
+  }
+
  }
-//       
+     
 
   return (
-    <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr'}}>
+    <div className='admin-products' >
       {products?.map((item)=>{
-        return <React.Fragment  key={item._id} >
-         <div className='' style={{background:'#ccc', width:"15rem",height:'auto', margin:"10px",display:'flex',flexDirection:'column'}} >
-          <img src={`${config.apiUrl}/api/v1/product/product-photo/${item._id}`} alt="" />
-          <p>{item._id}</p>
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
-          <a href="/">{item.category}</a>
-          <a href="/">{item.subcategory}</a>
-          <p>{item.brand}</p>
-          <p>{item.slug}</p>
-          <button onClick={()=>handleProductDelete(item._id)}>delete</button>
+
+        const {_id,title,category,subcategory,brand} = item
+        return <div className='admin-product'  key={_id} >
+
+         <div className='image-part'>
+         <img src={`${config.apiUrl}/api/v1/product/product-photo/${item._id}`} alt="" />
+         </div>
+
+         <div className="details">
+          <h3>title: {title}</h3>
+
+          <p>category: {category}</p>
+          <p>sub-category: {subcategory}</p>
+          <p>brand: {brand}</p>
+          </div>
+
+          <div className="action-butttons">
+          <button className='delete-btn' onClick={()=>handleProductDelete(item._id)}>delete</button>
+          <button className='edit-btn' 
+          onClick={()=>navigate('/admin/dashboard/editproduct',{state : {item}})} 
+          >
+            Edit
+          </button>
+          
+          </div>
         </div>
-        </React.Fragment>
       })}
     </div>
   )

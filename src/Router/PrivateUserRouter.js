@@ -2,18 +2,17 @@
 import React, { useEffect, useState } from 'react';
 import config from "../config.json"
 import Dashboard from "../Pages/User/Dashboard"
-//import Spinner from '../Component/Spinner';
 import Login from "../Pages/auth/Login"
 import axios from 'axios';
 
-//global Hook
-import { GlobalAuthHook } from '../Context/authContext'
+import { useSelector } from 'react-redux';
 
-const PrivateRouter = () => {
-    const [ok ,setOk]= useState(false);
-    const [state] = GlobalAuthHook();
 
-    useEffect(()=>{
+const PrivateUserRouter = () => {
+    const [ok ,setOk]= useState(true);
+/*    const [Authentication] = useSelector((state)=> state.authentication);
+  console.log(Authentication); */
+   /*useEffect(()=>{
 
         const authCheck = async () => {
           try {
@@ -29,13 +28,13 @@ const PrivateRouter = () => {
           }
  
         }
-        if(state?.token) authCheck();
-    },[state?.token])
-
+        if(Authentication?.token) authCheck();
+    },[Authentication?.token])
+ */
 
   return ok ? <Dashboard /> : <Login />
 
 }
 
-export default PrivateRouter
+export default PrivateUserRouter
 

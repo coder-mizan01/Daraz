@@ -2,48 +2,44 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 //global hook
-import { GlobalAuthHook } from '../Context/authContext'
+
 
 //css
-import "../CSS/Header.css"
+import TopHeaderCSS from "../CSS/TopHeader.module.css";
 
 
 const TopHeader = () => {
-  const [state,setState] = GlobalAuthHook();
  
-  const name = state.user ? state.user.name : null;
 
-  const handleLogOut = () =>{
-    setState({
-      user : null,
-      token : null,
-    })
-    localStorage.removeItem("auth")
-  }
+
+
   return (
     <>
-  <div id='topheader'>
-    <Link to="/" >SAVE MORE ON APP</Link> 
-    <Link className='responsive-none' to="/" >DARAZ DONATES</Link> 
-    <Link to="/" >SELL ON DARAZ </Link> 
-    <Link to="/" >CUSTOMER CARE</Link> 
-    <Link to="/" > TRACK MY ORDER</Link> 
-    {!state.user &&  <Link to="/Register" >signup / login</Link>}
-    <Link to="/"  className='responsive-none'> AFFILIATE PROGRAM</Link> 
-    <Link to="/" >ভাষা</Link> 
-    {!state.user ? <></>  :  <li className="nav-item dropdown">
-  <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    {name} Account
-  </Link>
-  <ul className="dropdown-menu">
-    <li><Link className="dropdown-item" to='/dashboard'>Dashboard</Link></li>
-    <li><Link className='dropdown-item' onClick={handleLogOut} to="/" >LogOut</Link></li>
-  </ul>
-</li>} 
+  <section id={TopHeaderCSS.topheader}>
+
+   <div className={TopHeaderCSS.topheader_leftside}>
+    <Link to="/" >+88092789565</Link> 
+    <Link to="/" >TRACK MY ORDER</Link> 
+   </div>
+
+   <div className={TopHeaderCSS.topheader_rightside}>
+   <Link to="/" >CUSTOMER CARE</Link> 
+    <Link to="/" >Language</Link> 
+
+
+    
+  {/* */}
+
+   </div>
+    
+
+
+
+
   
 
 
-  </div>
+  </section>
     </>
   )
 }

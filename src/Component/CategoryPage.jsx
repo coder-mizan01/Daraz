@@ -26,7 +26,7 @@ const CategoryPage = ({ products }) => {
 
   return (
     <>
-      <div className="top-filter">
+      <div className="top_filter">
   
           <Pagination Products={SingleProduct} />
 

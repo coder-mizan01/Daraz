@@ -1,5 +1,7 @@
 import React from "react";
-import { GlobalAuthHook } from "../../Context/authContext";
+
+import { useSelector } from "react-redux";
+
 import AdminProduct from "./AdminProducts";
 import CreateProduct from "./CreateProduct";
 import DeletProduct from "./DeleteProduct";
@@ -7,31 +9,32 @@ import UpdateProduct from "./UpdateProduct";
 import Users from "./Users";
 
 //css
-import ".././../CSS/Dashboard.css"
+import ".././../CSS/AdminDashboard.css"
 
 const AdminDashboard = () => {
-  const [state] = GlobalAuthHook();
+  
+ const Authentication = useSelector((state)=> state.authentication)
 
-
+  console.log(Authentication);
   return (
     <>
-      {state?.user.role === 1 ? (
+      {Authentication.role === 1 ? (
         <>
-        <div className="dashboard">
+        <div className="admin-dashboard">
           <div className="nav-content">
 
             <ul className="nav nav-tabs" id="myTab" role="tablist">
               <li className="nav-item" role="presentation">
-                <button className="nav-link active" id="account-tab" data-bs-toggle="tab" data-bs-target="#adminproducts-tab-pane" type="button" role="tab" aria-controls="adminproducts-tab-pane" aria-selected="true">Admin Products</button>
+                <button className="nav-link active" id="adminproducts-tab" data-bs-toggle="tab" data-bs-target="#adminproducts-tab-pane" type="button" role="tab" aria-controls="adminproducts-tab-pane" aria-selected="true">Admin Products</button>
               </li>
 
               <li className="nav-item" role="presentation">
                 <button className="nav-link " id="createproduct-tab" data-bs-toggle="tab" data-bs-target="#createproduct-tab-pane" type="button" role="tab" aria-controls="createproduct-tab-pane" aria-selected="true">create product</button>
               </li>
 
-              <li className="nav-item" role="presentation">
+             {/*  <li className="nav-item" role="presentation">
                 <button className="nav-link " id="updateproduct-tab" data-bs-toggle="tab" data-bs-target="#updateproduct-tab-pane" type="button" role="tab" aria-controls="updateproduct-tab-pane" aria-selected="true">update product</button>
-              </li>
+      </li>*/}
 
               <li className="nav-item" role="presentation">
                 <button className="nav-link " id="deleteproduct-tab" data-bs-toggle="tab" data-bs-target="#deleteproduct-tab-pane" type="button" role="tab" aria-controls="deleteproduct-tab-pane" aria-selected="true">delete product</button>
@@ -58,10 +61,10 @@ const AdminDashboard = () => {
             </div>
 
             
-            <div className="tab-pane fade show " id="updateproduct-tab-pane" role="tabpanel" aria-labelledby="updateproduct-tab" tabIndex={0}>
+           {/* <div className="tab-pane fade show " id="updateproduct-tab-pane" role="tabpanel" aria-labelledby="updateproduct-tab" tabIndex={0}>
               <UpdateProduct />
 
-            </div>
+    </div>*/}
 
             <div className="tab-pane fade show " id="deleteproduct-tab-pane" role="tabpanel" aria-labelledby="deleteproduct-tab" tabIndex={0}>
               <DeletProduct />

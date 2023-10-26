@@ -1,85 +1,9 @@
-
-#cover{
-    display: flex;
-    flex-direction: row;
-    margin-top: 15px;
-    @media(max-width:1115px){
-      margin-top: 0px;   
-    }
+#cover {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 50px 70px 50px;
+  @media (max-width: 1115px) {
+    margin: 5px 0px 20px 0px;
   }
-
-
-/*Img Slider Css*/
-
-.carousel{
-  width: 75%;
-  margin: 0px 0px 0px 0px;
 }
 
-.carousel-inner{
-  margin: 0px 0px 0px 0px;
-}
-
-
-.carousel-item > img{
-  height: 385px;
-}
-
-.carousel-control-prev,.carousel-control-next{
-  width: 35px;
-}
-
-.carouselprev-icon,.carouselnext-icon{
-  background-color: rgba(0,0,0,0.3);
-  width: 30px;
-  color:#000;
-  height: 55px;
-}
-
-.carousel-control-prev .visually-hidden{
-  color: rebeccapurple;
-}
-
-.custom{
-  color: brown;
-}
-
-.vcustom{
-  color: tomato;
-}
-
-
-@media(max-width:1115px){
-  .carousel{
-    width: 100%;
-  }
-  
-.carousel-item > img{
-  height: auto;
-}
-}
-
-@media(max-width:768px){
-
-  .carousel-control-prev,.carousel-control-next{
-    width: 25px;
-  }
-  
-.carouselprev-icon,.carouselnext-icon{
-  width: 30px;
-  height: 45px;
-}
-}
-
-@media(max-width:468px){
-
-  .carousel-control-prev,.carousel-control-next{
-    width: 15px;
-  }
-  
-.carouselprev-icon,.carouselnext-icon{
-  width: 20px;
-  height: 30px;
-}
-
-}

@@ -5,23 +5,26 @@ import { Link } from "react-router-dom";
 //Layout
 import OffCanvas from "./OffCanvas";
 //icons
-import { BsCartCheck } from "react-icons/bs";
-import { AiOutlineSearch } from "react-icons/ai";
-import { FaUserCircle, FaUserPlus } from "react-icons/fa";
+import { HiOutlineUser } from "react-icons/hi";
+import { AiOutlineSearch,AiOutlineShoppingCart } from "react-icons/ai";
 
 //css
-import "../CSS/Header.css";
+import HeaderCSS from "../CSS/Header.module.css";
 
 //CartHook
 import { GlobalCartHook } from "../Context/CartContext";
-import { GlobalAuthHook } from "../Context/authContext";
 import { GlobalProductHook } from "../Context/ProductContext";
+
+import { useSelector } from "react-redux";
+
 
 const Header = () => {
   const { Cart } = GlobalCartHook();
-  const [state] = GlobalAuthHook();
+
   const {products} = GlobalProductHook();
-  console.log(products);
+
+  const Authentication = useSelector((state)=> state.authentication)
+      console.log(Authentication);
 
   const [searchValue, setSearchValue] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -38,55 +41,42 @@ const Header = () => {
   }
   return (
     <>
-      <header id="header">
+      <section id={HeaderCSS.header} >
         <OffCanvas />
 
-        <div className="logo">
+        <div className={HeaderCSS.logo}>
           <a href="/"> SHOPEE</a>
         </div>
 
-        <div className="searchBar">
+        <div className={HeaderCSS.searchBar}>
           <input type="text" placeholder="Search in shopee" value={searchValue}  onChange={handleSearch}  />
           <button type="search">
             <AiOutlineSearch
-              className="searchIcon"
+              className={HeaderCSS.searchIcon}
               style={{ color: "white" }}
 
             />
           </button>
-          {searchValue.length > 1 && <div className="search-value"><ul> {filteredProducts.map((product,index) => (
+          {searchValue.length > 1 && <div className={HeaderCSS.search_value}><ul> {filteredProducts.map((product,index) => (
           <li key={index}><Link to={`/SingleProduct/${product.slug}`}>{product.title}</Link></li>
           ))}</ul></div>} 
         </div>
 
-        <div className="cart-user-div">
-          <div className="cart">
+        <div className={HeaderCSS.cart_user_div}>
+          <div className={HeaderCSS.cart}>
             <NavLink to="/cart">
-              <BsCartCheck className="cartIcon" />
+              <AiOutlineShoppingCart className={HeaderCSS.cartIcon} />
               {Cart.length !== 0 && <span> {Cart.length}</span>}
             </NavLink>
           </div>
 
-          <div className="user">
-            {state.user && state.token !== null ? (
-              <Link to="/dashboard">
-                {" "}
-                <FaUserCircle className="user-icon" />{" "}
+          <div className={HeaderCSS.user}>
+              <Link to={Authentication.email && Authentication.password !== null ? '/dashboard' : '/login'}>
+                <HiOutlineUser className={HeaderCSS.user_icon} />{" "}
               </Link>
-            ) : (
-              <div className="homepage-register-login">
-                <FaUserPlus className="icon" />
-
-                <div>
-                  <p>Account</p>
-                  <Link to="/register">register</Link> or{" "}
-                  <Link to="/login">login</Link>
-                </div>
-              </div>
-            )}
           </div>
         </div>
-      </header>
+      </section>
     </>
   );
 };

@@ -107,24 +107,23 @@ const productPhotoController = async(req,res)=>{
 
 const updateProductController =  async(req,res)=>{
   try {
-    const { title, description, price, category, shipping, quantity } =
+    const { title, description, price, category, subcategory,brand, shipping, quantity } =
       req.body;
-    //const {photo} = req.files;
 
-   /* if(!title || !description || !price || !category || !quantity){
-      res.status(404).send({success : false,message : "pleas fill all the fields"});
-    }*/
 
+    /* Check if title is present and is a string
+    if (typeof title !== 'string') {
+      return res.status(400).send({
+        success: false,
+        message: 'Invalid title',
+      });
+    }
+*/
     const slug = slugify(title);
 
     const products = await productModel.findByIdAndUpdate(req.params.id , 
       {...req.body , slug} ,
        {new : true})
-
-    /*if (photo) {
-      products.photo.data = fs.readFileSync(photo.path);
-      products.photo.contentType = photo.type;
-    }*/
 
     await products.save();
 

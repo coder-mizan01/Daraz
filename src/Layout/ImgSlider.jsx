@@ -1,44 +1,49 @@
-import React from 'react';
+import React from "react";
 
-//icons
-import {AiOutlineCaretLeft,AiOutlineCaretRight} from "react-icons/ai";
-
-
+//packages
+import {Link} from "react-router-dom"
 
 //css
-import "../CSS/Cover.css"
+import "../CSS/Imgslider.css";
 
-const ImgSlider = () => {
+//icons
+import {IoIosArrowBack,IoIosArrowForward} from "react-icons/io"
+
+const Imgslidersr = () => {
   return (
     <>
+  
 
 <div id="carouselExampleFade" className="carousel slide carousel-fade">
   <div className="carousel-inner">
+
     <div className="carousel-item active">
-      <img src="slide1.jpg" className="d-block w-100" alt="..." />
+    <a href="ElectronicAccessories/SmartPhones">
+      <img src="fashioncover3.jpg" className="img-fluid" alt="..." />
+      </a>
     </div>
+
     <div className="carousel-item">
-      <img src="slide4.jpg" className="d-block w-100" alt="..." />
+    <a href="/">
+      <img src="electronics.jpg" className="img-fluid" alt="..." />
+      </a>
     </div>
-    <div className="carousel-item">
-      <img src="slide5.jpg" className="d-block w-100" alt="..." />
-    </div>
+
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-    <AiOutlineCaretLeft className="carouselprev-icon" aria-hidden="true" />
+    <IoIosArrowBack className="carouselprev-icon" aria-hidden="true" />
     <span className="visually-hidden ">Previous</span>
   </button>
   <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-    <AiOutlineCaretRight className="carouselnext-icon" aria-hidden="true" />
+    <IoIosArrowForward className="carouselnext-icon" aria-hidden="true" />
     <span className="visually-hidden">Next</span>
   </button>
 </div>
 
 
 
-
     </>
-  )
-}
+  );
+};
 
-export default ImgSlider
+export default Imgslidersr;

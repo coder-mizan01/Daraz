@@ -37,32 +37,38 @@ import Dashboard from '../Pages/User/Dashboard';
 import Header from '../Layout/Header';
 import Footer from '../Layout/Footer';
 import BottomMenu from '../Layout/BottomMenu';
+import MobileMune from "../Layout/MobileMenu"
 
 
 //Router
-import UserRouter from './UserRouter';
-import AdminRouter from './AdminRouter';
+import PrivateUserRouter from './PrivateUserRouter';
+import PrivateAdminRouter from './PrivateAdminRouter';
+import UpdateProduct from '../Pages/Admin/UpdateProduct';
+import TopHeader from '../Layout/TopHeader';
 
 
 
 
 const Router = () => {
+
   return (
     <BrowserRouter>
-    <Header />
-
+    <TopHeader />
+     <Header />
      <Routes>
       
-     <Route path='/dashboard' element={<UserRouter /> } >
-        <Route path='/dashboard' element={<Dashboard />} />
-      </Route>
-
-      <Route path='/admin/dashboard' element={<AdminRouter /> } >
+     <Route path='/dashboard' element={<PrivateUserRouter /> } >
+     <Route path='/dashboard' element={<Dashboard />} />
+      </Route> 
+  
+      <Route path='/admin/dashboard' element={<PrivateAdminRouter /> } >
         <Route path='/admin/dashboard' element={<AdminDashboard />} />
-        <Route path='/admin/dashboard/createproduct' element={<CreateProduct />} />
-        <Route path='/admin/dashboard/products' element={<Products />} />
-        <Route path='/admin/dashboard/users' element={<Users />} />
+        <Route path='/admin/dashboard' element={<CreateProduct />} />
+        <Route path='/admin/dashboard' element={<Products />} />
+        <Route path='/admin/dashboard' element={<Users />} />
       </Route>
+      
+      <Route path='/admin/dashboard/editproduct' element={< UpdateProduct/>} />
 
         <Route path='/' element={<Home />} />
         <Route path='*' element={<Error />} />
@@ -87,6 +93,7 @@ const Router = () => {
         <Route path='/Register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/mobile-menu' element={<MobileMune />} />
 
    
    

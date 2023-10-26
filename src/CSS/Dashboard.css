@@ -4,39 +4,49 @@
     flex-direction: row;
     width: 85%;
     margin: 20px auto;
-
+    max-height: 600px;
 }
 
 .nav-content{
     flex: 20%;  
-    background-color: #FFFFFF;
     text-align: center;
     margin: 10px;
     flex-shrink: 0;
+    background-color: #F3F5F9;
+    box-shadow: 1px 1px 1px #ddd;
 }
 
 .nav-content ul{
     width: 100%;
+    
 }
 
 
 .nav-link{
     width: 100%;
     border: none;
-    background: linear-gradient(to left,#FFFFFF 0%,#eee 100%);
+    background-color: #F3F5F9;
     color: black;
     border: 1px solid black;
 }
 .nav-link:hover{
+    background-color: #F3F5F9;
     color: black;
+    background-color: #ddd;
 }
 .nav-link:active{
+    background-color: #F3F5F9;
     color: black;
+    background-color: #ddd;
 }
 
+.nav-link:focus{
+    background-color: #F3F5F9;
+    color: black;
+    background-color: #ddd;
+}
 .tab-content{
     flex: 80%;
-    background-color: #FFFFFF;
     margin: 10px;
     padding: 10px 10px 10px 20px;
 }

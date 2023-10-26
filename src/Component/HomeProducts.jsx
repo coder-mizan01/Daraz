@@ -4,6 +4,7 @@ import React from "react";
 //components
 import Products from "./Products";
 
+
 const HomeProducts = () => {
 
   return (

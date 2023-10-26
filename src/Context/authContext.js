@@ -1,3 +1,5 @@
+/*
+
 import { createContext, useContext, useState , useEffect } from "react";
 import axios from "axios";
 const AuthContext = createContext();
@@ -31,10 +33,12 @@ useEffect(()=>{
     </AuthContext.Provider>
 }
 
-
+  
 //global hook
 
 const GlobalAuthHook = () => useContext(AuthContext);
 
 
 export {AuthContextProvider , GlobalAuthHook}
+
+*/

@@ -73,7 +73,7 @@ const productSchema = new mongoose.Schema(
     brand: {
       type: String,
       enum: {
-        values: ["msi","no-brand","cocola","Treate","Nestle","hp","pran","polo","Bata","SkinPro"],
+        values: ["msi","no-brand","cocola","Treate","Nestle","hp","pran","polo","samsung","Bata","apple","SkinPro"],
         message: `{values} is not supported`,
       },
 required : true,

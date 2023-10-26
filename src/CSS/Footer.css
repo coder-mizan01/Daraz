@@ -4,7 +4,7 @@
 #footer{
     display: grid;
     grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
-    background-color: #1b202b;
+    background-color: #09274a;
     color: #FFFFFF;
     padding: 80px 50px;
 
@@ -96,6 +96,26 @@
     grid-template-columns:  1fr 1fr;
     padding: 80px 40px;
 }
+
+.brand-details{
+    text-align: center;
+}
+.about-section{
+    text-align: center;
+}
+.care-section{
+    margin-top: 40px;
+    text-align: center;
+}
+.contact-section{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.contact-section .footer-icons{
+    display: flex;
+    justify-content: center;
+}
 }
 
 
@@ -111,13 +131,15 @@
 
     @media(max-width:468px){
         #footer{
-
             grid-template-columns: 1fr;
             text-align: center  ;
         }
-
-        .contact-section .footer-icons{
-            display: flex;
-            justify-content: center;
+        .care-section{
+            margin-top: 15px;
         }
+        .contact-section{
+            margin-top: 15px;
+        }
+
+    
     }  

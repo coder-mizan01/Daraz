@@ -5,14 +5,13 @@ import AdminDashboard from "../Pages/Admin/AdminDashboard"
 import Login from "../Pages/auth/Login";
 import axios from 'axios';
 
-//global Hook
-import { GlobalAuthHook } from '../Context/authContext'
 
-const AdminRouter = () => {
-    const [ok ,setOk]= useState(false);
-    const [state] = GlobalAuthHook();
 
-    useEffect(()=>{
+const PrivateAdminRouter = () => {
+    const [ok ,setOk]= useState(true);
+
+
+  /*  useEffect(()=>{
 
         const authCheck = async () => {
           try {
@@ -29,12 +28,12 @@ const AdminRouter = () => {
  
         }
         if(state?.token) authCheck();
-    },[state?.token])
+    },[state?.token])*/
 
 
   return ok ? <AdminDashboard /> : <Login />
 
 }
 
-export default AdminRouter
+export default PrivateAdminRouter
 

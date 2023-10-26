@@ -1,22 +1,29 @@
 import React, { useState } from 'react';
+import {useLocation} from "react-router-dom"
 import axios from 'axios';
 import config from "../../config.json"
 //css
 import "../../CSS/UpdateProduct.css"
 
 const UpdateProduct = () => {
-  const [id, setId] = useState("");
-  const [category, setCategory] = useState("");
-  const [subcategory, setSubCategory] = useState("");
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  //const [photo, setPhoto] = useState("");
-  const [price, setPrice] = useState("");
-  const [brand, setBrand] = useState("");
-  const [quantity, setQuantity] = useState("");
+
+ const location = useLocation();
+ 
+ const {item} = location.state
 
 
-  console.log(title);
+
+ 
+  const [_id, setId] = useState(item._id);
+  const [category, setCategory] = useState(item.category);
+  const [subcategory, setSubCategory] = useState(item.subcategory);
+  const [title, setTitle] = useState(item.title);
+  const [description, setDescription] = useState(item.description);
+  const [price, setPrice] = useState(item.price);
+  const [brand, setBrand] = useState(item.brand);
+  const [quantity, setQuantity] = useState(item.quantity);
+
+
   const handleUpdateProduct = async () => {
     try {
       // Create an object with the updated product data
@@ -31,7 +38,7 @@ const UpdateProduct = () => {
       };
 
       // Make an HTTP request to your backend route to update the product
-      const response = await axios.put(`${config.apiUrl}/api/v1/product/update-product/${id}`, updatedProductData);
+      const response = await axios.put(`${config.apiUrl}/api/v1/product/update-product/${_id}`, updatedProductData);
 
       if (response.status === 201) {
         // Handle a successful update (you can show a success message or redirect)
@@ -50,10 +57,12 @@ const UpdateProduct = () => {
   return (
 
     <>
+    <section id='update-product'>
+
       <div className='id-div'>
         <input type="text" placeholder='write product id' 
         onChange={(e) => setId(e.target.value)}
-        value={id} required
+        value={_id} required
         />
       </div>
 
@@ -98,7 +107,7 @@ const UpdateProduct = () => {
       <div className='update-btn'>
         <button onClick={handleUpdateProduct} >update</button>
       </div>
-
+      </section>
     </>
 
   )
