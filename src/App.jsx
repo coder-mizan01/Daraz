@@ -3,11 +3,11 @@ import React, { useEffect } from "react";
 //css
 import "./CSS/App.css";
 
-import Router from "./Router/Router.js";
+import Router from "./Router/Router.jsx";
 
 //
 import { useSelector , useDispatch } from "react-redux";
-import { fetchAllProduct } from "./Redux/AllProducts";
+import { fetchAllProduct } from "./Redux/AllProducts.jsx";
 
 function App() {
   

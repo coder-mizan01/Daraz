@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import "../CSS/Menubar.css";
 
 //icons
-import { IoIosArrowF, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLaptop,
