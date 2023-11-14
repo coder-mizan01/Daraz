@@ -19,11 +19,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar,faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 
 //
-import { GlobalProductHook } from "../Context/ProductContext";
+import { useSelector } from "react-redux";
 import Spinner from "../Component/Spinner";
 
 const ElectronicSlide = () => {
-  const { products } = GlobalProductHook();
+  
+  //receive productsObj from allproducts by useSelector
+  const productsObj = useSelector((state)=> state.allproduct);
+    
+  //destructure property from object
+   const {loading , products , error} = productsObj;
 
   let productQuantity;
 

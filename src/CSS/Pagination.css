@@ -1,11 +1,12 @@
 
 .pagination{
-    padding: 25px 0px 25px 70px;
+    padding: 25px 0px 25px 10px;
     height: 30px;
     align-items: center;
 }
 .pagination a{
-    color: #1AB3D7;
+    color: #000;
+    font-weight: 600;
     text-decoration: none;
     padding: 0px 5px 0px 5px ;
 }

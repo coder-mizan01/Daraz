@@ -8,8 +8,9 @@
     margin: 0px;
 }
 
+
+
 ::-webkit-scrollbar{
-    background-color: #ddd;
     width: 10px;
 }
 

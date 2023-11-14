@@ -1,19 +1,21 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import { GlobalCartHook } from "../Context/CartContext";
-
 //css
 import "../CSS/Cart.css";
 
 //component
-import CartItems from "../Component/CartItems";
+import CartItems from "../Component/CartItems"
+
+import { useSelector  } from "react-redux";
+
 
 const Cart = () => {
-  const { Cart } = GlobalCartHook();
 
+  const Cart = useSelector((state)=> state.cart.Cart)
+  console.log(Cart);  
   const Shipping = 50;
-  
+
   //calculate the total price
   let totalprice = 0;
   Cart.forEach((curElm) => {
@@ -43,7 +45,7 @@ const Cart = () => {
           <div className="cart-items">
             {Cart.map((curElm, index) => {
               return <CartItems key={index} {...curElm} />;
-            })}
+          })}
           </div>
 
           <div className="cart-total-value">
@@ -56,7 +58,7 @@ const Cart = () => {
 
           
         </div>
-      )}
+          )}
     </>
   );
 };

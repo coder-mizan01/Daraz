@@ -1,26 +1,26 @@
-import React from 'react';
+import React from "react";
 
-
-//global hook
-import {GlobalProductHook} from "../../Context/ProductContext";
-
+import { useSelector } from "react-redux";
 //components
-import CategoryPage from '../../Component/CategoryPage';
+import CategoryPage from "../../Component/CategoryPage";
 
 const SkinCare = () => {
+  //receive productsObj from allproducts by useSelector
+  const productsObj = useSelector((state) => state.allproduct);
 
-    const {products} = GlobalProductHook();
+  //destructure property from object
+  const { loading, products, error } = productsObj;
 
-    let SkinCareProducts = products.filter((pro)=>{
-        return pro.subcategory === "skin-care";
-       })
-
+  //filter skincareproducts from products
+  let SkinCareProducts = products.filter((pro) => {
+    return pro.subcategory === "skin-care";
+  });
 
   return (
     <>
-     <CategoryPage  products={SkinCareProducts} />
+      <CategoryPage products={SkinCareProducts} />
     </>
-  )
-}
+  );
+};
 
-export default SkinCare
+export default SkinCare;

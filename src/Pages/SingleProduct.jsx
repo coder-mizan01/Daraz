@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import config from "../config.json";
-import { SingleProductGlobalContext } from "../Context/SingleProContext";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 //global hooks
-import { GlobalCartHook } from "../Context/CartContext";
+//import { GlobalCartHook } from "../Context/CartContext";
 
 //css
 import "../CSS/SingleProduct.css";
@@ -19,45 +18,48 @@ import Quantity from "../Component/Quantity";
 import Pagination from "../Component/Pagination";
 import AddToCart from "../Component/AddToCart";
 
-const API = `${config.apiUrl}/api/v1/product/get-product`;
+//redux
+import { useSelector, useDispatch } from "react-redux";
+import { getSingleProduct } from "../Redux/SingleProduct";
 
 const SingleProduct = () => {
-  const { slug } = useParams();
-  const { SingleProduct, getSingleProduct } = SingleProductGlobalContext();
 
+  const API = `${config.apiUrl}/api/v1/product/get-product`;
+  const { slug } = useParams();
+
+
+  const SingleProductObj = useSelector((state) => state.singleproduct);
+  const { loading, SingleProduct, error } = SingleProductObj;
+  const dispatch = useDispatch();
+  
   useEffect(() => {
-    getSingleProduct(`${API}/${slug}`);
+    dispatch(getSingleProduct(`${API}/${slug}`));
     /* eslint-disable-next-line */
   }, []);
 
+
   //product quantity state
-  const [productQuantity, setProductQuantity] = useState(1);
+  const QuantityofProduct = useSelector((state)=> state.productquantitycounter.count)
 
-  const handleQuantity = (newproductQuantity) => {
-    setProductQuantity(newproductQuantity);
-  };
-   
+  //get the cart value 
+  const Cart = useSelector((state)=> state.cart.Cart);
+
+
   //get the cart value
-  const { Cart } = GlobalCartHook();
+  const [productInCart, setProductinCart] = useState(false);  
 
-  const [productInCart,setProductinCart] = useState(false)
 
-  // Check if the current single product is in the cart 
-   useEffect(()=>{
-    if(SingleProduct){
+  // Check if the current single product is in the cart or not
+  useEffect(() => {
+    if (SingleProduct) {
       let isProductInCart = Cart.some((item) => item._id === SingleProduct._id);
-      setProductinCart(isProductInCart)
+      setProductinCart(isProductInCart);
     }
-
-   },[SingleProduct,Cart])
- 
-
-   console.log(Cart);
-   console.log(productInCart);
+  }, [SingleProduct, Cart])
 
   return (
     <>
-      {SingleProduct !== undefined ? (
+      {SingleProduct !== null ? (
         <div id="Single-Product-Page">
           <Pagination Products={SingleProduct} />
           <div className="Single-Product">
@@ -89,18 +91,22 @@ const SingleProduct = () => {
               </p>
               <hr />
               <div className="quantity">
-                <p> Quantity : </p> <Quantity onChange={handleQuantity} />
+                <p> Quantity : </p> <Quantity />
               </div>
 
               <div className="Single-Product-buttons">
-
-                {productInCart ? <Link to='/cart'><button className="add-to-cart">Go to Cart</button></Link> :<AddToCart
-                    product={SingleProduct}
-                    quantity={productQuantity}
-                    name={"Add TO Cart"}
-                  /> }
-
-        
+                {productInCart ? (
+                  <Link to="/cart">
+                    <button className="add-to-cart">Go to Cart</button>
+                  </Link>
+                ) : (
+                  <AddToCart 
+                  product={SingleProduct}
+                  quantity={QuantityofProduct}
+                  name={"Add TO Cart"}
+                />
+                )
+               }
               </div>
             </div>
           </div>

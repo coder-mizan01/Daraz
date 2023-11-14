@@ -1,19 +1,26 @@
 import React from 'react';
-//global hook
-import {GlobalProductHook} from "../../Context/ProductContext"
+
+import { useSelector } from "react-redux";
 //components
 import CategoryPage from '../../Component/CategoryPage';
 
 const Traditionwears = () => {
-   const {products} = GlobalProductHook();
 
-   let ChocoLatesProducts = products.filter((pro)=>{
+    //receive productsObj from allproducts by useSelector
+    const productsObj = useSelector((state) => state.allproduct);
+
+    //destructure property from object
+    const { loading, products, error } = productsObj;
+
+   //filter chocolateproduct from products 
+   let TraditionClothproducts = products.filter((pro)=>{
     return pro.subcategory === "traditional-wear";
    })
-   console.log(ChocoLatesProducts);
+
+   console.log(TraditionClothproducts);
   return (
     <>
-    <CategoryPage products={ChocoLatesProducts} />
+    <CategoryPage products={TraditionClothproducts} />
     </>
   )
 }

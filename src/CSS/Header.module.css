@@ -6,6 +6,7 @@
   align-items: center;
   padding: 10px 40px 10px 30px;
   background-color: #ffffff;
+  box-sizing: 0px 1px 1px rgba(0,0,0,.1);
 
 }
 

@@ -1,35 +1,34 @@
-
-import React,{useState} from "react";
+import React from "react";
 
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
-const Quantity = ({ onChange }) => {
-  const [Quantity, setQuantity] = useState(1);
+import { useDispatch, useSelector } from "react-redux";
+import { Increment, Decrement } from "../Redux/ProductQuantityReducer";
 
-  const handleDecrease = () => {
-    if (Quantity > 1) {
-      setQuantity(Quantity - 1);
-      onChange(Quantity - 1);
-    }
-  };
-
-  const handleIncrease = () => {
-    setQuantity(Quantity + 1);
-    onChange(Quantity + 1); // Update with the increased value
-  };
+const Quantity = () => {
+  
+  const Quantity = useSelector((state) => state.productquantitycounter.count);
+  const dispatch = useDispatch();
 
   return (
     <>
-    <button onClick={handleDecrease} disabled={Quantity === 1}>
+      <button
+        onClick={() => {
+          dispatch(Decrement());
+        }}
+        disabled={Quantity === 1}
+      >
         <AiOutlineMinus />
-      </button>
-  {" "}
+      </button>{" "}
+
       <p>{Quantity} </p>{" "}
 
-      <button onClick={handleIncrease}>
-        <AiOutlinePlus
-          
-        />
+      <button
+        onClick={() => {
+          dispatch(Increment());
+        }}
+      >
+        <AiOutlinePlus />
       </button>
     </>
   );

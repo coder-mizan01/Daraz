@@ -12,19 +12,24 @@ import { AiOutlineSearch,AiOutlineShoppingCart } from "react-icons/ai";
 import HeaderCSS from "../CSS/Header.module.css";
 
 //CartHook
-import { GlobalCartHook } from "../Context/CartContext";
-import { GlobalProductHook } from "../Context/ProductContext";
+//import { GlobalCartHook } from "../Context/CartContext";
 
 import { useSelector } from "react-redux";
 
 
 const Header = () => {
-  const { Cart } = GlobalCartHook();
+  //const { Cart } = GlobalCartHook();
 
-  const {products} = GlobalProductHook();
+  const Cart = useSelector((state)=> state.cart.Cart)
 
-  const Authentication = useSelector((state)=> state.authentication)
-      console.log(Authentication);
+
+  //receive productsObj from allproducts by useSelector
+  const productsObj = useSelector((state)=> state.allproduct);
+    
+  //destructure property from object
+   const {loading , products , error} = productsObj;
+   
+  const Authentication = useSelector((state)=> state.authentication);
 
   const [searchValue, setSearchValue] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -66,7 +71,7 @@ const Header = () => {
           <div className={HeaderCSS.cart}>
             <NavLink to="/cart">
               <AiOutlineShoppingCart className={HeaderCSS.cartIcon} />
-              {Cart.length !== 0 && <span> {Cart.length}</span>}
+                {Cart.length !== 0 && <span> {Cart.length}</span>} 
             </NavLink>
           </div>
 

@@ -252,7 +252,7 @@ const Menubar = () => {
                   <NavLink to="/furniture/table">table</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">Furniture</NavLink>
+                  <NavLink to="/furniture/sofa">Sofa</NavLink>
                 </li>
               </ul>
             </li>

@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { GlobalProductHook } from '../Context/ProductContext';
-
 import { Link } from "react-router-dom";
 
 import config from "../config.json";
@@ -25,9 +23,16 @@ import { faStar,faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 //loader
 import Spinner from "../Component/Spinner";
 
+import { useSelector } from 'react-redux';
+
 const MensFashionSlide = () => {
  
-    const {products} = GlobalProductHook();
+  //receive productsObj from allproducts by useSelector
+  const productsObj = useSelector((state)=> state.allproduct);
+    
+  //destructure property from object
+   const {loading , products , error} = productsObj;
+
     
     let MensFashionPro = products.filter((pro)=>{
         return pro.category === "mens-fashion"

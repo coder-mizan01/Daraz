@@ -1,15 +1,25 @@
 import React from 'react';
-//global hook
-import {GlobalProductHook} from "../../Context/ProductContext"
+
 //components
 import CategoryPage from '../../Component/CategoryPage';
 
-const ComputerAccessories = () => {
-   const {products} = GlobalProductHook();
+import { useSelector } from 'react-redux';
 
+const ComputerAccessories = () => {
+
+    //receive productsObj from allproducts by useSelector
+    const productsObj = useSelector((state)=> state.allproduct);
+
+        
+    //destructure property from object
+    const {loading,products,error} = productsObj;
+   
+    //filter ComputerAccessoriesProducts from products
    let ComputerAccessoriesProducts = products.filter((pro)=>{
     return pro.subcategory === "computer-accessories";
    })
+
+
   return (
     <>
     <CategoryPage products={ComputerAccessoriesProducts} />

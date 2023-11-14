@@ -9,22 +9,34 @@ import config from "../../config.json"
 
 
 //global hook
-import { GlobalProductHook } from '../../Context/ProductContext';
+//import { GlobalProductHook } from '../../Context/ProductContext';
 
 //css
 import "../../CSS/AdminProducts.css"
 
+import { useEffect } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { fetchAllProduct } from '../../Redux/AllProducts';
+
+
 const Products = () => {
 
   //get the GlobalProductHook state
-  const  {products , setProducts} = GlobalProductHook();
-  
-  //obtain navigate function
+  //const  {products , setProducts} = GlobalProductHook();
+
+  const productData = useSelector((state)=> state.allProduct)
+
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(fetchAllProduct()) 
+  },[])
+  console.log(productData);
+    //obtain navigate function
    const navigate = useNavigate();
   
 
  // handleProductDelete function to delete product
- const handleProductDelete = async(id)=>{
+ /*const handleProductDelete = async(id)=>{
   const confirmDelete = window.confirm("Are you sure you want to delte this product?")
   if(confirmDelete){
     try {
@@ -38,12 +50,12 @@ const Products = () => {
      }
   }
 
- }
+ }*/
      
 
   return (
     <div className='admin-products' >
-      {products?.map((item)=>{
+      {productData?.map((item)=>{
 
         const {_id,title,category,subcategory,brand} = item
         return <div className='admin-product'  key={_id} >
@@ -61,7 +73,7 @@ const Products = () => {
           </div>
 
           <div className="action-butttons">
-          <button className='delete-btn' onClick={()=>handleProductDelete(item._id)}>delete</button>
+          <button className='delete-btn' >delete</button>
           <button className='edit-btn' 
           onClick={()=>navigate('/admin/dashboard/editproduct',{state : {item}})} 
           >

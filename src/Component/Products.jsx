@@ -1,59 +1,51 @@
-import React from 'react';
-import config from "../config.json"
+import React, { useEffect, useState } from 'react';
+import config from "../config.json";
+
+import { useDispatch , useSelector } from 'react-redux';
+import {getProductsStart,getProductsFailure,getProductsSuccess} from "../Redux/AllProducts"
 
 import {Link} from "react-router-dom";
-//css
-import "../CSS/Products.css"
+
+import axios from 'axios';
+
 
 //Global Hook
-import { GlobalProductHook } from '../Context/ProductContext';
-//import { GlobalCartHook } from '../Context/CartContext';
+
+
 
 
 
 //component
-import Spinner from './Spinner';
-import AddToCart from "./AddToCart"
+
 
 
 const Products = () => {
+  const dispatch = useDispatch();
 
-    const {products} = GlobalProductHook();
-    let productQuantity = 1;
+   const getAllProducts = async () => {
+       try {
+        dispatch(getProductsStart())
+         const {data} = await axios.get(`${config.apiUrl}/api/v1/product/get-product`);
+         if(data.success){
+          dispatch(getProductsSuccess(data.products))
+           console.log("Products dispatched:", data.products);
+         } 
+       } catch (error) {
+         console.log(error);
+         dispatch(getProductsFailure({error : error.message}))
+       }
+   }
 
+  /* useEffect(()=>{
+   getAllProducts();
+   },[])*/
    
 
    
     
   return (
     <>
-    <div className={products.length !== 0 ? 'products' : ''}>
-      {products.length !== 0 ? products.map((pro) => {
-
-        const {slug,description,price,_id} = pro  
-        return (
-          <div className="product" key={_id}>
-            <Link to={`/SingleProduct/${slug}`}>
-              <img
-                className="home-pro-img"
-                src={`${config.apiUrl}/api/v1/product/product-photo/${pro._id}`}
-                alt=""
-              />
-
-            <div className="pro-content">
-              <p className="desc" >{description.slice(0,39)}...</p>
-            </div>
-            </Link>
-                          
-            <div className="price-addcart">
-                <p className='price'>Tk.{price}</p>
-                <AddToCart product={pro} name={'+add'} quantity={productQuantity} />
-            </div>
-          </div>
-        );
-      }) : <Spinner /> }
-    
-    </div>
+   
     </>
   )
 }

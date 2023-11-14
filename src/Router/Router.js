@@ -45,6 +45,7 @@ import PrivateUserRouter from './PrivateUserRouter';
 import PrivateAdminRouter from './PrivateAdminRouter';
 import UpdateProduct from '../Pages/Admin/UpdateProduct';
 import TopHeader from '../Layout/TopHeader';
+import Sofa from '../Pages/SubPages/Sofa';
 
 
 
@@ -87,6 +88,7 @@ const Router = () => {
         <Route path='/fashion/shoes' element={<Shoes/>} />
 
         <Route path='/furniture/table' element={<Tables />} />
+        <Route path='/furniture/sofa' element={<Sofa />} />
 
 
         <Route path='/SingleProduct/:slug' element={<SingleProduct />} />
@@ -94,6 +96,7 @@ const Router = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/mobile-menu' element={<MobileMune />} />
+
 
    
    
