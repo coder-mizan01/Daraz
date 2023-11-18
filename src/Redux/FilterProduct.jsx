@@ -5,11 +5,6 @@
     name : "filterproduct",
     initialState : {
        category_Wise_Products :[],
-       lowestPrice : [],
-       highestPrice : [],
-       AtoZ_Product : [],
-       ZtoA_Product : [],
-       polobrandProduct:[],
     },
 
     reducers : {
@@ -43,10 +38,26 @@
 
         nobrand:(state,action)=>{
           let products = action.payload;
-          state.category_Wise_Products = [...products].filter((product)=> product.brand==='no-brand' )
+          state.category_Wise_Products = [...products].filter((product)=> product.brand ==='no-brand' )
+        },
+        hpBrand : (state,action) => {
+           let products = action.payload;
+           state.category_Wise_Products = [...products].filter((product)=> product.brand === "hp")
+        },
+        TreateBrand : (state,action) => {
+          let products = action.payload;
+          state.category_Wise_Products = [...products].filter((product)=> product.brand === "Treate")
+        },
+        NestleBrand : (state,action) => {
+          let products = action.payload;
+          state.category_Wise_Products = [...products].filter((product)=> product.brand === "Nestle")
+        },
+        PranBrand : (state,action) => {
+          let products = action.payload;
+          state.category_Wise_Products = [...products].filter((product)=>product.brand === "pran")
         }
     }
  })
 
- export const {categoryWiseProductsAction,LowestPriceProduct , HighestPriceProduct , ProductFromAtoZ, ProductFromZtoA , polobrand,nobrand} = FilterProductSlice.actions;
+ export const {categoryWiseProductsAction,LowestPriceProduct , HighestPriceProduct , ProductFromAtoZ, ProductFromZtoA , polobrand,nobrand,hpBrand,TreateBrand,NestleBrand,PranBrand} = FilterProductSlice.actions;
  export default FilterProductSlice.reducer;

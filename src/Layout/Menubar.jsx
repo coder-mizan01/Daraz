@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 //css
-import "../CSS/Menubar.css";
+import styles from  "../CSS/Menubar.module.css";
 
 //icons
 import { IoIosArrowForward } from "react-icons/io";
@@ -22,7 +22,9 @@ import {
   faListCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Menubar = () => {
+const Menubar = ({onScrollMenuBar}) => {
+
+
   const [isHovered, setIsHovered] = useState({
     fashion: false,
     health: false,
@@ -37,6 +39,7 @@ const Menubar = () => {
     sports: false,
     gifts: false,
   });
+
   const {
     fashion,
     health,
@@ -66,8 +69,8 @@ const Menubar = () => {
 
   return (
     <>
-      <div className="menubar">
-        <div className="side-nav">
+      <div className={onScrollMenuBar ? styles.scroll : styles.menubar}  >
+        <div className={styles.side_nav}>
           <ul>
             <li
               onMouseOver={() => {
@@ -79,9 +82,9 @@ const Menubar = () => {
             >
               <NavLink to="/">
                 <FontAwesomeIcon icon={faLaptop} /> Electronics{" "}
-                {electronics && <IoIosArrowForward className='arrow'  />}
+                {electronics && <IoIosArrowForward className={styles.arrow}  />}
               </NavLink>
-              <ul className="dropdown">
+              <ul className={styles.dropdown}>
                 <li>
                   <NavLink to="ElectronicAccessories/SmartPhones">
                     Smart Phones
@@ -106,9 +109,9 @@ const Menubar = () => {
               <NavLink to="/">
                 {" "}
                 <FontAwesomeIcon icon={faPerson} /> Girls Fashion{" "}
-                {fashion && <IoIosArrowForward className='arrow' />}{" "}
+                {fashion && <IoIosArrowForward className={styles.arrow} />}{" "}
               </NavLink>
-              <ul className="dropdown">
+              <ul className={styles.dropdown}>
                 <li>
                   {" "}
                   <NavLink to="fashion/traditionalwears">
@@ -133,9 +136,9 @@ const Menubar = () => {
               <NavLink to="/">
                 {" "}
                 <FontAwesomeIcon icon={faShirt} /> Boy's Fashion 
-                {mens && <IoIosArrowForward className='arrow' />}
+                {mens && <IoIosArrowForward className={styles.arrow}  />}
               </NavLink>
-              <ul className="dropdown">
+              <ul className={styles.dropdown}>
                 <li>
                   <NavLink to="/fashion/cloths">Cloths</NavLink>
                 </li>
@@ -156,9 +159,9 @@ const Menubar = () => {
               <NavLink to="/">
                 {" "}
                 <FontAwesomeIcon icon={faNotesMedical} /> Health Items{" "}
-                {health && <IoIosArrowForward className='arrow' />}
+                {health && <IoIosArrowForward className={styles.arrow} />}
               </NavLink>
-              <ul className="dropdown">
+              <ul className={styles.dropdown}>
                 <li>
                   <NavLink to="/healthcare/skincare">Skin Care</NavLink>
                 </li>
@@ -178,7 +181,7 @@ const Menubar = () => {
             >
               <NavLink to="/">
                 <FontAwesomeIcon icon={faCarSide} /> Kids Toy's{" "}
-                {kids && <IoIosArrowForward className='arrow' />}
+                {kids && <IoIosArrowForward className={styles.arrow}/>}
               </NavLink>
             </li>
 
@@ -192,9 +195,9 @@ const Menubar = () => {
             >
               <NavLink to="/">
                 <FontAwesomeIcon icon={faBasketShopping} /> Groceries{" "}
-                {groceries && <IoIosArrowForward className='arrow' />}
+                {groceries && <IoIosArrowForward className={styles.arrow}/>}
               </NavLink>
-              <ul className="dropdown">
+              <ul className={styles.dropdown}>
                 <li>
                   <NavLink to="Groceries/ChocolateCandies">
                     Chocolate & candy
@@ -217,7 +220,7 @@ const Menubar = () => {
               <NavLink to="/">
                 {" "}
                 <FontAwesomeIcon icon={faBaby} /> Baby Care{" "}
-                {baby && <IoIosArrowForward className='arrow' />}
+                {baby && <IoIosArrowForward className={styles.arrow} />}
               </NavLink>
             </li>
             <li
@@ -229,7 +232,7 @@ const Menubar = () => {
               }}
             >
               <NavLink to="/">
-                <FontAwesomeIcon icon={faTv} /> Big Deal {electronicDevice && <IoIosArrowForward className='arrow' />}
+                <FontAwesomeIcon icon={faTv} /> Big Deal {electronicDevice && <IoIosArrowForward className={styles.arrow} />}
 
               </NavLink>
             </li>
@@ -245,9 +248,9 @@ const Menubar = () => {
               <NavLink to="/">
                 {" "}
                 <FontAwesomeIcon icon={faCouch} /> Furniture 
-                {home && <IoIosArrowForward className='arrow' />}
+                {home && <IoIosArrowForward className={styles.arrow} />}
               </NavLink>
-              <ul className="dropdown">
+              <ul className={styles.dropdown}>
                 <li>
                   <NavLink to="/furniture/table">table</NavLink>
                 </li>
@@ -266,7 +269,7 @@ const Menubar = () => {
               }}
             >
               <NavLink to="/">
-                <FontAwesomeIcon icon={faBaseball} />   Sports {sports && <IoIosArrowForward className='arrow' />}
+                <FontAwesomeIcon icon={faBaseball} />   Sports {sports && <IoIosArrowForward className={styles.arrow} />}
               
               </NavLink>
             </li>
@@ -281,7 +284,7 @@ const Menubar = () => {
               <NavLink to="/">
                 {" "}
                 <FontAwesomeIcon icon={faGift} /> 
-                {""} Vouchers{gifts && <IoIosArrowForward className='arrow' />}
+                {""} Vouchers{gifts && <IoIosArrowForward className={styles.arrow} />}
               </NavLink>
             </li>
             <li>

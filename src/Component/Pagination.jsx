@@ -10,10 +10,8 @@ const Pagination = ({Products}) => {
   return (
     <>
     {Products !== undefined ? <div className="pagination">
-            <a href="/">{Products.category}</a>
-            <ImArrowRight2 className='right-arrow' />
             <a href="/">{Products.subcategory}</a>
-          </div> : <p></p>  }
+          </div> : ""  }
      
     </>
   )

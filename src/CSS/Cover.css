@@ -1,7 +1,7 @@
 #cover {
   display: flex;
   flex-direction: row;
-  margin: 15px 50px 70px 50px;
+  margin: 20px 50px 70px 50px;
   @media (max-width: 1115px) {
     margin: 5px 0px 20px 0px;
   }

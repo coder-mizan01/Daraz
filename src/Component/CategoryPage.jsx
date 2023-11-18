@@ -2,8 +2,7 @@ import React,{useState,useEffect} from "react";
 import { Link } from "react-router-dom";
 
 //css
-import "../CSS/CategoryPage.css";
-
+import CategoryPageCSS from "../CSS/categorypage.module.css"
 //icons
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
@@ -51,14 +50,8 @@ const [selectedOption , setSelectedOption] = useState("");
 
   return (  
     <>
-      <div className="category_page_container">
 
-        <SideFilters products={products} /> 
-
-
-        <div className="category_page">
-
-        <div className="category_page_topbar">
+<div className={CategoryPageCSS.category_page_topbar}>
         <Pagination Products={SingleProduct}  />
         <select name="" id=""  onChange={(e)=>{handlePriceChange(e,category_Wise_Products)}} >
             <option value="">sort by: Feautured</option>
@@ -69,39 +62,46 @@ const [selectedOption , setSelectedOption] = useState("");
           </select>
       </div>
 
-       <div className="category_page_products">
+
+      <div className={CategoryPageCSS.category_page_container}>
+
+        <SideFilters products={products} /> 
+   
+       <div className={CategoryPageCSS.category_page_products}>
  
       
 
           {category_Wise_Products?.map((pro) => {
-            const {title, slug, price, _id } = pro;
+            const {title, slug, price, _id , brand} = pro;
 
             return (
-              <div className="pro" key={_id}>
+              <div className={CategoryPageCSS.pro} key={_id}>
+
                 <Link to={`/SingleProduct/${slug}`}>
                   <img
-                    className="category_pro_img"
+                    className={CategoryPageCSS.category_pro_img}
                     src={`https://daraz-api.onrender.com/api/v1/product/product-photo/${pro._id}`}
                     alt=""
                   />
+                </Link>
 
-                  <div className="category_pro-content">
-                    <p className="title">{title}</p>
-                    <p className="price">৳{price}</p>
-                    <p className="star">
+                <div className={CategoryPageCSS.category_pro_content}>
+                     <p className="title">{ title.length > 20 ? title.slice(0,28)+'...': title}</p>
+                     <p className="star">
                       {" "}
                       <AiFillStar />
                       <AiFillStar /> <AiFillStar />
                       <AiFillStar />
-                      <AiOutlineStar /> <span>(167)</span>
+                      <AiOutlineStar /> 
                     </p>
+                    <p className="price">৳{price}</p>
+                    
                   </div>
-                </Link>
+
               </div>
             );
           })}
            </div> 
-        </div>
       </div>
     </>
   );

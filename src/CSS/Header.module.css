@@ -3,13 +3,20 @@
 #header {
   display: flex;
   flex-direction: row;
-  align-items: center;
   padding: 10px 40px 10px 30px;
+  margin:0px 0px 0px 0px;
   background-color: #ffffff;
-  box-sizing: 0px 1px 1px rgba(0,0,0,.1);
-
+  box-shadow: 0px 1px 5px rgba(0,0,0,.4);
 }
 
+/* Add this CSS */
+#header.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: top 0.5s ease-in-out;
+}
 
 
 /*--------------*/
@@ -19,21 +26,30 @@
   text-align: center;
 }
 
-.logo a{
-  width: 140px;
+.logo .brand{
+  display: block;
+  width: 100%;
   height: auto;
   font-size: 1.8rem;
   font-weight: 800;
-  /*color: #2E2787;*/
-  /*color: #8980FF;*/
-  /*color: #9683EC;*/
-  /*color: #545AA7;*/
-  /*color: #205896;*/
-  /*color: #0047ab;*/
-  /*color: #603fef;*/
-  /*color: #4B0082;*/
   color: #0F3460;
   text-decoration: none;
+}
+
+.scrolling_menu{
+  width: 100%;
+  text-align: center;
+  color: #0F3460;
+  margin: 0px 0px 0px 0px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.scroll{
+  position: fixed;
+  top: 90px;
+  left: 50px;
 }
 
 .searchBar {
@@ -95,6 +111,7 @@
 
 .cart_user_div{
   flex: 23%;
+  height: 52px;
   display: flex;
   justify-content:flex-end;
   align-items: center;
@@ -160,31 +177,17 @@ z-index: 1;
 
 
 @media only screen and (max-width: 1115px) {
-  .logo{
-    display: none;
-  }
-  .searchBar {
-    flex: 90%;
-  }
-  .cart_user_div{
-    flex: 10%;
-  }
-  .cart_user_div .cart{
-    display: block;
-  }
-  .cart_user_div .user{
-    display: none;
-  }
-
-  .responsive-menu{
-    display: block;
-    margin: 0px 10px 0px 0px;
+  #header{
+    padding: 10px 0px 10px 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   #header{
     padding: 10px 10px 10px 10px;
+  }
+  .logo{
+    display: none;
   }
 
   .cart_user_div{

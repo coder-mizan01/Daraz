@@ -1,87 +1,69 @@
-import React,{useState} from "react";
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
+import React,{useState,useEffect} from "react";
 
 //Layout
-import OffCanvas from "./OffCanvas";
+import Menubar from "./Menubar";
+
 //icons
-import { HiOutlineUser } from "react-icons/hi";
-import { AiOutlineSearch,AiOutlineShoppingCart } from "react-icons/ai";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
 
 //css
 import HeaderCSS from "../CSS/Header.module.css";
 
-//CartHook
-//import { GlobalCartHook } from "../Context/CartContext";
-
-import { useSelector } from "react-redux";
+//component
+import SearchBar from "../Component/SearchBar";
+import HomePageCart_User from "../Component/HomePageCart_User";
 
 
 const Header = () => {
-  //const { Cart } = GlobalCartHook();
-
-  const Cart = useSelector((state)=> state.cart.Cart)
 
 
-  //receive productsObj from allproducts by useSelector
-  const productsObj = useSelector((state)=> state.allproduct);
-    
-  //destructure property from object
-   const {loading , products , error} = productsObj;
-   
-  const Authentication = useSelector((state)=> state.authentication);
 
-  const [searchValue, setSearchValue] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState([]);
-   
-  const handleSearch = (e) =>{
-   const  inputValue = e.target.value;
-    setSearchValue(inputValue);
-      
-    const matchingProducts = products.filter((pro)=>{
-      return pro.title.toLowerCase().includes(inputValue.toLowerCase());
-    })
+  const [onScrollMenuBar , setOnSrollMenuBar] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
 
-    setFilteredProducts(matchingProducts);
-  }
+  const handleScroll = () => {
+    if (window.scrollY > 500) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+      setOnSrollMenuBar(false)
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <section id={HeaderCSS.header} >
-        <OffCanvas />
+      <section id={HeaderCSS.header} className={`${scrolling ? HeaderCSS.sticky :  ""}`}  >
 
-        <div className={HeaderCSS.logo}>
-          <a href="/"> SHOPEE</a>
+      <div className={HeaderCSS.logo}>
+          <a className={HeaderCSS.brand} href="/"> SHOPEE</a>
+          {scrolling && <div className={HeaderCSS.scrolling_menu} 
+           onClick={()=>{setOnSrollMenuBar(!onScrollMenuBar)}} >
+          {onScrollMenuBar ? <FontAwesomeIcon icon={faChevronUp} />  : 
+          <FontAwesomeIcon icon={faChevronDown} /> } categories
+            </div>}
         </div>
 
-        <div className={HeaderCSS.searchBar}>
-          <input type="text" placeholder="Search in shopee" value={searchValue}  onChange={handleSearch}  />
-          <button type="search">
-            <AiOutlineSearch
-              className={HeaderCSS.searchIcon}
-              style={{ color: "white" }}
+        {onScrollMenuBar && <Menubar onScrollMenuBar={onScrollMenuBar}  onMouseOver={()=>{setScrolling(true)}} /> }
+   
+       <SearchBar />
 
-            />
-          </button>
-          {searchValue.length > 1 && <div className={HeaderCSS.search_value}><ul> {filteredProducts.map((product,index) => (
-          <li key={index}><Link to={`/SingleProduct/${product.slug}`}>{product.title}</Link></li>
-          ))}</ul></div>} 
-        </div>
+      <HomePageCart_User />
+ 
 
-        <div className={HeaderCSS.cart_user_div}>
-          <div className={HeaderCSS.cart}>
-            <NavLink to="/cart">
-              <AiOutlineShoppingCart className={HeaderCSS.cartIcon} />
-                {Cart.length !== 0 && <span> {Cart.length}</span>} 
-            </NavLink>
-          </div>
 
-          <div className={HeaderCSS.user}>
-              <Link to={Authentication.email && Authentication.password !== null ? '/dashboard' : '/login'}>
-                <HiOutlineUser className={HeaderCSS.user_icon} />{" "}
-              </Link>
-          </div>
-        </div>
+
       </section>
+
     </>
   );
 };
