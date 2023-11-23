@@ -7,7 +7,4 @@ export default defineConfig({
     outDir: 'dist',
     ssr: false,   
   },
-  css: {
-    modules: true,
-  },
 });

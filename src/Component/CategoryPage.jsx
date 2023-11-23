@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 import { Link } from "react-router-dom";
 
 //css
-import CategoryPageCSS from "../CSS/categorypage.module.css?used"
+import CategoryPageCSS from "../CSS/CategoryPage.module.css"
 //icons
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 

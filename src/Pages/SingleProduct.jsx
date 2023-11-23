@@ -61,7 +61,6 @@ const SingleProduct = () => {
     <>
       {SingleProduct !== null ? (
         <div id="Single-Product-Page">
-          <Pagination Products={SingleProduct} />
           <div className="Single-Product">
             <Images SingleProduct={SingleProduct} />
 
