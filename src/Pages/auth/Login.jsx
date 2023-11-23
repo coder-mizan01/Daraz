@@ -5,14 +5,12 @@ import config from "../../config.json";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {setUser} from "../../Redux/Authentication";
-import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
 //global hook
 
 //css
 import "../../CSS/Login.css";
-import "react-toastify/dist/ReactToastify.css";
 
 //icons
 import { FaRegEye } from "react-icons/fa";
@@ -59,7 +57,7 @@ const Register = () => {
 
         navigate(location.state || "/");
       } else {
-        toast.error(res.data.message);
+        console.log(res.data.message);
       }
     } catch (error) {
       console.log(error);
@@ -68,7 +66,7 @@ const Register = () => {
 
   return (
     <div className="login">
-      <ToastContainer />
+
       <form onSubmit={handleRegistration} className="login-form">
         <div className="mb-3">
           <label htmlFor="">Email</label>

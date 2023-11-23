@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import config from "../../config.json";
 import { useNavigate, Link } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
 
 //icons
 import { FaRegEye } from "react-icons/fa";
@@ -10,7 +9,6 @@ import { FaRegEyeSlash } from "react-icons/fa"
 
 //css
 import "../../CSS/Register.css";
-import "react-toastify/dist/ReactToastify.css";
 
 
 const Register = () => {
@@ -33,7 +31,7 @@ const Register = () => {
         toast.success('user is created')
         navigate('/Login')
       } else {
-        toast.error(res.data.message)
+        console.log(res.data.message)
       }
     } catch (error) {
       console.log(error);
@@ -42,7 +40,6 @@ const Register = () => {
 
   return (
     <div className="register">
-      <ToastContainer />
       <form onSubmit={handleRegistration} className="register-form" >
         <div className="">
           <label htmlFor="">Name</label>

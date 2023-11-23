@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 import { Link } from "react-router-dom";
 
 //css
-import CategoryPageCSS from "../CSS/categorypage.module.css"
+import CategoryPageCSS from "../CSS/categorypage.module.css?used"
 //icons
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
@@ -54,7 +54,7 @@ const [selectedOption , setSelectedOption] = useState("");
 <div className={CategoryPageCSS.category_page_topbar}>
         <Pagination Products={SingleProduct}  />
         <select name="" id=""  onChange={(e)=>{handlePriceChange(e,category_Wise_Products)}} >
-            <option value="">sort by: Feautured</option>
+            <option value="">sort by: Feauture</option>
             <option value="A-Z">Product (A-Z)</option>
             <option value="Z-A">Product (Z-A)</option>
             <option value="highest" >Price (highest-lowest)</option>
