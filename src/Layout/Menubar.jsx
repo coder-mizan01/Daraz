@@ -22,7 +22,7 @@ import {
   faListCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Menubar = ({onScrollMenuBar}) => {
+const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
 
 
   const [isHovered, setIsHovered] = useState({
@@ -69,7 +69,7 @@ const Menubar = ({onScrollMenuBar}) => {
 
   return (
     <>
-      <div className={onScrollMenuBar ? styles.scroll : styles.menubar}  >
+      <div className={onScrollMenuBar ? styles.scroll : styles.menubar} onClick={onClickMenuBar} >
         <div className={styles.side_nav}>
           <ul>
             <li

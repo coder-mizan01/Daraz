@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import AdminProduct from "./AdminProducts";
 import CreateProduct from "./CreateProduct";
 import DeletProduct from "./DeleteProduct";
-import UpdateProduct from "./UpdateProduct";
 import Users from "./Users";
 
 //css
@@ -32,10 +31,6 @@ const AdminDashboard = () => {
                 <button className="nav-link " id="createproduct-tab" data-bs-toggle="tab" data-bs-target="#createproduct-tab-pane" type="button" role="tab" aria-controls="createproduct-tab-pane" aria-selected="true">create product</button>
               </li>
 
-             {/*  <li className="nav-item" role="presentation">
-                <button className="nav-link " id="updateproduct-tab" data-bs-toggle="tab" data-bs-target="#updateproduct-tab-pane" type="button" role="tab" aria-controls="updateproduct-tab-pane" aria-selected="true">update product</button>
-      </li>*/}
-
               <li className="nav-item" role="presentation">
                 <button className="nav-link " id="deleteproduct-tab" data-bs-toggle="tab" data-bs-target="#deleteproduct-tab-pane" type="button" role="tab" aria-controls="deleteproduct-tab-pane" aria-selected="true">delete product</button>
               </li>
@@ -50,7 +45,7 @@ const AdminDashboard = () => {
 
 
           <div className="tab-content" id="myTabContent">
-            <div className="tab-pane fade show " id="adminproducts-tab-pane" role="tabpanel" aria-labelledby="adminproducts-tab" tabIndex={0}>
+            <div className="tab-pane fade show active" id="adminproducts-tab-pane" role="tabpanel" aria-labelledby="adminproducts-tab" tabIndex={0}>
               <AdminProduct />
 
             </div>
@@ -60,11 +55,7 @@ const AdminDashboard = () => {
 
             </div>
 
-            
-           {/* <div className="tab-pane fade show " id="updateproduct-tab-pane" role="tabpanel" aria-labelledby="updateproduct-tab" tabIndex={0}>
-              <UpdateProduct />
-
-    </div>*/}
+          
 
             <div className="tab-pane fade show " id="deleteproduct-tab-pane" role="tabpanel" aria-labelledby="deleteproduct-tab" tabIndex={0}>
               <DeletProduct />

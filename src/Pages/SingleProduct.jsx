@@ -15,7 +15,6 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 //component
 import Images from "../Component/Images";
 import Quantity from "../Component/Quantity";
-import Pagination from "../Component/Pagination";
 import AddToCart from "../Component/AddToCart";
 
 //redux

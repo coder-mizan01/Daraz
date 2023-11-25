@@ -3,17 +3,15 @@ import React from 'react';
 //icons
 import {FaTrash} from "react-icons/fa";
 
-//global Cart Hook
-//import { GlobalCartHook } from '../Context/CartContext';
 
-import { DeleteToCart } from '../Redux/CartItem';
+import { DeleteFromCart } from '../Redux/CartItem';
 import { useDispatch } from 'react-redux';
 
 const CartItems = ({_id,price,quantity}) => {
 
   const dispatch = useDispatch();
   const handleDelete = () => {
-  dispatch(DeleteToCart(_id))
+  dispatch(DeleteFromCart(_id))
   }
   return (
     <>

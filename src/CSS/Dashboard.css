@@ -12,15 +12,24 @@
     text-align: center;
     margin: 10px;
     flex-shrink: 0;
-    background-color: #F3F5F9;
     box-shadow: 1px 1px 1px #ddd;
+    background-color: #fff!important;
+    border-radius: 10px;
 }
 
 .nav-content ul{
     width: 100%;
-    
+    background-color: #fff!important;
 }
 
+.nav-content ul li{
+    background-color: #fff!important; 
+}
+
+.nav-content ul li:not(.active){
+    background-color: #fff!important;
+
+}
 
 .nav-link{
     width: 100%;
@@ -49,8 +58,16 @@
     flex: 80%;
     margin: 10px;
     padding: 10px 10px 10px 20px;
+    background-color: #fff!important;
+    border-radius: 10px;
 }
+.tab-content ul {
+    background-color: #fff!important;
+}
+.tab-content ul li.active{
+    background-color: #fff!important;
 
+}
 .nav-content ul{
   display: inline-block;
 }

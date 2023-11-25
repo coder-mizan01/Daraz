@@ -14,11 +14,14 @@
 
         Decrement : (state,action)=>{
             state.count = state.count - 1 ;
+        },
+        Reset : (state,action) => {
+            state.count = 0
         }
     }
  })
 
 
- export const {Increment , Decrement} = ProductQuantitySlice.actions;
+ export const {Increment , Decrement , Reset} = ProductQuantitySlice.actions;
 
  export default ProductQuantitySlice.reducer

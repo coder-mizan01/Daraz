@@ -5,11 +5,10 @@
   justify-content:space-between;
   margin: 0;
   padding: 5px 40px 5px 40px;
-  /*position: fixed;
-  width: 100%;  
-  top: 0px;
-  z-index: 100;
-*/
+  @media(max-width:1115px){
+    display:none;
+  }
+
 }
 
 #topheader .topheader_leftside{
@@ -56,21 +55,3 @@ li {
 .responisve-none{
  color: blue;
 }
-
-@media only screen and (max-width: 990px) {
-
-  #topheader a:nth-child(2){
-    display: none;
-  }
-  #topheader a:nth-child(7){
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 768px) {
- #topheader{
-  padding: 0px 0px 0px 0px;
-
-}
-
- }

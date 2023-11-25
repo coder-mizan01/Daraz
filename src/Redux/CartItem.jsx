@@ -4,7 +4,7 @@
  const CartSlice = createSlice({
     name : 'cart',
     initialState : {
-    Cart : [],
+    Cart :JSON.parse(localStorage.getItem('cart')) || [],
     shipping : '',
     },
 
@@ -20,20 +20,18 @@
               quantity,
               title
             }
-            
              state.Cart = [...state.Cart,CartItems];
             
-
         },
 
-        DeleteToCart : (state,action) => {
+        DeleteFromCart : (state,action) => {
             let updatedCart;
             updatedCart = state.Cart.filter((item)=> item._id !== action.payload)
             state.Cart = updatedCart;
-        },
+        },  
     }
  })
 
- export const {AddtoCart , DeleteToCart} = CartSlice.actions 
+ export const {AddtoCart , DeleteFromCart} = CartSlice.actions 
 
  export default CartSlice.reducer;

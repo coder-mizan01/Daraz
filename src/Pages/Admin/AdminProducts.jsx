@@ -8,12 +8,9 @@ import { useNavigate } from 'react-router-dom';
 import config from "../../config.json"
 
 
-//global hook
-//import { GlobalProductHook } from '../../Context/ProductContext';
 
 //css
 import "../../CSS/AdminProducts.css"
-
 import { useEffect } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { fetchAllProduct } from '../../Redux/AllProducts';
@@ -21,41 +18,38 @@ import { fetchAllProduct } from '../../Redux/AllProducts';
 
 const Products = () => {
 
-  //get the GlobalProductHook state
-  //const  {products , setProducts} = GlobalProductHook();
 
-  const productData = useSelector((state)=> state.allProduct)
-
+  const productObj = useSelector((state)=> state.allproduct);
+  const {products, isloading , error} = productObj
+ 
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(fetchAllProduct()) 
   },[])
-  console.log(productData);
     //obtain navigate function
    const navigate = useNavigate();
   
 
  // handleProductDelete function to delete product
- /*const handleProductDelete = async(id)=>{
+ const handleProductDelete = async(id)=>{
   const confirmDelete = window.confirm("Are you sure you want to delte this product?")
   if(confirmDelete){
     try {
       const {data} = axios.delete(`${config.apiUrl}/api/v1/product/delete-product/${id}`);
       if(data.success){
         console.log('product is delete');
-        setProducts();
       }
      } catch (error) {
        console.log(error);
      }
   }
 
- }*/
+ }
      
 
   return (
     <div className='admin-products' >
-      {productData?.map((item)=>{
+      {products.length > 0 ? products.map((item)=>{
 
         const {_id,title,category,subcategory,brand} = item
         return <div className='admin-product'  key={_id} >
@@ -73,7 +67,7 @@ const Products = () => {
           </div>
 
           <div className="action-butttons">
-          <button className='delete-btn' >delete</button>
+          <button className='delete-btn' onClick={(e)=>handleProductDelete(_id)} >delete</button>
           <button className='edit-btn' 
           onClick={()=>navigate('/admin/dashboard/editproduct',{state : {item}})} 
           >
@@ -82,7 +76,7 @@ const Products = () => {
           
           </div>
         </div>
-      })}
+      }) : "loading"}
     </div>
   )
 }

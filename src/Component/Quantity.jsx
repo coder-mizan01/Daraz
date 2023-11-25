@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 import { useDispatch, useSelector } from "react-redux";
-import { Increment, Decrement } from "../Redux/ProductQuantityReducer";
+import { Increment, Decrement , Reset } from "../Redux/ProductQuantityReducer";
 
 const Quantity = () => {
   
   const Quantity = useSelector((state) => state.productquantitycounter.count);
   const dispatch = useDispatch();
+
+  useEffect(()=>{
+   dispatch(Reset())
+  },[])
 
   return (
     <>

@@ -42,7 +42,7 @@ const UpdateProduct = () => {
 
       if (response.status === 201) {
         // Handle a successful update (you can show a success message or redirect)
-        console.log("Product updated successfully");
+        alert("Product updated successfully");
       } else {
         // Handle errors if the update was not successful
         console.error("Product update failed");

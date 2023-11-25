@@ -18,8 +18,8 @@ const CategoryPage = ({ products }) => {
   let SingleProduct = copyProducts[0];
 
 
-  const demo = useSelector((state)=> state.filterproduct)
-  const {category_Wise_Products} = demo;
+  const categoryProducts = useSelector((state)=> state.filterproduct)
+  const {category_Wise_Products} = categoryProducts;
   
 
 

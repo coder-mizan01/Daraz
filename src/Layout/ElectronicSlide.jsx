@@ -26,7 +26,7 @@ const ElectronicSlide = () => {
   
   //receive productsObj from allproducts by useSelector
   const productsObj = useSelector((state)=> state.allproduct);
-    
+
   //destructure property from object
    const {loading , products , error} = productsObj;
 
@@ -151,7 +151,7 @@ const ElectronicSlide = () => {
    
         {electronicProducts.length > 0 ? (
           electronicProducts.map((pro) => {
-            const { title, slug, description, price, _id } = pro;
+            const { title, slug, price, _id } = pro;
    
             return (
               <div key={_id} className="product">

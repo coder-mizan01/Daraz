@@ -52,9 +52,9 @@
   .carousel{
     width: 100%;
   }
-  
+ 
   .img-fluid{
-    height: 520px;
+    height: auto;
   }
   
 }
@@ -63,9 +63,6 @@
 
 
 @media(max-width:768px){
-  .img-fluid{
-    height: 400px;
-  }
   .carousel-control-prev,.carousel-control-next{
     width: 25px;
   }
@@ -78,10 +75,6 @@
 
 @media(max-width:468px){
 
-  .img-fluid{
-    height: 200px;
-  }
-
   .carousel-control-prev,.carousel-control-next{
     width: 15px;
   }
@@ -93,10 +86,3 @@
 
 }
 
-
-@media(max-width:300px){
-
-  .img-fluid{
-    height: 150px;
-  }
-}

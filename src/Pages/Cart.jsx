@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import {Link} from "react-router-dom";
 
 //css
@@ -7,14 +7,25 @@ import "../CSS/Cart.css";
 //component
 import CartItems from "../Component/CartItems"
 
-import { useSelector  } from "react-redux";
+import { useDispatch ,useSelector} from "react-redux";
+
 
 
 const Cart = () => {
 
-  const Cart = useSelector((state)=> state.cart.Cart)
-  console.log(Cart);  
-  const Shipping = 50;
+  const dispatch = useDispatch();
+
+
+    const Cart = useSelector((state)=> state.cart.Cart)
+    console.log(Cart);  
+    const Shipping = 50;
+  
+    // Save cart to local storage whenever it changes
+    useEffect(() => {
+      localStorage.setItem("cart", JSON.stringify(Cart));
+    }, [Cart]);
+
+
 
   //calculate the total price
   let totalprice = 0;
