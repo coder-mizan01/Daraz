@@ -86,12 +86,12 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
               </NavLink>
               <ul className={styles.dropdown}>
                 <li>
-                  <NavLink to="ElectronicAccessories/SmartPhones">
+                  <NavLink to="electronics/smartphones">
                     Smart Phones
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="ElectronicAccessories/ComputerAccessories">
+                  <NavLink to="electronics/computer-accessories">
                     ComputerAccessories
                   </NavLink>
                 </li>
@@ -114,13 +114,13 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
               <ul className={styles.dropdown}>
                 <li>
                   {" "}
-                  <NavLink to="fashion/traditionalwears">
+                  <NavLink to="fashion/traditional-wears">
                     Traditional wear
                   </NavLink>
                 </li>
                 <li>
                   {" "}
-                  <NavLink to="fashion/westernwears">Western wears</NavLink>
+                  <NavLink to="fashion/western-wears">Western wears</NavLink>
                 </li>
               </ul>
             </li>
@@ -199,12 +199,12 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
               </NavLink>
               <ul className={styles.dropdown}>
                 <li>
-                  <NavLink to="Groceries/ChocolateCandies">
+                  <NavLink to="groceries/chocolate-candies">
                     Chocolate & candy
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="Groceries/Cooking">Cooking Indregiants</NavLink>
+                  <NavLink to="groceries/cooking">Cooking Indregiants</NavLink>
                 </li>
               </ul>
             </li>

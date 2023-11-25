@@ -26,7 +26,6 @@ const SingleProduct = () => {
   const API = `${config.apiUrl}/api/v1/product/get-product`;
   const { slug } = useParams();
 
-
   const SingleProductObj = useSelector((state) => state.singleproduct);
   const { loading, SingleProduct, error } = SingleProductObj;
   const dispatch = useDispatch();

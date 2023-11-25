@@ -1,9 +1,9 @@
 import React from 'react'
-import {BrowserRouter,Routes,Route} from "react-router-dom";
+import {Routes,Route} from "react-router-dom";
+import { HashRouter as BrowserRouter} from "react-router-dom"
 
 //pages
 import Home from "../Pages/Home";
-import Error from '../Pages/Error';
 import SingleProduct from "../Pages/SingleProduct";
 import Cart from '../Pages/Cart';
 
@@ -72,20 +72,19 @@ const Router = () => {
       <Route path='/admin/dashboard/editproduct' element={< UpdateProduct/>} />
 
         <Route path='/' element={<Home />} />
-        <Route path='*' element={<Error />} />
-        <Route path='/ElectronicAccessories/SmartPhones' element={<SmatrPhones />} />
-        <Route path='/ElectronicAccessories/ComputerAccessories' element={<ComputerAccessories />} />
+        <Route path='/electronics/smartphones' element={<SmatrPhones />} />
+        <Route path='/electronics/computer-accessories' element={<ComputerAccessories />} />
 
         <Route path='/healthcare/skincare' element={ <SkinCare />} />
 
-        <Route path='/fashion/traditionalwears' element={<Traditionwears />} />
-        <Route path='/fashion/westernwears' element={<WesternWears />} />
-
-        <Route path='/Groceries/Cooking' element={<Cooking />} />
-        <Route path='/Groceries/ChocolateCandies' element={<ChocoLates />} />
+        <Route path='/fashion/traditional-wears' element={<Traditionwears />} />
+        <Route path='/fashion/western-wears' element={<WesternWears />} />
 
         <Route path='/fashion/cloths' element={<Cloths/>} />
         <Route path='/fashion/shoes' element={<Shoes/>} />
+
+        <Route path='/groceries/cooking' element={<Cooking />} />
+        <Route path='/groceries/chocolate-candies' element={<ChocoLates />} />
 
         <Route path='/furniture/table' element={<Tables />} />
         <Route path='/furniture/sofa' element={<Sofa />} />
