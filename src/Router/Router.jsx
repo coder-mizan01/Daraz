@@ -46,6 +46,8 @@ import PrivateAdminRouter from './PrivateAdminRouter';
 import UpdateProduct from '../Pages/Admin/UpdateProduct';
 import TopHeader from '../Layout/TopHeader';
 import Sofa from '../Pages/SubPages/Sofa';
+import ConfirmOrderPage from '../Layout/ConfirmOrderPage';
+import CC from '../CC';
 
 
 
@@ -94,7 +96,9 @@ const Router = () => {
         <Route path='/Register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/confirm-order' element={<ConfirmOrderPage />} />
         <Route path='/mobile-menu' element={<MobileMune />} />
+        <Route path='/admin/cc' element={<CC />} />
 
 
    

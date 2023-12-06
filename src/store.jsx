@@ -13,7 +13,7 @@
 
   //cart Item
   import CartItem from "./Redux/CartItem";
-import ProductQuantityReducer from "./Redux/ProductQuantityReducer";
+import ProductQuantity from "./Redux/ProductQuantity";
 import FilterProduct from "./Redux/FilterProduct";
 
 
@@ -23,7 +23,7 @@ import FilterProduct from "./Redux/FilterProduct";
       allproduct: AllProduct,
       singleproduct : SingleProduct,
       cart : CartItem,
-      productquantitycounter : ProductQuantityReducer,
+      productquantitycounter : ProductQuantity,
       filterproduct : FilterProduct
     },
   });

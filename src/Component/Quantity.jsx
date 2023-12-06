@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 import { useDispatch, useSelector } from "react-redux";
-import { Increment, Decrement , Reset } from "../Redux/ProductQuantityReducer";
+import { Increment, Decrement , Reset } from "../Redux/ProductQuantity";
 
 const Quantity = () => {
   

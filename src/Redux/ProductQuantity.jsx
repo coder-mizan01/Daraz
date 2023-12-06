@@ -16,7 +16,7 @@
             state.count = state.count - 1 ;
         },
         Reset : (state,action) => {
-            state.count = 0
+            state.count = 1
         }
     }
  })

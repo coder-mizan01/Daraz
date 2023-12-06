@@ -18,14 +18,14 @@ const Imgslidersr = () => {
   <div className="carousel-inner">
 
     <div className="carousel-item active">
-    <a href="/fashion/westernwears">
-      <img src="fashioncover3.jpg" className="img-fluid" alt="..." />
+    <a href="/#/electronics/computer-accessories">
+      <img src="electronics.jpg" className="img-fluid" alt="..." />
       </a>
     </div>
 
     <div className="carousel-item">
-    <a href="ElectronicAccessories/SmartPhones">
-      <img src="electronics.jpg" className="img-fluid" alt="..." />
+    <a href="/#/fashion/cloths">
+      <img src="cover1.png " className="img-fluid" alt="..." />
       </a>
     </div>
 
