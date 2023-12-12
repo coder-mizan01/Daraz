@@ -1,6 +1,9 @@
 import React,{useState,useEffect} from "react";
 import { Link } from "react-router-dom";
 
+//Api-link
+import config from "../config.json"
+
 //css
 import CategoryPageCSS from "../CSS/CategoryPage.module.css"
 //icons
@@ -80,7 +83,7 @@ const [selectedOption , setSelectedOption] = useState("");
                 <Link to={`/SingleProduct/${slug}`}>
                   <img
                     className={CategoryPageCSS.category_pro_img}
-                    src={`https://daraz-api.onrender.com/api/v1/product/product-photo/${pro._id}`}
+                    src={`${config.apiUrl}/api/v1/product/product-photo/${pro._id}`}
                     alt=""
                   />
                 </Link>

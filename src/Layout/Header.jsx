@@ -69,7 +69,7 @@ console.log(onScrollMenuBar);
       <section id={`${scrolling ? HeaderCSS.sticky : HeaderCSS.header}`}  >
 
       <div className={HeaderCSS.logo}>
-          <a className={HeaderCSS.brand} href="/"> SHOPEE</a>
+          <a className={HeaderCSS.brand} href="/">A-Z.com</a>
           {scrolling && <div className={HeaderCSS.scrolling_menu} 
            onClick={()=>{setOnSrollMenuBar(!onScrollMenuBar)}} >
           {onScrollMenuBar ? <FontAwesomeIcon icon={faChevronUp} />  : 

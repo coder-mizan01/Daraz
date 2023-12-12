@@ -15,7 +15,7 @@ const Footer = () => {
       <section id="footer">
 
         <div className="brand-details">
-          <Link className="logo">Shopee</Link>
+          <Link className="logo">A-Z.com</Link>
 
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia magni modi quo nostrum dolorum quae ullam rerum amet quis odit adipisicing elit.</p>
            
@@ -29,12 +29,12 @@ const Footer = () => {
         <div className="about-section">
           <h3>About us</h3>
           <Link to="/">About us</Link>
-          <Link to="/">Shopee Blogs</Link>
+          <Link to="/">A-Z Blogs</Link>
           <Link to="/">contact with us</Link>
-          <Link to="/">Shopee demo</Link>
+          <Link to="/">A-Z demo</Link>
           <Link to="/">privacy condition</Link>
           <Link to="/">contact with us</Link>
-          <Link to="/">Shopee demo</Link>
+          <Link to="/">A-Z demo</Link>
           
 
         </div>
@@ -56,15 +56,15 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <div className="">
            <p className="address">70 Mugda, Madina bag, Dhaka 1214, Bangladesh</p>
-           <p className="Email">Email: shopee01@gmail.com</p>
-           <p className="phone">Phone: +162798311</p>
+           <p className="Email">Email: atoz60678@gmail.com</p>
+           <p className="phone">Phone: 019995952159</p>
  
           </div>
 
           <ul className="footer-icons">
-            <li> <Link to='/'> <FaFacebookF className="icon" /> </Link> </li>
+            <li> <Link target="_blank" to='https://www.facebook.com/a.to.z.bd.shop/'> <FaFacebookF className="icon" /> </Link> </li>
             <li><Link to='/'>  <FaYoutube className="icon" /></Link> </li>
-            <li><Link to='/'>  <FaGoogle className="icon" /></Link> </li>
+            <li><Link target="_blank" to='mailto:atoz60678@gmail.com'>  <FaGoogle className="icon" /></Link> </li>
             <li><Link to='/'>  <AiFillInstagram className="icon" /></Link> </li>
             <li> <Link to='/'> <FaTwitter className="icon" /></Link> </li>
            </ul>
