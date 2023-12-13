@@ -26,6 +26,7 @@ import Products from "../Pages/Admin/AdminProducts";
 import Users from '../Pages/Admin/Users';
 
 
+
 //auth
 import Register from '../Pages/auth/Register';
 import Login from '../Pages/auth/Login';
@@ -62,7 +63,7 @@ const Router = () => {
       
      <Route path='/dashboard' element={<PrivateUserRouter /> } >
      <Route path='/dashboard' element={<Dashboard />} />
-      </Route> 
+      </Route>
   
       <Route path='/admin/dashboard' element={<PrivateAdminRouter /> } >
         <Route path='/admin/dashboard' element={<AdminDashboard />} />

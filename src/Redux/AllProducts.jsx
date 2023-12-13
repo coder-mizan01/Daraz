@@ -5,7 +5,7 @@ import config from "../config.json"
 
 
  export const fetchAllProduct = createAsyncThunk("allproduct/fetchAllProduct", async () => {
-    const res = await axios.get(`${config.apiUrl}/api/v1/product/get-product`);
+    const res = await axios.get(`${config.apiUrl}/api/product/get-product`);
     return res.data.products;
  });
 

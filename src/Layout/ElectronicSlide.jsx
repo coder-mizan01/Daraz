@@ -159,7 +159,7 @@ const ElectronicSlide = () => {
                   <div className="product-img">
                     <img
                       className="home-pro-img"
-                      src={`${config.apiUrl}/api/v1/product/product-photo/${pro._id}`}
+                      src={`${config.apiUrl}/api/product/product-photo/${pro._id}`}
                       alt=""
                     />
                   </div>

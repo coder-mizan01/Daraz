@@ -7,9 +7,9 @@ const Images = ({SingleProduct}) => {
   return (
     <>
     <div className="Images">
-    <img className='img-fluid' src={`${config.apiUrl}/api/v1/product/product-photo/${_id}`} alt="" />
+    <img className='img-fluid' src={`${config.apiUrl}/api/product/product-photo/${_id}`} alt="" />
     <div className='thumbnails'>
-      <img onClick={()=>alert('feauter will added')} className='thumb-img' src={`${config.apiUrl}/api/v1/product/product-photo/${_id}`} alt=""/>
+      <img onClick={()=>alert('feauter will added')} className='thumb-img' src={`${config.apiUrl}/api/product/product-photo/${_id}`} alt=""/>
       
 
     </div>

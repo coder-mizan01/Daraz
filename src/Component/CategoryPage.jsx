@@ -83,7 +83,7 @@ const [selectedOption , setSelectedOption] = useState("");
                 <Link to={`/SingleProduct/${slug}`}>
                   <img
                     className={CategoryPageCSS.category_pro_img}
-                    src={`${config.apiUrl}/api/v1/product/product-photo/${pro._id}`}
+                    src={`${config.apiUrl}/api/product/product-photo/${pro._id}`}
                     alt=""
                   />
                 </Link>

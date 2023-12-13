@@ -23,7 +23,7 @@ import { getSingleProduct } from "../Redux/SingleProduct";
 
 const SingleProduct = () => {
 
-  const API = `${config.apiUrl}/api/v1/product/get-product`;
+  const API = `${config.apiUrl}/api/product/get-product`;
   const { slug } = useParams();
 
   const SingleProductObj = useSelector((state) => state.singleproduct);

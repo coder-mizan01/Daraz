@@ -6,11 +6,11 @@ import styles from "./CSS/AdminCC.module.css"
 
 const CC = () => {
   const state = useSelector((state)=>state.authentication)
-  const location = useLocation();
+/*  const location = useLocation();
 
   console.log(location.state.Cart);
   const {Cart} = location.state;
-  console.log(Cart);
+  console.log(Cart); */
   return (
     <>
 
@@ -25,7 +25,7 @@ const CC = () => {
         </tr>
      </thead>
      <tbody>
-      <tr>
+     {/* <tr>
         <td className={styles.orderID} rowSpan={1}>12345679</td>
         <td rowSpan={1}> {Cart.map((cartPro,i)=>{
           return <div  key={i}> 
@@ -41,7 +41,7 @@ const CC = () => {
    
          })}</td>
 
-      </tr>
+      </tr> */}
 
       <tr>
         <td>total</td>

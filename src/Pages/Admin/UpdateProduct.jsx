@@ -22,6 +22,7 @@ const UpdateProduct = () => {
   const [price, setPrice] = useState(item.price);
   const [brand, setBrand] = useState(item.brand);
   const [quantity, setQuantity] = useState(item.quantity);
+  const [model , setModel] = useState(item.model);
 
 
   const handleUpdateProduct = async () => {
@@ -34,11 +35,12 @@ const UpdateProduct = () => {
         description,
         price,
         brand,
-        quantity
+        quantity,
+        model
       };
 
       // Make an HTTP request to your backend route to update the product
-      const response = await axios.put(`${config.apiUrl}/api/v1/product/update-product/${_id}`, updatedProductData);
+      const response = await axios.put(`${config.apiUrl}/api/product/update-product/${_id}`, updatedProductData);
 
       if (response.status === 201) {
         // Handle a successful update (you can show a success message or redirect)
@@ -82,6 +84,11 @@ const UpdateProduct = () => {
       <div className='brand-div'>
         <input type="text" placeholder='write brand' 
         onChange={(e) => setBrand(e.target.value)} value={brand} required />
+      </div>
+
+      <div className='model-div'>
+        <input type="text" placeholder='write model' 
+        onChange={(e) => setModel(e.target.value)} value={model} />
       </div>
 
       <div className='title-div'>

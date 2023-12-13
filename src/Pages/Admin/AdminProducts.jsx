@@ -35,7 +35,7 @@ const Products = () => {
   const confirmDelete = window.confirm("Are you sure you want to delte this product?")
   if(confirmDelete){
     try {
-      const {data} = axios.delete(`${config.apiUrl}/api/v1/product/delete-product/${id}`);
+      const {data} = axios.delete(`${config.apiUrl}/api/product/delete-product/${id}`);
       if(data.success){
         console.log('product is delete');
       }
@@ -55,7 +55,7 @@ const Products = () => {
         return <div className='admin-product'  key={_id} >
 
          <div className='image-part'>
-         <img src={`${config.apiUrl}/api/v1/product/product-photo/${item._id}`} alt="" />
+         <img src={`${config.apiUrl}/api/product/product-photo/${item._id}`} alt="" />
          </div>
 
          <div className="details">
