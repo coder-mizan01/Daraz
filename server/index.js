@@ -1,18 +1,19 @@
-require('dotenv').config();
-const express = require('express');
-const connectDB = require('./config/db');
+import dotenv from "dotenv"
+dotenv.config();
+import express from "express";
+import connectDB  from './config/db.js';
 const connecTed = async() =>{
     await connectDB();
 } 
-const authRoutes = require('./routes/authRoute');
-const categoryRoutes = require('./routes/categoryRoute');
-const productRoute = require('./routes/productRoute');
-const cors = require('cors');
+import authRoutes from './routes/authRoute.js';
+import categoryRoutes from './routes/categoryRoute.js';
+import productRoute from './routes/productRoute.js';
+import orderRoute from './routes/orderRoute.js'
+import cors from 'cors';
+
 
 
 const app = express();
-
-
 
 //middleware
 app.use(express.json());
@@ -21,13 +22,13 @@ app.use(cors());
 //app.use(morgan());
 
 //routes
-app.use("/api/v1/auth", authRoutes);
-app.use("/api/v1/category",categoryRoutes);
-app.use("/api/v1/product",productRoute);
+app.use("/api/auth", authRoutes);
+app.use("/api/category",categoryRoutes);
+app.use("/api/product",productRoute);
+app.use("/api/orders",orderRoute)
 
 
-
-// Define a route
+// Define home route
 app.get('/', (req, res) => {
   res.setHeader("Access-Control-Allow-Credentials","true")
   res.send('Hello, world!');

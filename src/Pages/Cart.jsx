@@ -16,7 +16,8 @@ import { useSelector} from "react-redux";
 const Cart = () => {
 
     const Cart = useSelector((state)=> state.cart.Cart)
-  
+    console.log(Cart);
+
     // Save cart to local storage whenever it changes
     useEffect(() => {
       localStorage.setItem("cart", JSON.stringify(Cart));

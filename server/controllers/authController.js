@@ -1,7 +1,7 @@
-require('dotenv').config();
-const { hashPassword, comparePassword } = require('../helper/authhelper');
-const User = require('../models/userModel');
-const jwt = require('jsonwebtoken');
+import { hashPassword, comparePassword } from '../helper/authhelper.js';
+import User from '../models/userModel.js';
+import jwt from 'jsonwebtoken';
+
 
 const registerController = async (req, res) => {
   try {
@@ -36,7 +36,7 @@ const registerController = async (req, res) => {
 
 
   } catch (error) {
-    res.status(200).send({
+    res.status(500).send({
       success: false,
       message: 'error in registerController',
       error,
@@ -139,4 +139,11 @@ const adminRoute = (req, res) => {
   })
 }
 
-module.exports = { registerController, loginController,getAllUser, testController, userRoute, adminRoute };
+export { 
+  registerController, 
+  loginController, 
+  getAllUser, 
+  testController, 
+  userRoute, 
+  adminRoute 
+};
