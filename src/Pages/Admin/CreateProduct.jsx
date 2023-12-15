@@ -34,7 +34,7 @@ const CreateProduct = () => {
         productData
       );
       if (data?.success) {
-          console.log('product is creatd');
+         alert('product is creatd');
       } else {
         console.log(data.message);
       }

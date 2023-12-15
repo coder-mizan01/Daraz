@@ -67,8 +67,9 @@ const SingleProduct = () => {
               <p className="brand">
                 {" "}
                 brand: {SingleProduct.brand} | more product from{" "}
-                {SingleProduct.brand}
+
               </p>
+              <p>{SingleProduct.subcategory}</p>
               <p className="sub-category">
                 {" "}
                 category : <Link to="/">{SingleProduct.category}</Link>

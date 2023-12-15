@@ -14,12 +14,12 @@ const Charger = () => {
   const { loading, products, error } = productsObj;
 
   //filter smartphonesProducts from products
-   let SmartphonesProducts = products.filter((pro)=>{
-    return pro.subcategory === "computer-accessories";
+   let charger = products.filter((pro)=>{
+    return pro.subcategory === "charger";
    })
   return (
     <>
-<CategoryPage products={SmartphonesProducts} />
+<CategoryPage products={charger} />
     </>
   )
 }

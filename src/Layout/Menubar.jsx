@@ -39,9 +39,9 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
     faLightbulb,
     faHouse,
     faPlugCircleBolt,
-   faVolumeHigh,
-   faBook,
-   faCircle,
+    faVolumeHigh,
+    faBook,
+    faCircle,
     faGift,]
 
   const [isHovered, setIsHovered] = useState({
@@ -93,14 +93,15 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
         <div className={styles.side_nav}>
           <ul>
             {Object.keys(categories).map((category,i)=>{
- 
+             
              return  <li key={i}>
               <NavLink to="/">
                 <FontAwesomeIcon icon={iconArr[i]}/>{category}{" "}
               </NavLink>
               <ul className={styles.dropdown}>
               {categories[category].map((subcategory) => (
-            <li key={subcategory}>
+                        
+              <li key={subcategory}>
               <NavLink to={`/${category}/${subcategory}`}>
                 {subcategory}
               </NavLink>

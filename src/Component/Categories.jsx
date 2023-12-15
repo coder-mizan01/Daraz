@@ -1,18 +1,17 @@
 
 export const categories = {
     computer_items : ["keyboard","mouse","mouse_pad","laptop_table","computer_glass","gaming_controller","pen_drive","laptop_stands"],
-    Mobile_Accessories : ["charger" , "wireless_charger","battery","power_charger","ring_light","waterproof_cover","selfie_stick",
-    "memory_card","mobile_holder","power_bank"],
-    Headphone_Items : ["Gaming_headphones","Bluthooth_headphone","In_Ear_Headphone","Earbuds","Nechbands"],
-    Smart_Watches : ["smart_watch","Watch_strap"],
-    Routers_Collection : ["Wifi_Routers","Router_Stand","Pocket_Router","Router_Stand"],
-    Light_Lamps :["RGB_Light","LED_Light","Emergency_Light","Ring_Light","Torch_Light"],
-    Home_Appliances : ["Dry_Iron", "Water_Heater", "Room_Heater", "Electric_Kettle", "Blender", "Juicer", "Vacuum_Cleaner", "Vacuum_Flask" , "Rechargeable" ,"Fan"],
-    Trimmer_Shaver : ["Electric_Trimmer","Electric_Shaver"],
-    Speaker_Microphone :["Speaker","Bluthooth_Speaker","Microphone","Karoke_Speaker"],
-    Books : ["self_motivation ","islamic books","academic books"],
-    Other_Items :["calculator","ToothBrush","Bag_Luggage","Smart_Tv_Box"],
-    Vouchers :["gift voucher","weeding voucher","love voucher"]
+    mobile_accessories: ["charger", "wireless_charger", "battery", "power_charger", "ring_light", "waterproof_cover", "selfie_stick", "memory_card", "mobile_holder", "power_bank"],
+    headphone_items: ["gaming_headphone", "bluetooth_headphone", "in_ear_headphone", "earbuds", "neckbands"],
+    smart_watches: ["smart_watch", "watch_strap"],
+    routers_collection: ["wifi_router", "router_stand", "pocket_router"],
+    light_lamp: ["rgb_light", "led_light", "emergency_light", "ring_light", "torch_light"],
+    home_appliances: ["dry_iron", "water_heater", "room_heater", "electric_kettle", "blender", "juicer", "vacuum_cleaner", "vacuum_flask", "rechargeablefan"],
+    trimmer_shaver: ["electric_trimmer", "electric_shaver"],
+    speaker_microphone: ["speaker", "bluetooth_speaker", "microphone", "karaoke_speaker"],
+    books: ["self_motivation", "islamic_book", "academic_book"],
+    other_items: ["calculator", "toothbrush", "bag_luggage", "smart_tv_box"],
+    voucher: ["gift_voucher", "wedding_voucher", "love_voucher"]
 }
 
 

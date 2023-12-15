@@ -13,7 +13,7 @@ const Mouse = () => {
     //destructure property from object
     const { loading, products, error } = productsObj;
   
-    //filter smartphonesProducts from products
+    //filter mouse from products
      let Mouse = products.filter((pro)=>{
       return pro.subcategory === "mouse";
      })

@@ -75,7 +75,7 @@ const [selectedOption , setSelectedOption] = useState("");
       
 
           {category_Wise_Products?.map((pro) => {
-            const {title, slug, price, _id , brand} = pro;
+            const {title, slug, price, _id , subcategory, brand} = pro;
 
             return (
               <div className={CategoryPageCSS.pro} key={_id}>
