@@ -4,26 +4,45 @@ import { NavLink } from "react-router-dom";
 //css
 import styles from  "../CSS/Menubar.module.css";
 
+//component
+import { categories } from "../Component/Categories";
+
 //icons
 import { IoIosArrowForward } from "react-icons/io";
+
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faLightbulb,
+  faMobileScreen,
+  faHeadphones,
+  faWifi,
+  faClock,
   faLaptop,
-  faNotesMedical,
-  faShirt,
-  faBasketShopping,
-  faCarSide,
-  faCouch,
-  faBaseball,
-  faTv,
-  faBaby,
-  faPerson,
+  faVolumeHigh,
+  faBook,
+  faHouse,
+  faPlugCircleBolt,
+  faCircle,
   faGift,
-  faListCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
 
+const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
+ 
+  const iconArr = [
+    faLaptop,
+    faMobileScreen,
+    faHeadphones,
+    faClock,
+    faWifi,
+    faLightbulb,
+    faHouse,
+    faPlugCircleBolt,
+   faVolumeHigh,
+   faBook,
+   faCircle,
+    faGift,]
 
   const [isHovered, setIsHovered] = useState({
     fashion: false,
@@ -67,38 +86,33 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
     }));
   };
 
+
   return (
     <>
       <div className={onScrollMenuBar ? styles.scroll : styles.menubar} onClick={onClickMenuBar} >
         <div className={styles.side_nav}>
           <ul>
-            <li
-              onMouseOver={() => {
-                handleMouseOver("electronics");
-              }}
-              onMouseLeave={() => {
-                handleMouseLeave("electronics");
-              }}
-            >
+            {Object.keys(categories).map((category,i)=>{
+ 
+             return  <li key={i}>
               <NavLink to="/">
-                <FontAwesomeIcon icon={faLaptop} /> Electronics{" "}
-                {electronics && <IoIosArrowForward className={styles.arrow}  />}
+                <FontAwesomeIcon icon={iconArr[i]}/>{category}{" "}
               </NavLink>
               <ul className={styles.dropdown}>
-                <li>
-                  <NavLink to="electronics/smartphones">
-                    Smart Phones
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="electronics/computer-accessories">
-                    ComputerAccessories
-                  </NavLink>
-                </li>
+              {categories[category].map((subcategory) => (
+            <li key={subcategory}>
+              <NavLink to={`/${category}/${subcategory}`}>
+                {subcategory}
+              </NavLink>
+            </li>
+          ))}
               </ul>
             </li>
+            })}
+           
 
-            <li
+
+ {/* <li
               onMouseOver={() => {
                 handleMouseOver("fashion");
               }}
@@ -108,13 +122,13 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
             >
               <NavLink to="/">
                 {" "}
-                <FontAwesomeIcon icon={faPerson} /> Girls Fashion{" "}
+                <FontAwesomeIcon icon={faMobileScreen} />{categories[1]}{" "}
                 {fashion && <IoIosArrowForward className={styles.arrow} />}{" "}
               </NavLink>
               <ul className={styles.dropdown}>
                 <li>
                   {" "}
-                  <NavLink to="fashion/traditional-wears">
+                  <NavLink to={`fashion/traditional-wears`}>
                     Traditional wear
                   </NavLink>
                 </li>
@@ -135,7 +149,7 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
             >
               <NavLink to="/">
                 {" "}
-                <FontAwesomeIcon icon={faShirt} /> Boy's Fashion 
+                <FontAwesomeIcon icon={faHeadphones} />Headphone Items 
                 {mens && <IoIosArrowForward className={styles.arrow}  />}
               </NavLink>
               <ul className={styles.dropdown}>
@@ -158,7 +172,7 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
             >
               <NavLink to="/">
                 {" "}
-                <FontAwesomeIcon icon={faNotesMedical} /> Health Items{" "}
+                <FontAwesomeIcon icon={faClock} />Smart Watches{" "}
                 {health && <IoIosArrowForward className={styles.arrow} />}
               </NavLink>
               <ul className={styles.dropdown}>
@@ -180,7 +194,7 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
               }}
             >
               <NavLink to="/">
-                <FontAwesomeIcon icon={faCarSide} /> Kids Toy's{" "}
+              <FontAwesomeIcon icon={faWifi} />Router Collection{" "}
                 {kids && <IoIosArrowForward className={styles.arrow}/>}
               </NavLink>
             </li>
@@ -194,7 +208,7 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
               }}
             >
               <NavLink to="/">
-                <FontAwesomeIcon icon={faBasketShopping} /> Groceries{" "}
+              <FontAwesomeIcon icon={faVolumeHigh} />Speaker & Micro..{" "}
                 {groceries && <IoIosArrowForward className={styles.arrow}/>}
               </NavLink>
               <ul className={styles.dropdown}>
@@ -219,7 +233,7 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
             >
               <NavLink to="/">
                 {" "}
-                <FontAwesomeIcon icon={faBaby} /> Baby Care{" "}
+                <GiBedLamp />Light & Lamps {" "}
                 {baby && <IoIosArrowForward className={styles.arrow} />}
               </NavLink>
             </li>
@@ -232,7 +246,7 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
               }}
             >
               <NavLink to="/">
-                <FontAwesomeIcon icon={faTv} /> Big Deal {electronicDevice && <IoIosArrowForward className={styles.arrow} />}
+              <FontAwesomeIcon icon={faHouse} />Home Appliances {electronicDevice && <IoIosArrowForward className={styles.arrow} />}
 
               </NavLink>
             </li>
@@ -247,7 +261,7 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
             >
               <NavLink to="/">
                 {" "}
-                <FontAwesomeIcon icon={faCouch} /> Furniture 
+                <GiBeard/>Trimmer & Shaver 
                 {home && <IoIosArrowForward className={styles.arrow} />}
               </NavLink>
               <ul className={styles.dropdown}>
@@ -269,7 +283,7 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
               }}
             >
               <NavLink to="/">
-                <FontAwesomeIcon icon={faBaseball} />   Sports {sports && <IoIosArrowForward className={styles.arrow} />}
+                <FontAwesomeIcon icon={faBaseball} />Other Items{sports && <IoIosArrowForward className={styles.arrow} />}
               
               </NavLink>
             </li>
@@ -283,18 +297,19 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
             >
               <NavLink to="/">
                 {" "}
-                <FontAwesomeIcon icon={faGift} /> 
-                {""} Vouchers{gifts && <IoIosArrowForward className={styles.arrow} />}
+                <FontAwesomeIcon icon={faBook} /> 
+                {""} Books{gifts && <IoIosArrowForward className={styles.arrow} />}
               </NavLink>
             </li>
             <li>
               <NavLink to="/">
-                <FontAwesomeIcon icon={faListCheck} /> Others{" "}
+                <FontAwesomeIcon icon={faGift} />Gift & Vouchers{" "}
               </NavLink>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
+
     </>
   );
 };

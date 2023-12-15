@@ -11,6 +11,7 @@ const CreateProduct = () => {
   const [price, setPrice] = useState("");
   const [brand,setBrand] = useState("");
   const [quantity, setQuantity] = useState("");
+  const [model,setModel]= useState("");
 
 
    
@@ -26,9 +27,10 @@ const CreateProduct = () => {
       productData.append("photo", photo);
       productData.append("category", category);
       productData.append("subcategory", subcategory);
-      productData.append("brand",brand)
+      productData.append("brand",brand);
+      productData.append("model",model);
       const { data } = await axios.post(
-        `${config.apiUrl}/api/v1/product/create-product`,
+        `${config.apiUrl}/api/product/create-product`,
         productData
       );
       if (data?.success) {
@@ -97,6 +99,16 @@ const CreateProduct = () => {
           placeholder="write a brand"
           className="form-control w-100"
           onChange={(e) => setBrand(e.target.value)}
+        />
+      </div>
+
+      <div className="mt-3">
+        <input
+          type="text"
+          value={model}
+          placeholder="write a model"
+          className="form-control w-100"
+          onChange={(e) => setModel(e.target.value)}
         />
       </div>
 

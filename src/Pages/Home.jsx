@@ -10,7 +10,8 @@ const Home = () => {
    <>
   <Cover />
   <ElectronicSlide />
-  <MensFashionSlide /> 
+  <MensFashionSlide />
+
   </> 
 
   );

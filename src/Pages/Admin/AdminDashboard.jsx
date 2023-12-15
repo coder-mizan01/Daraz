@@ -24,11 +24,11 @@ const AdminDashboard = () => {
 
             <ul className="nav nav-tabs" id="myTab" role="tablist">
               <li className="nav-item" role="presentation">
-                <button className="nav-link active" id="adminproducts-tab" data-bs-toggle="tab" data-bs-target="#adminproducts-tab-pane" type="button" role="tab" aria-controls="adminproducts-tab-pane" aria-selected="true">Admin Products</button>
+                <button className="nav-link " id="adminproducts-tab" data-bs-toggle="tab" data-bs-target="#adminproducts-tab-pane" type="button" role="tab" aria-controls="adminproducts-tab-pane" aria-selected="true">Admin Products</button>
               </li>
 
               <li className="nav-item" role="presentation">
-                <button className="nav-link " id="createproduct-tab" data-bs-toggle="tab" data-bs-target="#createproduct-tab-pane" type="button" role="tab" aria-controls="createproduct-tab-pane" aria-selected="true">create product</button>
+                <button className="nav-link active" id="createproduct-tab" data-bs-toggle="tab" data-bs-target="#createproduct-tab-pane" type="button" role="tab" aria-controls="createproduct-tab-pane" aria-selected="true">create product</button>
               </li>
 
               <li className="nav-item" role="presentation">
@@ -45,12 +45,12 @@ const AdminDashboard = () => {
 
 
           <div className="tab-content" id="myTabContent">
-            <div className="tab-pane fade show active" id="adminproducts-tab-pane" role="tabpanel" aria-labelledby="adminproducts-tab" tabIndex={0}>
+            <div className="tab-pane fade show " id="adminproducts-tab-pane" role="tabpanel" aria-labelledby="adminproducts-tab" tabIndex={0}>
               <AdminProduct />
 
             </div>
 
-            <div className="tab-pane fade show " id="createproduct-tab-pane" role="tabpanel" aria-labelledby="createproduct-tab" tabIndex={0}>
+            <div className="tab-pane fade show active" id="createproduct-tab-pane" role="tabpanel" aria-labelledby="createproduct-tab" tabIndex={0}>
               <CreateProduct />
 
             </div>

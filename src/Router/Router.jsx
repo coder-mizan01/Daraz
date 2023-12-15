@@ -7,7 +7,7 @@ import Home from "../Pages/Home";
 import SingleProduct from "../Pages/SingleProduct";
 import Cart from '../Pages/Cart';
 
-//subpages
+/*
 import Cooking from '../Pages/SubPages/Cooking';
 import ChocoLates from '../Pages/SubPages/ChocoLates';
 import SmatrPhones from "../Pages/SubPages/SmatrPhones";
@@ -18,6 +18,7 @@ import SkinCare from '../Pages/SubPages/SkinCare';
 import Cloths from '../Pages/SubPages/Cloths';
 import Shoes from '../Pages/SubPages/Shoes';
 import Tables from '../Pages/SubPages/Tables';
+*/
 
 //Admin-auth
 import AdminDashboard from '../Pages/Admin/AdminDashboard';
@@ -38,7 +39,9 @@ import Dashboard from '../Pages/User/Dashboard';
 import Header from '../Layout/Header';
 import Footer from '../Layout/Footer';
 import BottomMenu from '../Layout/BottomMenu';
-import MobileMune from "../Layout/MobileMenu"
+import MobileMune from "../Layout/MobileMenu";
+import { categories } from '../Component/Categories';
+
 
 
 //Router
@@ -46,11 +49,30 @@ import PrivateUserRouter from './PrivateUserRouter';
 import PrivateAdminRouter from './PrivateAdminRouter';
 import UpdateProduct from '../Pages/Admin/UpdateProduct';
 import TopHeader from '../Layout/TopHeader';
-import Sofa from '../Pages/SubPages/Sofa';
 import ConfirmOrderPage from '../Layout/ConfirmOrderPage';
 import CC from '../CC';
 
 
+// Import your components dynamically
+const dynamicComponents = {
+  mouse: React.lazy(() => import('../Pages/MenuPages/Computer_Items/Mouse')),
+  keyboard : React.lazy(()=> import('../Pages/MenuPages/Computer_Items/Keyboard')),
+  mouse_pad : React.lazy(()=>import('../Pages/MenuPages/Computer_Items/Mouse_pad')),
+  charger : React.lazy(()=>import('../Pages/MenuPages/Mobile_Accessories/Charger')),
+  wireless_charger : React.lazy(()=>import('../Pages/MenuPages/Mobile_Accessories/Wireless_charger')),
+  battery : React.lazy(()=> import("../Pages/MenuPages/Mobile_Accessories/Battery")),
+  
+};
+
+const LazyComponent = ({ componentName }) => {
+  const Component = dynamicComponents[componentName];
+
+  return (
+    <React.Suspense fallback={<div>Loading...</div>}>
+      {Component ? <Component /> : null}
+    </React.Suspense>
+  );
+};
 
 
 const Router = () => {
@@ -60,7 +82,9 @@ const Router = () => {
     <TopHeader />
      <Header />
      <Routes>
-      
+    
+
+     
      <Route path='/dashboard' element={<PrivateUserRouter /> } >
      <Route path='/dashboard' element={<Dashboard />} />
       </Route>
@@ -75,10 +99,17 @@ const Router = () => {
       <Route path='/admin/dashboard/editproduct' element={< UpdateProduct/>} />
 
         <Route path='/' element={<Home />} />
-        <Route path='/electronics/smartphones' element={<SmatrPhones />} />
-        <Route path='/electronics/computer-accessories' element={<ComputerAccessories />} />
 
-        <Route path='/healthcare/skincare' element={ <SkinCare />} />
+        {categories.computer_items.map((Item,i)=>{
+          return <Route key={i} path={`/computer_items/${Item}`}  element={<LazyComponent componentName={Item} />}/>
+        })}
+
+        {categories.Mobile_Accessories.map((Item,i)=>{
+          return <Route key={i} path={`/Mobile_Accessories/${Item}`} element={<LazyComponent componentName={Item}/>} />
+        })}
+
+
+     {/*     <Route path='/healthcare/skincare' element={ <SkinCare />} />
 
         <Route path='/fashion/traditional-wears' element={<Traditionwears />} />
         <Route path='/fashion/western-wears' element={<WesternWears />} />
@@ -91,7 +122,7 @@ const Router = () => {
 
         <Route path='/furniture/table' element={<Tables />} />
         <Route path='/furniture/sofa' element={<Sofa />} />
-
+ */}
 
         <Route path='/SingleProduct/:slug' element={<SingleProduct />} />
         <Route path='/Register' element={<Register />} />
@@ -112,3 +143,6 @@ const Router = () => {
 }
 
 export default Router;
+
+
+

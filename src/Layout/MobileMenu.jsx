@@ -38,7 +38,7 @@ const MobileMenu = () => {
       <ul>
         <li onClick={() => handleDropdownClick(0)}>
           <NavLink >
-          <FontAwesomeIcon icon={faLaptop} />  Electronics <FontAwesomeIcon icon={faChevronDown} className={MobileMenuStyle.arrow_icon}  />
+          <FontAwesomeIcon icon={faLaptop} />computer items <FontAwesomeIcon icon={faChevronDown} className={MobileMenuStyle.arrow_icon}  />
           </NavLink>
 
           <ul  className={`${

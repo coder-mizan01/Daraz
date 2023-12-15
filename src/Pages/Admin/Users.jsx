@@ -9,10 +9,10 @@ import style from "../../CSS/Users.module.css"
 const Users = () => {
   const [users , setUsers] = useState([]);
 
-  useEffect(()=>{
+  /*useEffect(()=>{
     const fetchUsers = async () => {
       try {
-        const res = await axios.get(`${config.apiUrl}/api/v1/auth/all-user`);
+        const res = await axios.get(`${config.apiUrl}/api/auth/all-user`);
          if(res.data.success){
            setUsers(res.data.allUser)
          }
@@ -24,7 +24,7 @@ const Users = () => {
     fetchUsers();
 
   },[])
-  console.log(users);
+  console.log(users);*/
   return (
     <>
 
