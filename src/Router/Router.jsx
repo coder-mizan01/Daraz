@@ -59,11 +59,11 @@ const dynamicComponents = {
   mouse: React.lazy(() => import('../Pages/MenuPages/Computer_Items/Mouse')),
   keyboard : React.lazy(()=> import('../Pages/MenuPages/Computer_Items/Keyboard')),
   mouse_pad : React.lazy(()=>import('../Pages/MenuPages/Computer_Items/Mouse_pad')),
-  computer_glass : React.lazy(()=>import('../Pages/MenuPages/Computer_Items/Computer_glass')),
-  gaming_controller : React.lazy(()=>import('../pages/MenuPages/Computer_Items/Gaming_controller')),
-  laptop_stands : React.lazy(()=>import('../pages/MenuPages/Computer_Items/Laptop_stands')),
-  laptop_table : React.lazy(()=>import('../pages/MenuPages/Computer_Items/Laptop_table')),
-  pend_drive : React.lazy(()=>import('../Pages/MenuPages/Computer_Items/Pen_drive')),
+  computer_glass : React.lazy(()=>import('../Pages/MenuPages/Computer_Items/ComputerGlass')),
+  gaming_controller : React.lazy(()=>import('../Pages/MenuPages/Computer_Items/GamingContrller')),
+  laptop_stands : React.lazy(()=>import('../Pages/MenuPages/Computer_Items/LaptopStand')),
+  laptop_table : React.lazy(()=>import('../Pages/MenuPages/Computer_Items/LaptopTable')),
+  pend_drive : React.lazy(()=>import('../Pages/MenuPages/Computer_Items/PenDrive')),
 
   //mobile accessories pages
   charger : React.lazy(()=>import('../Pages/MenuPages/Mobile_Accessories/Charger')),

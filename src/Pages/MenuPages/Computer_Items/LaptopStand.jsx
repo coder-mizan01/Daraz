@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 //components
 import CategoryPage from '../../../Component/CategoryPage';
 
-const Laptop_stands = () => {
+const LaptopStand = () => {
         //receive productsObj from allproducts by useSelector
         const productsObj = useSelector((state) => state.allproduct);
 
@@ -22,4 +22,4 @@ const Laptop_stands = () => {
   )
 }
 
-export default Laptop_stands
+export default LaptopStand

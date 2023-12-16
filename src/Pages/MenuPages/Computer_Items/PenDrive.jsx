@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 //components
 import CategoryPage from '../../../Component/CategoryPage';
 
-const Pen_drive = () => {
+const PenDrive = () => {
       //receive productsObj from allproducts by useSelector
       const productsObj = useSelector((state) => state.allproduct);
 
@@ -22,4 +22,4 @@ const Pen_drive = () => {
   )
 }
 
-export default Pen_drive
+export default PenDrive

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 //components
 import CategoryPage from '../../../Component/CategoryPage';
 
-export const Computer_glass = () => {
+export const ComputerGlass = () => {
 //receive productsObj from allproducts by useSelector
 const productsObj = useSelector((state) => state.allproduct);
 
@@ -24,4 +24,4 @@ const { loading, products, error } = productsObj;
   )
 }
 
-export default Computer_glass;
+export default ComputerGlass;

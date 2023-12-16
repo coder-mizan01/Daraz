@@ -4,22 +4,22 @@ import { useSelector } from "react-redux";
 //components
 import CategoryPage from '../../../Component/CategoryPage';
 
-const Gaming_controller = () => {
+const LaptopTable = () => {
       //receive productsObj from allproducts by useSelector
       const productsObj = useSelector((state) => state.allproduct);
 
       //destructure property from object
       const { loading, products, error } = productsObj;
     
-      //filter mouse from products
-       let gaming_controller = products.filter((pro)=>{
-        return pro.subcategory === "gaming_controller";
+      //filter laptop_table from products
+       let laptop_table = products.filter((pro)=>{
+        return pro.subcategory === "laptop_table";
        })
   return (
     <>
-    <CategoryPage products={gaming_controller} />
+    <CategoryPage products={laptop_table} />
        </>
   )
 }
 
-export default Gaming_controller
+export default LaptopTable
