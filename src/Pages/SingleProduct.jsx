@@ -3,8 +3,6 @@ import config from "../config.json";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-//global hooks
-//import { GlobalCartHook } from "../Context/CartContext";
 
 //css
 import "../CSS/SingleProduct.css";
@@ -40,7 +38,7 @@ const SingleProduct = () => {
   const QuantityofProduct = useSelector((state)=> state.productquantitycounter.count)
 
   //get the cart value 
-  const Cart = useSelector((state)=> state.cart.Cart);
+  const Cart = useSelector((state)=> state.cart.Cart);  
 
 
   //get the cart value
@@ -55,26 +53,45 @@ const SingleProduct = () => {
     }
   }, [SingleProduct, Cart])
 
+  //check if the single product is not null then destructure the SingleProduct object
+  if(SingleProduct !== null){
+    var {_id,title,description,subcategory,subcategory,category,price,brand,quantity} = SingleProduct;
+
+  }
+
+//
+var originalDescription = SingleProduct && SingleProduct.description ? SingleProduct.description : "";
+    // Replace '/' with '\n' for line breaks
+    var stringWithBreaks = originalDescription.replace(/\//g, '\n');  
+    console.log(stringWithBreaks);
+  
+    // Split the string into an array based on the newline character
+    var arrayOfStrings = stringWithBreaks.split('\n');
+  
+    // Remove any empty strings from the array
+   var arrayOfStrings = arrayOfStrings.filter((str) => str.trim() !== '');
+    console.log(arrayOfStrings);
   return (
     <>
       {SingleProduct !== null ? (
+         
         <div id="Single-Product-Page">
           <div className="Single-Product">
-            <Images SingleProduct={SingleProduct} />
+            <Images id={_id} />
 
             <div className="Single-Product-Details">
-              <p className="title">{SingleProduct.title}</p>
+              <p className="title">{title}</p>
               <p className="brand">
                 {" "}
-                brand: {SingleProduct.brand} | more product from{" "}
+                brand: {brand} | more product from{" "}
 
               </p>
-              <p>{SingleProduct.subcategory}</p>
+              <p>{subcategory}</p>
               <p className="sub-category">
                 {" "}
-                category : <Link to="/">{SingleProduct.category}</Link>
+               category : <Link to="/">{category}</Link>
               </p>
-              <p> in stock : {SingleProduct.quantity} pice</p>
+              <p> in stock : {quantity} pice</p>
               <p className="star">
                 {" "}
                 <AiFillStar />
@@ -82,11 +99,8 @@ const SingleProduct = () => {
                 <AiFillStar />
                 <AiOutlineStar />{" "}
               </p>
-              <p className="discount-price">TK. {SingleProduct.price}</p>
-              <p className="price">
-                {" "}
-                <del> 210</del> -52%
-              </p>
+              <p className="discount-price">TK. {price}</p>
+
               <hr />
               <div className="quantity">
                 <p> Quantity : </p> <Quantity />
@@ -112,6 +126,13 @@ const SingleProduct = () => {
       ) : (
         <p>..Loading</p>
       )}
+       
+      <div className="specification">
+        <h5>specificantion:</h5>
+        {arrayOfStrings.map((a,i)=>{
+          return <p key={i}>*{a}</p>
+        })}
+      </div>
     </>
   );
 };

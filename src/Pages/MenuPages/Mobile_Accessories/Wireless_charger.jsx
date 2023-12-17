@@ -13,7 +13,7 @@ const Wireless_charger = () => {
     
       //filter wireless_charger from products
        let wireless_charger = products.filter((pro)=>{
-        return pro.subcategory === "mowireless_chargeruse";
+        return pro.subcategory === "wireless_charger";
        })
   return (
     <>

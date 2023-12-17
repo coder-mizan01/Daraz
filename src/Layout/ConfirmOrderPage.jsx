@@ -125,11 +125,11 @@ const ConfirmOrderPage = () => {
               required
             />
 
-           <div className={style.payment_methods}>
+          {/* <div className={style.payment_methods}>
               <div> <img className={style.cod_img} src="cod.jpg" alt="" /></div>
              <div> <img className={style.bkash_img} src="bkash.png" alt="" /></div>
              <div> <img className={style.nagad_img} src="nagad.png" alt="" /></div>
-          </div>
+                  </div>*/}
 
 
           <div className={style.check_terms_And_confirm_btn}>

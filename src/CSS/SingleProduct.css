@@ -32,6 +32,10 @@
 .Single-Product-Details p{
     margin: 8px 5px;
 }
+.Single-Product-Details a{
+    text-decoration: none;
+}
+
 .Single-Product-Details .title{
     color: #222836;;
     font-size: 1.8rem;
@@ -107,6 +111,13 @@ hr{
     background: #222836;
   }
 
+
+  .specification{
+    background-color: #FFFFFF;
+    padding: 10px;
+    width: 90%;
+    margin: 20px auto;
+  }
 
 
 @media(max-width:1168px){

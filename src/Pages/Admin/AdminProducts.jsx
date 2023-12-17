@@ -76,7 +76,7 @@ const Products = () => {
           
           </div>
         </div>
-      }) : "loading"}
+      }) : "loading..."}
     </div>
   )
 }

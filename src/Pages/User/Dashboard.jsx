@@ -3,7 +3,7 @@ import React from "react";
 import { useSelector , useDispatch} from "react-redux";
 import {removeUser} from "../../Redux/Authentication";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,Link } from "react-router-dom";
 
 import "../../CSS/Dashboard.css"
 
@@ -23,8 +23,7 @@ const Dashboard = () => {
     navigate('/')
   }
 
-
-
+ 
   return (
     <>
       {Authentication?.user !== null ? (
@@ -67,7 +66,9 @@ const Dashboard = () => {
                 
                 <h3> Email : {Authentication?.email}</h3>
                 <h3> Pass : {Authentication?.password}</h3>
-                <p style={{cursor:'pointer',textDecoration:'underline'}} onClick={()=>alert('feauter will updated')}>edit your details</p>
+                
+                {Authentication?.role === 1 && <Link to='/admin/dashboard'>go to super dashboard</Link>}
+                <p style={{cursor:'pointer',textDecoration:'underline'}} onClick={()=>alert('feauter will be updated')}>edit your details</p>
                 </>
               </div>
               <div className="tab-pane fade" id="orders-tab-pane" role="tabpanel" aria-labelledby="orders-tab" tabIndex={0}><><h2>you have no order yet</h2></></div>

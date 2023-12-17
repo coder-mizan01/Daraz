@@ -11,13 +11,13 @@ const PenDrive = () => {
       //destructure property from object
       const { loading, products, error } = productsObj;
     
-      //filter mouse from products
-       let Mouse = products.filter((pro)=>{
-        return pro.subcategory === "mouse";
+      //filter pen_drive from products
+       let pen_drive = products.filter((pro)=>{
+        return pro.subcategory === "pen_drive";
        })
   return (
     <>
-    <CategoryPage products={Mouse} />
+    <CategoryPage products={pen_drive} />
        </>
   )
 }

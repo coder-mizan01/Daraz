@@ -97,7 +97,7 @@ const [selectedOption , setSelectedOption] = useState("");
                       <AiFillStar />
                       <AiOutlineStar /> 
                     </p>
-                    <p className="price">৳{price}</p>
+                    <p className="price">Tk.{price}</p>
                     
                   </div>
 

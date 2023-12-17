@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import axios from "axios";
-import config from "../../config.json"
+import config from "../../config.json";
+
+//categories
+import { categories } from "../../Component/Categories";
 
 const CreateProduct = () => {
+  //All states of this page
   const [category, setCategory] = useState("");
   const [subcategory, setSubCategory] = useState("");
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
   const [photo, setPhoto] = useState("");
   const [price, setPrice] = useState("");
-  const [brand,setBrand] = useState("");
+  const [brand, setBrand] = useState("");
   const [quantity, setQuantity] = useState("");
-  const [model,setModel]= useState("");
+  const [model, setModel] = useState("");
+  const [description,setDescription] = useState("");
+  const [Category_Wise_Subcategory, setCategory_Wise_Subcategory] =useState("");
 
-
-   
-
+  //post api function for create product
   const handleCreateProduct = async (e) => {
     e.preventDefault();
     try {
@@ -27,14 +30,14 @@ const CreateProduct = () => {
       productData.append("photo", photo);
       productData.append("category", category);
       productData.append("subcategory", subcategory);
-      productData.append("brand",brand);
-      productData.append("model",model);
+      productData.append("brand", brand);
+      productData.append("model", model);
       const { data } = await axios.post(
         `${config.apiUrl}/api/product/create-product`,
         productData
       );
       if (data?.success) {
-         alert('product is creatd');
+        alert("product is creatd");
       } else {
         console.log(data.message);
       }
@@ -43,10 +46,16 @@ const CreateProduct = () => {
     }
   };
 
+  //handleCategory fun for set value of category and category_wise_subcategory
+  const handleCategory = (e) => {
+    setCategory(e.target.value);
+    setCategory_Wise_Subcategory(e.target.value);
+  };
 
+
+ console.log(subcategory);
   return (
     <>
-
       <div className="mt-3">
         <label className="btn btn-outline-secondary col-md-12">
           {photo ? photo.name : "upload photo"}
@@ -72,36 +81,52 @@ const CreateProduct = () => {
         )}
       </div>
 
+      <select
+        className="w-100 mt-3 p-2"
+        name=""
+        id=""
+        onChange={handleCategory}
+      >
+        {Object.keys(categories).map((c, i) => {
+          return (
+            <option key={i} value={c}>
+              {c}
+            </option>
+          );
+        })}
+      </select>
+
+      <select
+        className="w-100 p-2 mt-3"
+        name=""
+        id=""
+        onChange={(e) => {
+          setSubCategory(e.target.value);
+        }}
+        required
+      >
+        {categories[Category_Wise_Subcategory] !== undefined &&
+          categories[Category_Wise_Subcategory].map((subc, i) => {
+            return (
+              <option key={i} value={subc}>
+                {subc}
+              </option>
+            );
+          })}
+      </select>
+
+      
       <div className="mt-3">
         <input
           type="text"
-          value={category}
-          placeholder="write a category"
+          value={title}
+          placeholder="write a title"
           className="form-control w-100"
-          onChange={(e) => setCategory(e.target.value)}
+          onChange={(e) => setTitle(e.target.value)}
         />
       </div>
 
-      <div className="mt-3">
-        <input
-          type="text"
-          value={subcategory}
-          placeholder="write a subcategory"
-          className="form-control w-100"
-          onChange={(e) => setSubCategory(e.target.value)}
-        />
-      </div>
-
-      <div className="mt-3">
-        <input
-          type="text"
-          value={brand}
-          placeholder="write a brand"
-          className="form-control w-100"
-          onChange={(e) => setBrand(e.target.value)}
-        />
-      </div>
-
+      
       <div className="mt-3">
         <input
           type="text"
@@ -115,22 +140,24 @@ const CreateProduct = () => {
       <div className="mt-3">
         <input
           type="text"
-          value={title}
-          placeholder="write a title"
+          value={brand}
+          placeholder="write a brand"
           className="form-control w-100"
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={(e) => setBrand(e.target.value)}
         />
       </div>
 
-      <div className="mt-3">
-        <input
+
+      <div className="mt-3 ">
+        <textarea
           type="text"
           value={description}
-          placeholder="write a description"
+          placeholder="write a description "
           className="form-control w-100"
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
+
 
       <div className="mt-3">
         <input
@@ -142,7 +169,6 @@ const CreateProduct = () => {
         />
       </div>
 
-
       <div className="mt-3">
         <input
           type="number"
@@ -153,15 +179,11 @@ const CreateProduct = () => {
         />
       </div>
 
-      
-
       <div className="mt-3">
-      <button className="btn btn-primary" onClick={handleCreateProduct}>
-                  CREATE PRODUCT
-                </button>
+        <button className="btn btn-primary" onClick={handleCreateProduct}>
+          CREATE PRODUCT
+        </button>
       </div>
-
-
     </>
   );
 };
