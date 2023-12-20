@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+
 import { Link } from "react-router-dom";
 
 import config from "../config.json";
@@ -10,6 +11,7 @@ import "../CSS/Products.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 //component
 import AddToCart from "../Component/AddToCart";
 
@@ -18,25 +20,24 @@ import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar,faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 
-//
-import { useSelector } from "react-redux";
+//loader
 import Spinner from "../Component/Spinner";
 
-const ElectronicSlide = () => {
-  
+import { useSelector } from 'react-redux';
+
+const Mobile_Accessories = () => {
+ 
   //receive productsObj from allproducts by useSelector
   const productsObj = useSelector((state)=> state.allproduct);
-
+    
   //destructure property from object
    const {loading , products , error} = productsObj;
 
-  let productQuantity;
-
-  //filter electronics products
-  let electronicProducts;
-  electronicProducts = products.filter((pro) => {
-    return pro.category === "electronic-accessories";
-  });
+    
+    let mobile_accessories = products.filter((pro)=>{
+        return pro.category === "mobile_accessories"
+    })
+    let productQuantity;
 
   //make custone next arrow
   function SampleNextArrow(props) {
@@ -61,7 +62,7 @@ const ElectronicSlide = () => {
       />
     );
   }
-
+ 
   var settings = {
     dots: false,
     infinite: false,
@@ -117,42 +118,39 @@ const ElectronicSlide = () => {
           slidesToScroll: 1,
           dots: false,
           infinit : true,
-        },
-      },
-      {
-        breakpoint: 430,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: false,
-          infinit : true,
-        },
-      },
+      }
+    },
+    {
+      breakpoint: 430,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        infinit : true,
+      }
+    },
       {
         breakpoint: 300,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots: false,
-          infinit:true,
         },
       },
     ],
   };
 
+
   return (
     <>
-      <div className="slide-header">
-         <h2>Electronic Slide</h2>
-         <Link className="button buttontext">See All</Link>
+          <div className="slide-header">
+         <h2>{mobile_accessories[0] !== undefined && mobile_accessories[0].category}</h2>
+         <Link to={``} className="button buttontext">See All</Link>
       </div>
-
-      <Slider {...settings} className="">
-   
-        {electronicProducts.length > 0 ? (
-          electronicProducts.map((pro) => {
+  <Slider {...settings} className="">
+        {mobile_accessories.length > 0 ? (
+          mobile_accessories.map((pro) => {
             const { title, slug, price, _id } = pro;
-   
             return (
               <div key={_id} className="product">
                 <Link to={`/SingleProduct/${slug}`}>
@@ -171,13 +169,12 @@ const ElectronicSlide = () => {
                 </Link>
 
                 <div className="addcart">
-                  <p className="price">${price}</p>
+                <p className="price">Tk.{price}</p>
                   <AddToCart
                     product={pro}
                     name={"+add"}
                     quantity={productQuantity}
                   />
-
                 </div>
               </div>
             );
@@ -186,10 +183,8 @@ const ElectronicSlide = () => {
           <Spinner />
         )}
       </Slider>
-
-
     </>
-  );
-};
+  )
+}
 
-export default ElectronicSlide;
+export default Mobile_Accessories

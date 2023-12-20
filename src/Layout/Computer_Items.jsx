@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from "react";
 import { Link } from "react-router-dom";
 
 import config from "../config.json";
@@ -11,7 +10,6 @@ import "../CSS/Products.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 //component
 import AddToCart from "../Component/AddToCart";
 
@@ -20,24 +18,25 @@ import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar,faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 
-//loader
+//
+import { useSelector } from "react-redux";
 import Spinner from "../Component/Spinner";
 
-import { useSelector } from 'react-redux';
-
-const MensFashionSlide = () => {
- 
+const Computer_Items = () => {
+  
   //receive productsObj from allproducts by useSelector
   const productsObj = useSelector((state)=> state.allproduct);
-    
+
   //destructure property from object
    const {loading , products , error} = productsObj;
 
-    
-    let MensFashionPro = products.filter((pro)=>{
-        return pro.category === "mens-fashion"
-    })
-    let productQuantity;
+  let productQuantity;
+
+  //filter electronics products
+  let computer_items;
+  computer_items = products.filter((pro) => {
+    return pro.category === "computer_items";
+  });
 
   //make custone next arrow
   function SampleNextArrow(props) {
@@ -62,13 +61,13 @@ const MensFashionSlide = () => {
       />
     );
   }
- 
+
   var settings = {
     dots: false,
     infinite: false,
-    speed: 500,
+    speed: 800,
     slidesToShow: 5,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     initialSlide: 0,
     prevArrow: <SamplePrevArrow />,
     nextArrow: <SampleNextArrow />,
@@ -118,39 +117,43 @@ const MensFashionSlide = () => {
           slidesToScroll: 1,
           dots: false,
           infinit : true,
-      }
-    },
-    {
-      breakpoint: 430,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false,
-        infinit : true,
-      }
-    },
+        },
+      },
+      {
+        breakpoint: 430,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+          infinit : true,
+        },
+      },
       {
         breakpoint: 300,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots: false,
+          infinit:true,
         },
       },
     ],
   };
-
+  console.log(computer_items);
 
   return (
     <>
-          <div className="slide-header">
-         <h2>Fashion Slide</h2>
+      <div className="slide-header">
+         <h2>{computer_items[0] !== undefined && computer_items[0].category}</h2>
          <Link className="button buttontext">See All</Link>
       </div>
-  <Slider {...settings} className="">
-        {MensFashionPro.length > 0 ? (
-          MensFashionPro.map((pro) => {
-            const { title, slug, description, price, _id } = pro;
+
+      <Slider {...settings} className="">
+   
+        {computer_items.length > 0 ? (
+          computer_items.map((pro) => {
+            const { title, slug, price, _id } = pro;
+   
             return (
               <div key={_id} className="product">
                 <Link to={`/SingleProduct/${slug}`}>
@@ -169,12 +172,13 @@ const MensFashionSlide = () => {
                 </Link>
 
                 <div className="addcart">
-                <p className="price">${price}</p>
+                  <p className="price">Tk.{price}</p>
                   <AddToCart
                     product={pro}
                     name={"+add"}
                     quantity={productQuantity}
                   />
+
                 </div>
               </div>
             );
@@ -183,8 +187,10 @@ const MensFashionSlide = () => {
           <Spinner />
         )}
       </Slider>
-    </>
-  )
-}
 
-export default MensFashionSlide
+
+    </>
+  );
+};
+
+export default Computer_Items;

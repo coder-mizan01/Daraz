@@ -1,16 +1,18 @@
 import React from "react";
 import Cover from "../Layout/Cover";
 
-//components
-import ElectronicSlide from "../Layout/ElectronicSlide";
-import MensFashionSlide from "../Layout/MensFashionSlide";
+//Layout
+import Computer_Items from "../Layout/Computer_Items";
+import Headphone_Items from "../Layout/Headphone_Items";
+import Mobile_Accessories from "../Layout/Mobile_Accessories";
 
 const Home = () => {
   return (
    <>
   <Cover />
-  <ElectronicSlide />
-  <MensFashionSlide />
+  <Computer_Items />
+  <Headphone_Items />
+  <Mobile_Accessories />
 
   </> 
 

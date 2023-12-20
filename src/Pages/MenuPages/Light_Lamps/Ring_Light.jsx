@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from "react-redux";
 
-//components
+//components  
 import CategoryPage from '../../../Component/CategoryPage';
 
 const Ring_Light = () => {
