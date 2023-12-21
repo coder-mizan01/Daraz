@@ -95,7 +95,7 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
             {Object.keys(categories).map((category,i)=>{
              
              return  <li key={i}>
-              <NavLink to="/">
+              <NavLink to={`/${category}`}>
                 <FontAwesomeIcon icon={iconArr[i]}/>{category}{" "}
               </NavLink>
               <ul className={styles.dropdown}>
@@ -110,10 +110,6 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
               </ul>
             </li>
             })}
-           
-
-
-
           </ul>
         </div>
       </div>

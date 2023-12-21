@@ -16,8 +16,8 @@
     text-align: center;
 }
 .Images img{
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
 }
 .thumbnails{
     text-align: start;
@@ -28,7 +28,9 @@
     border: 1px solid rgba(36, 20, 20, 0.6);
     margin: 8px 0px 0px 0px;
 }
-
+.Single-Product-Details{
+    margin-left: 60px;
+}
 .Single-Product-Details p{
     margin: 8px 5px;
 }
@@ -141,12 +143,14 @@ hr{
     .Single-Product{
         grid-template-columns: 1fr;
     }
+    .Single-Product-Details{
+        margin-left: 0px;
+    }
     .other-Information{
         display: none;
     }
 
     .thumbnails .thumb-img{
-    
         width: 50px;
         height: 50px;
     }

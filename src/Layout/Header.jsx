@@ -63,7 +63,7 @@ const Header = () => {
     setOnSrollMenuBar(false);
   };
 
-console.log(onScrollMenuBar);
+
   return (
     <>
       <section id={`${scrolling ? HeaderCSS.sticky : HeaderCSS.header}`}  >

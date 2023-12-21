@@ -2,17 +2,17 @@ import React from "react";
 import Cover from "../Layout/Cover";
 
 //Layout
-import Computer_Items from "../Layout/Computer_Items";
-import Headphone_Items from "../Layout/Headphone_Items";
-import Mobile_Accessories from "../Layout/Mobile_Accessories";
+import Home_Computer_Items_ from "../Layout/Home_Computer_Items_";
+import Home_Headphone_Items from "../Layout/Home_Headphone_Items";
+import Home_Mobile_Accessories from "../Layout/Home_Mobile_Accessories";
 
 const Home = () => {
   return (
    <>
   <Cover />
-  <Computer_Items />
-  <Headphone_Items />
-  <Mobile_Accessories />
+  <Home_Computer_Items_ />
+  <Home_Headphone_Items />
+  <Home_Mobile_Accessories />
 
   </> 
 

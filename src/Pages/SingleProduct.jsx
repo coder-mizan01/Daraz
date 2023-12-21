@@ -18,6 +18,7 @@ import AddToCart from "../Component/AddToCart";
 //redux
 import { useSelector, useDispatch } from "react-redux";
 import { getSingleProduct } from "../Redux/SingleProduct";
+import Spinner from "../Component/Spinner";
 
 const SingleProduct = () => {
 
@@ -63,19 +64,18 @@ const SingleProduct = () => {
 var originalDescription = SingleProduct && SingleProduct.description ? SingleProduct.description : "";
     // Replace '/' with '\n' for line breaks
     var stringWithBreaks = originalDescription.replace(/\//g, '\n');  
-    console.log(stringWithBreaks);
+
   
     // Split the string into an array based on the newline character
     var arrayOfStrings = stringWithBreaks.split('\n');
   
     // Remove any empty strings from the array
    var arrayOfStrings = arrayOfStrings.filter((str) => str.trim() !== '');
-    console.log(arrayOfStrings);
+
   return (
     <>
-      {SingleProduct !== null ? (
-         
-        <div id="Single-Product-Page">
+    {loading ? <Spinner /> : 
+    <div id="Single-Product-Page">
           <div className="Single-Product">
             <Images id={_id} />
 
@@ -86,11 +86,8 @@ var originalDescription = SingleProduct && SingleProduct.description ? SinglePro
                 brand: {brand} | more product from{" "}
 
               </p>
-              <p>{subcategory}</p>
-              <p className="sub-category">
-                {" "}
-               category : <Link to="/">{category}</Link>
-              </p>
+              <p>see more: <Link to={`/${category}/${subcategory}`}>{subcategory}</Link></p>
+
               <p> in stock : {quantity} pice</p>
               <p className="star">
                 {" "}
@@ -113,26 +110,23 @@ var originalDescription = SingleProduct && SingleProduct.description ? SinglePro
                   </Link>
                 ) : (
                   <AddToCart 
-                  product={SingleProduct}
+                  product={{_id,title,description,subcategory,category,price,brand,quantity}}
                   quantity={QuantityofProduct}
-                  name={"Add TO Cart"}
+                  name={"Add To Cart"}
                 />
                 )
                }
               </div>
             </div>
           </div>
-        </div>
-      ) : (
-        <p>..Loading</p>
-      )}
-       
-      <div className="specification">
+        </div> }
+
+      {loading ? <Spinner /> : <div className="specification">
         <h5>specificantion:</h5>
         {arrayOfStrings.map((a,i)=>{
           return <p key={i}>*{a}</p>
         })}
-      </div>
+      </div>}
     </>
   );
 };

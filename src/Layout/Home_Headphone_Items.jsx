@@ -35,8 +35,10 @@ const Headphone_Items = () => {
   //filter electronics products
   let headphone_items;
   headphone_items = products.filter((pro) => {
-    return pro.category === "headphone_items";
+    return pro.category === "headphone_items" ;
   });
+
+  
 
   //make custone next arrow
   function SampleNextArrow(props) {
@@ -67,7 +69,7 @@ const Headphone_Items = () => {
     infinite: false,
     speed: 800,
     slidesToShow: 5,
-    slidesToScroll: 2,
+    slidesToScroll: 5,
     initialSlide: 0,
     prevArrow: <SamplePrevArrow />,
     nextArrow: <SampleNextArrow />,
@@ -150,7 +152,7 @@ const Headphone_Items = () => {
       <Slider {...settings} className="">
    
         {headphone_items.length > 0 ? (
-          headphone_items.map((pro) => {
+          headphone_items.slice(0,14).map((pro) => {
             const { title, slug, price, _id } = pro;
    
             return (

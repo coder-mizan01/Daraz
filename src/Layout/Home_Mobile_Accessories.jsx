@@ -66,9 +66,9 @@ const Mobile_Accessories = () => {
   var settings = {
     dots: false,
     infinite: false,
-    speed: 500,
+    speed: 800,
     slidesToShow: 5,
-    slidesToScroll: 1,
+    slidesToScroll: 5,
     initialSlide: 0,
     prevArrow: <SamplePrevArrow />,
     nextArrow: <SampleNextArrow />,
@@ -140,12 +140,13 @@ const Mobile_Accessories = () => {
     ],
   };
 
-
+ //destructure the value 
+  const {category} = mobile_accessories[0] !== undefined && mobile_accessories[0]
   return (
     <>
           <div className="slide-header">
-         <h2>{mobile_accessories[0] !== undefined && mobile_accessories[0].category}</h2>
-         <Link to={``} className="button buttontext">See All</Link>
+         <h2>{category}</h2>
+         <Link className="button buttontext" to={`/${category}`}>See All</Link>
       </div>
   <Slider {...settings} className="">
         {mobile_accessories.length > 0 ? (

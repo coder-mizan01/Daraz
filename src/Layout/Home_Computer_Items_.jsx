@@ -67,8 +67,8 @@ const Computer_Items = () => {
     infinite: false,
     speed: 800,
     slidesToShow: 5,
-    slidesToScroll: 2,
-    initialSlide: 0,
+    slidesToScroll: 5,
+    initialSlide: 20,
     prevArrow: <SamplePrevArrow />,
     nextArrow: <SampleNextArrow />,
     responsive: [
@@ -77,6 +77,7 @@ const Computer_Items = () => {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
+          speed: 800,
           infinite: true,
           dots: false,
         },
@@ -139,19 +140,21 @@ const Computer_Items = () => {
       },
     ],
   };
-  console.log(computer_items);
+
+   //destructure the values
+   const {category} = computer_items[0] !== undefined && computer_items[0]; 
 
   return (
     <>
       <div className="slide-header">
-         <h2>{computer_items[0] !== undefined && computer_items[0].category}</h2>
-         <Link className="button buttontext">See All</Link>
+         <h2>{category}</h2>
+         <Link className="button buttontext" to={`/${category}`}>See All</Link>
       </div>
 
       <Slider {...settings} className="">
    
         {computer_items.length > 0 ? (
-          computer_items.map((pro) => {
+          computer_items.slice(0,14).map((pro) => {
             const { title, slug, price, _id } = pro;
    
             return (
