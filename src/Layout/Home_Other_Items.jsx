@@ -22,7 +22,7 @@ import { faStar,faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from "react-redux";
 import Spinner from "../Component/Spinner";
 
-const Home_Computer_Items = () => {
+const Home_Other_Items = () => {
 
   //make custone next arrow
   function SampleNextArrow(props) {
@@ -86,7 +86,7 @@ const Home_Computer_Items = () => {
           initialSlide: 1,
           speed: 800,
           dots: false,
-          infinite: true,
+          infinite: false,
         },
       },
       {
@@ -133,24 +133,24 @@ const Home_Computer_Items = () => {
     ],
   };
      
+    
   //receive productsObj from allproducts by useSelector
   const productsObj = useSelector((state)=> state.allproduct);
 
   //destructure property from object
    const {loading , products , error} = productsObj;
-
   
    //declare productquantity variable
-   let productQuantity;
+  let productQuantity;
 
-  //filter electronics products
-  let computer_items;
-  computer_items = products.filter((pro) => {
-    return pro.category === "computer_items" ;
+  //filter other_items from products
+  let other_items;
+  other_items = products.filter((pro) => {
+    return pro.category === "other_items";
   });
- 
-  //
-  let {category} = computer_items[0] !== undefined && computer_items[0]
+
+  //destructure the values
+  let {category} = other_items[0] !== undefined && other_items[0]
   return (
     <>
       <div className="slide-header">
@@ -160,8 +160,8 @@ const Home_Computer_Items = () => {
 
       <Slider {...settings} className="">
    
-        {computer_items.length > 0 ? (
-          computer_items.reverse().slice(0,14).map((pro) => {
+        {other_items.length > 0 ? (
+          other_items.map((pro) => {
             const { title, slug, price, _id } = pro;
    
             return (
@@ -203,4 +203,4 @@ const Home_Computer_Items = () => {
   );
 };
 
-export default Home_Computer_Items;
+export default Home_Other_Items;

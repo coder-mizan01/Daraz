@@ -15,7 +15,8 @@ const CreateProduct = () => {
   const [brand, setBrand] = useState("");
   const [quantity, setQuantity] = useState("");
   const [model, setModel] = useState("");
-  const [description,setDescription] = useState("");
+  const [specification_property,setSpecification_property] = useState("");
+  const [specification_value,setSpecification_value] = useState("")
   const [Category_Wise_Subcategory, setCategory_Wise_Subcategory] =useState("");
 
   //post api function for create product
@@ -24,7 +25,8 @@ const CreateProduct = () => {
     try {
       const productData = new FormData();
       productData.append("title", title);
-      productData.append("description", description);
+      productData.append("specification_property", specification_property);
+      productData.append("specification_value", specification_value);
       productData.append("price", price);
       productData.append("quantity", quantity);
       productData.append("photo", photo);
@@ -149,12 +151,24 @@ const CreateProduct = () => {
 
 
       <div className="mt-3 ">
+        <textarea 
+
+          type="text"
+          value={specification_property}
+          placeholder="write specifications"
+          className="form-control w-100"
+          onChange={(e) => setSpecification_property(e.target.value)}
+        />
+      </div>
+
+      
+      <div className="mt-3 ">
         <textarea
           type="text"
-          value={description}
-          placeholder="write a description "
+          value={specification_value}
+          placeholder="write specification value"
           className="form-control w-100"
-          onChange={(e) => setDescription(e.target.value)}
+          onChange={(e) => setSpecification_value(e.target.value)}
         />
       </div>
 

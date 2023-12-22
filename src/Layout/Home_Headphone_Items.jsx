@@ -23,22 +23,6 @@ import { useSelector } from "react-redux";
 import Spinner from "../Component/Spinner";
 
 const Headphone_Items = () => {
-  
-  //receive productsObj from allproducts by useSelector
-  const productsObj = useSelector((state)=> state.allproduct);
-
-  //destructure property from object
-   const {loading , products , error} = productsObj;
-
-  let productQuantity;
-
-  //filter electronics products
-  let headphone_items;
-  headphone_items = products.filter((pro) => {
-    return pro.category === "headphone_items" ;
-  });
-
-  
 
   //make custone next arrow
   function SampleNextArrow(props) {
@@ -78,8 +62,9 @@ const Headphone_Items = () => {
         breakpoint: 1115,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 1,
-          infinite: true,
+          slidesToScroll: 4,
+          infinite: false,
+          speed: 800,
           dots: false,
         },
       },
@@ -87,8 +72,9 @@ const Headphone_Items = () => {
         breakpoint: 990,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
+          slidesToScroll: 3,
+          speed: 800,
+          infinite: false,
           dots: false,
         },
       },
@@ -96,29 +82,32 @@ const Headphone_Items = () => {
         breakpoint: 768,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToScroll: 3,
           initialSlide: 1,
+          speed: 800,
           dots: false,
-          infinite: true,
+          infinite: false,
         },
       },
       {
        breakpoint : 670,
        settings: {
         slidesToShow : 2,
-        slidesToScroll : 1,
+        slidesToScroll : 2,
         initialSlide : 1,
+        speed: 800,
         dots : false,
-        infinit : true,
+        infinit : false,
        }
       },
       {
         breakpoint: 500,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
+          speed: 800,
           dots: false,
-          infinit : true,
+          infinit : false,
         },
       },
       {
@@ -126,8 +115,9 @@ const Headphone_Items = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          speed: 800,
           dots: false,
-          infinit : true,
+          infinit : false,
         },
       },
       {
@@ -135,18 +125,38 @@ const Headphone_Items = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          speed: 800,
           dots: false,
-          infinit:true,
+          infinit:false,
         },
       },
     ],
   };
+     
+     
+  //receive productsObj from allproducts by useSelector
+  const productsObj = useSelector((state)=> state.allproduct);
 
+  //destructure property from object
+   const {loading , products , error} = productsObj;
+
+  
+   //declare productquantity variable
+   let productQuantity;
+
+  //filter electronics products
+  let headphone_items;
+  headphone_items = products.filter((pro) => {
+    return pro.category === "headphone_items" ;
+  });
+
+
+  let {category} = headphone_items[0] !== undefined && headphone_items[0]
   return (
     <>
       <div className="slide-header">
-         <h2>{headphone_items[0] !== undefined && headphone_items[0].category}</h2>
-         <Link className="button buttontext">See All</Link>
+         <h2>{category}</h2>
+         <Link  to={`/${category}`} className="button buttontext">See All</Link>
       </div>
 
       <Slider {...settings} className="">

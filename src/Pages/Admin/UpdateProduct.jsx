@@ -18,7 +18,8 @@ const UpdateProduct = () => {
   const [category, setCategory] = useState(item.category);
   const [subcategory, setSubCategory] = useState(item.subcategory);
   const [title, setTitle] = useState(item.title);
-  const [description, setDescription] = useState(item.description);
+  const [specification_property, setSpecification_property] = useState(item.specification_property);
+  const [specification_value,setSpecification_value] = useState(item.specification_value)
   const [price, setPrice] = useState(item.price);
   const [brand, setBrand] = useState(item.brand);
   const [quantity, setQuantity] = useState(item.quantity);
@@ -32,7 +33,7 @@ const UpdateProduct = () => {
         category,
         subcategory,
         title,
-        description,
+        specification_property,
         price,
         brand,
         quantity,
@@ -96,10 +97,16 @@ const UpdateProduct = () => {
         onChange={(e) => setTitle(e.target.value)} value={title} required />
       </div>
 
-      <div className='description-div'>
-        <input type="text" placeholder='write description' 
-        onChange={(e) => setDescription(e.target.value)} value={description} required />
+      <div className='specification_property-div'>
+        <textarea type="text" placeholder='write specification_property' style={{width:'500px',height:'100px'}}
+        onChange={(e) => setSpecification_property(e.target.value)} value={specification_property} required />
       </div>
+
+      <div className='specification_value-div'>
+        <textarea type="text" placeholder='write specification_property' style={{width:'500px',height:'100px'}}
+        onChange={(e) => setSpecification_value(e.target.value)} value={specification_value} required />
+      </div>
+
 
       <div className='price-div'>
         <input type="number" placeholder='write price' 

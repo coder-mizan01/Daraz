@@ -56,12 +56,12 @@ const SingleProduct = () => {
 
   //check if the single product is not null then destructure the SingleProduct object
   if(SingleProduct !== null){
-    var {_id,title,description,subcategory,subcategory,category,price,brand,quantity} = SingleProduct;
-
+    var {_id,title,specification_value,subcategory,subcategory,category,price,brand,quantity} = SingleProduct;
+   console.log(specification_value);
   }
 
 //
-var originalDescription = SingleProduct && SingleProduct.description ? SingleProduct.description : "";
+var originalDescription = SingleProduct && SingleProduct.specification_property ? SingleProduct.specification_property : "";
     // Replace '/' with '\n' for line breaks
     var stringWithBreaks = originalDescription.replace(/\//g, '\n');  
 
@@ -110,7 +110,7 @@ var originalDescription = SingleProduct && SingleProduct.description ? SinglePro
                   </Link>
                 ) : (
                   <AddToCart 
-                  product={{_id,title,description,subcategory,category,price,brand,quantity}}
+                  product={{_id,title,subcategory,category,price,brand,quantity}}
                   quantity={QuantityofProduct}
                   name={"Add To Cart"}
                 />

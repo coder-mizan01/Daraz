@@ -27,17 +27,7 @@ import { useSelector } from 'react-redux';
 
 const Mobile_Accessories = () => {
  
-  //receive productsObj from allproducts by useSelector
-  const productsObj = useSelector((state)=> state.allproduct);
-    
-  //destructure property from object
-   const {loading , products , error} = productsObj;
 
-    
-    let mobile_accessories = products.filter((pro)=>{
-        return pro.category === "mobile_accessories"
-    })
-    let productQuantity;
 
   //make custone next arrow
   function SampleNextArrow(props) {
@@ -77,8 +67,9 @@ const Mobile_Accessories = () => {
         breakpoint: 1115,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 1,
-          infinite: true,
+          slidesToScroll: 4,
+          infinite: false,
+          speed: 800,
           dots: false,
         },
       },
@@ -86,8 +77,9 @@ const Mobile_Accessories = () => {
         breakpoint: 990,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
+          slidesToScroll: 3,
+          speed: 800,
+          infinite: false,
           dots: false,
         },
       },
@@ -95,50 +87,71 @@ const Mobile_Accessories = () => {
         breakpoint: 768,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToScroll: 3,
           initialSlide: 1,
+          speed: 800,
           dots: false,
-          infinite: true,
+          infinite: false,
         },
       },
       {
        breakpoint : 670,
        settings: {
         slidesToShow : 2,
-        slidesToScroll : 1,
+        slidesToScroll : 2,
         initialSlide : 1,
+        speed: 800,
         dots : false,
-        infinit : true,
+        infinit : false,
        }
       },
       {
         breakpoint: 500,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
+          speed: 800,
           dots: false,
-          infinit : true,
-      }
-    },
-    {
-      breakpoint: 430,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false,
-        infinit : true,
-      }
-    },
+          infinit : false,
+        },
+      },
+      {
+        breakpoint: 430,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          speed: 800,
+          dots: false,
+          infinit : false,
+        },
+      },
       {
         breakpoint: 300,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          speed: 800,
           dots: false,
+          infinit:false,
         },
       },
     ],
   };
+     
+
+   //receive productsObj from allproducts by useSelector
+   const productsObj = useSelector((state)=> state.allproduct);
+    
+   //destructure property from object
+    const {loading , products , error} = productsObj;
+ 
+     
+     let mobile_accessories = products.filter((pro)=>{
+         return pro.category === "mobile_accessories"
+     })
+  
+   //declare productquantity variable
+   let productQuantity;
 
  //destructure the value 
   const {category} = mobile_accessories[0] !== undefined && mobile_accessories[0]
