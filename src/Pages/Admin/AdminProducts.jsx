@@ -13,7 +13,7 @@ import config from "../../config.json"
 import "../../CSS/AdminProducts.css"
 import { useEffect } from "react";
 import { useSelector,useDispatch } from "react-redux";
-import { fetchAllProduct } from '../../Redux/AllProducts';
+import  {FetchAllProduct}  from '../../Redux/FetchAllProduct';
 
 
 const Products = () => {
@@ -24,7 +24,7 @@ const Products = () => {
  
   const dispatch = useDispatch();
   useEffect(()=>{
-    dispatch(fetchAllProduct()) 
+    dispatch(FetchAllProduct()) 
   },[])
     //obtain navigate function
    const navigate = useNavigate();

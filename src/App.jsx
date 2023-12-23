@@ -7,14 +7,14 @@ import Router from "./Router/Router.jsx";
 
 //
 import { useSelector , useDispatch } from "react-redux";
-import { fetchAllProduct } from "./Redux/AllProducts.jsx";
+import {FetchAllProduct} from "./Redux/FetchAllProduct.jsx";
 
 function App() {
   
   const dispatch = useDispatch();
 
   useEffect(()=>{
-       dispatch(fetchAllProduct())
+       dispatch(FetchAllProduct())
      },[])
      
   return (

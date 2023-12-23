@@ -34,6 +34,7 @@ const UpdateProduct = () => {
         subcategory,
         title,
         specification_property,
+        specification_value,
         price,
         brand,
         quantity,

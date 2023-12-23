@@ -6,7 +6,7 @@
   import Authentication from "./Redux/Authentication";
 
   //product file
-  import AllProduct from "./Redux/AllProducts";
+  import FetchAllProduct from "./Redux/FetchAllProduct";
 
   //single product
   import SingleProduct from "./Redux/SingleProduct";
@@ -20,7 +20,7 @@ import FilterProduct from "./Redux/FilterProduct";
   const store = configureStore({
     reducer: {
       authentication: Authentication,
-      allproduct: AllProduct,
+      allproduct: FetchAllProduct,
       singleproduct : SingleProduct,
       cart : CartItem,
       productquantitycounter : ProductQuantity,

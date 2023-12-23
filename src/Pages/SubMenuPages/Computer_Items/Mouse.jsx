@@ -17,6 +17,7 @@ const Mouse = () => {
      let Mouse = products.filter((pro)=>{
       return pro.subcategory === "mouse";
      })
+     console.log(Mouse);
   return (
     <>
  <CategoryPage products={Mouse} />

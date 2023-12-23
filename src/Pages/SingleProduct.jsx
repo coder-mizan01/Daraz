@@ -56,10 +56,10 @@ const SingleProduct = () => {
 
   //check if the single product is not null then destructure the SingleProduct object
   if(SingleProduct !== null){
-    var {_id,title,specification_value,subcategory,subcategory,category,price,brand,quantity} = SingleProduct;
-   console.log(specification_value);
+    var {_id,title,specification_property,specification_value,subcategory,subcategory,category,price,brand,quantity} = SingleProduct;
   }
-
+  console.log(specification_property);
+  console.log(specification_value);
 //
 var originalDescription = SingleProduct && SingleProduct.specification_property ? SingleProduct.specification_property : "";
     // Replace '/' with '\n' for line breaks
@@ -71,6 +71,16 @@ var originalDescription = SingleProduct && SingleProduct.specification_property 
   
     // Remove any empty strings from the array
    var arrayOfStrings = arrayOfStrings.filter((str) => str.trim() !== '');
+
+///////////////////////////////
+ var originalValue = SingleProduct && SingleProduct.specification_value ? SingleProduct.specification_value : "";
+    // Replace '/' with '\n' for line breaks
+    var originalValueWithbreak = originalValue.replace(/\//g, '\n'); 
+
+        // Split the string into an array based on the newline character
+        var arrayOfStrings2 = originalValueWithbreak.split('\n');
+
+        var arrayOfStrings2 = arrayOfStrings2.filter((str) => str.trim() !== '');
 
   return (
     <>
@@ -121,12 +131,24 @@ var originalDescription = SingleProduct && SingleProduct.specification_property 
           </div>
         </div> }
 
-      {loading ? <Spinner /> : <div className="specification">
-        <h5>specificantion:</h5>
-        {arrayOfStrings.map((a,i)=>{
-          return <p key={i}>*{a}</p>
-        })}
-      </div>}
+      {loading ? <Spinner /> : 
+      <div className="specification">
+ <h5>specificantion:</h5>
+
+        <table>
+          <tbody> 
+           {arrayOfStrings.map((a,i)=>{
+            return <tr key={i}>
+              <td>{a}</td>
+              <td>{arrayOfStrings2[i]}</td>
+            </tr>
+           })}
+          </tbody>
+        </table>
+        </div>
+
+
+  }
     </>
   );
 };

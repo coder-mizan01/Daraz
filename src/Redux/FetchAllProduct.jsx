@@ -4,7 +4,7 @@ import axios from "axios";
 import config from "../config.json"
 
 
- export const fetchAllProduct = createAsyncThunk("allproduct/fetchAllProduct", async () => {
+ export const FetchAllProduct = createAsyncThunk("allproduct/FetchAllProduct", async () => {
     const res = await axios.get(`${config.apiUrl}/api/product/get-product`);
     return res.data.products;
  });
@@ -16,21 +16,21 @@ import config from "../config.json"
         loading : false,
         products : [],
         error : null,
-    },
+    },   
 
    
    extraReducers : (builder) =>  {
 
-      builder.addCase(fetchAllProduct.pending,(state)=>{
+      builder.addCase(FetchAllProduct.pending,(state)=>{
          state.loading = true
       });
 
-      builder.addCase(fetchAllProduct.fulfilled,(state,action)=> {
+      builder.addCase(FetchAllProduct.fulfilled,(state,action)=> {
          state.loading = false;
          state.products = action.payload;
       });
 
-      builder.addCase(fetchAllProduct.rejected,(state,action)=>{
+      builder.addCase(FetchAllProduct.rejected,(state,action)=>{
          state.loading = false;
          state.products = [];
          state.error = action.payload.error;
