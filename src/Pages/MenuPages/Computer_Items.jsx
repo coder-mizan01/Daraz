@@ -7,15 +7,12 @@ import CategoryPage from '../../Component/CategoryPage';
 
 const Computer_Items = () => {
     //receive productsObj from allproducts by useSelector
-    const productsObj = useSelector((state) => state.allproduct);
+    const productsObj = useSelector((state) => state.computer_products);
 
     //destructure property from object
-    const { loading, products, error } = productsObj;
-  
-    //filter mouse from products
-     let computer_items = products.filter((pro)=>{
-      return pro.category === "computer_items";
-     })
+    const { loading, computer_items, error } = productsObj;
+
+
   return (
     <>
   <CategoryPage products={computer_items} />

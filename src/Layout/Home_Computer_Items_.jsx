@@ -132,25 +132,23 @@ const Home_Computer_Items = () => {
       },
     ],
   };
-     
-  //receive productsObj from allproducts by useSelector
-  const productsObj = useSelector((state)=> state.allproduct);
-
-  //destructure property from object
-   const {loading , products , error} = productsObj;
+    
 
   
    //declare productquantity variable
    let productQuantity;
 
-  //filter electronics products
-  let computer_items;
-  computer_items = products.filter((pro) => {
-    return pro.category === "computer_items" ;
-  });
- 
-  //
+  const computer_item_Obj = useSelector((state)=> state.computer_products)
+
+  //destructure computer obj
+  let {loading,computer_items} = computer_item_Obj;
+  
+  //destructure category from computer items
   let {category} = computer_items[0] !== undefined && computer_items[0]
+
+  //reverse the copy computer_items
+ const reverse_with_slice = [...computer_items].reverse().slice(0,14);  
+
   return (
     <>
       <div className="slide-header">
@@ -160,9 +158,9 @@ const Home_Computer_Items = () => {
 
       <Slider {...settings} className="">
    
-        {computer_items.length > 0 ? (
-          computer_items.reverse().slice(0,14).map((pro) => {
-            const { title, slug, price, _id } = pro;
+        {loading !== true  ? (
+          reverse_with_slice.map((computer_item) => {
+            const { title, slug, price, _id } = computer_item;
    
             return (
               <div key={_id} className="product">
@@ -170,7 +168,7 @@ const Home_Computer_Items = () => {
                   <div className="product-img">
                     <img
                       className="home-pro-img"
-                      src={`${config.apiUrl}/api/product/product-photo/${pro._id}`}
+                      src={`${config.apiUrl}/api/product/product-photo/${computer_item._id}`}
                       alt=""
                     />
                   </div>
@@ -184,7 +182,7 @@ const Home_Computer_Items = () => {
                 <div className="addcart">
                   <p className="price">Tk.{price}</p>
                   <AddToCart
-                    product={pro}
+                    product={computer_item}
                     name={"+add"}
                     quantity={productQuantity}
                   />
