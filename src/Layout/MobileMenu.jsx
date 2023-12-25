@@ -6,26 +6,43 @@ import { Link, NavLink } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faLightbulb,
+  faMobileScreen,
+  faHeadphones,
+  faWifi,
+  faClock,
   faLaptop,
-  faNotesMedical,
-  faShirt,
-  faBasketShopping,
-  faCarSide,
-  faCouch,
-  faBaseball,
-  faTv,
-  faBaby,
-  faPerson,
+  faVolumeHigh,
+  faBook,
+  faHouse,
+  faPlugCircleBolt,
+  faCircle,
   faGift,
-  faListCheck,
   faChevronDown
-} from "@fortawesome/free-solid-svg-icons";
+} from "@fortawesome/free-solid-svg-icons"; 
 
 //css
-import MobileMenuStyle from "../CSS/MobileMenu.module.css"
+import MobileMenuStyle from "../CSS/MobileMenu.module.css";
+
+//component
+import {categories} from "../Component/Categories"
 
 
 const MobileMenu = () => {
+
+  const iconArr = [
+    faLaptop,
+    faMobileScreen,
+    faHeadphones,
+    faClock,
+    faWifi,
+    faLightbulb,
+    faHouse,
+    faPlugCircleBolt,
+    faVolumeHigh,
+    faBook,
+    faCircle,
+    faGift,]
 
   const [activeDropdown, setActiveDropdown] = useState(null);
 
@@ -35,29 +52,33 @@ const MobileMenu = () => {
 
   return (
     <div className={MobileMenuStyle.mobile_menu}>
-      <ul>
-        <li onClick={() => handleDropdownClick(0)}>
+      <ul>{
+        Object.keys(categories).map((category,i)=>{
+          return <React.Fragment key={i}>
+           <li onClick={() => handleDropdownClick(i)}>
           <NavLink >
-          <FontAwesomeIcon icon={faLaptop} />computer items <FontAwesomeIcon icon={faChevronDown} className={MobileMenuStyle.arrow_icon}  />
+          <FontAwesomeIcon icon={iconArr[i]} />{category}<FontAwesomeIcon icon={faChevronDown} className={MobileMenuStyle.arrow_icon}  />
           </NavLink>
 
           <ul  className={`${
               activeDropdown === 0 ? MobileMenuStyle.active : MobileMenuStyle.dropdown
             }`} >
-            <li>
+            {/*category[i].map((c)=>{
+              return <li>
               <NavLink to="/electronics/smartphones">
                 Smart Phones
               </NavLink>
             </li>
-            <li>
-              <NavLink to="electronics/computer-accessories">
-                ComputerAccessories
-              </NavLink>
-            </li>
+            })*/}
           </ul>
         </li>
+              
+          </React.Fragment>
+        })
+        }
+       
 
-
+  {/*
         <li  onClick={() => handleDropdownClick(1)}> 
               <NavLink >
                 {" "}
@@ -218,7 +239,7 @@ const MobileMenu = () => {
                 <FontAwesomeIcon icon={faChevronDown}   className={MobileMenuStyle.arrow_icon} /> 
               </NavLink>
             </li>
-
+ */}
 
       </ul>
     </div>

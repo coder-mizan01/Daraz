@@ -19,7 +19,7 @@ import AddToCart from "../Component/AddToCart";
 import { useSelector, useDispatch } from "react-redux";
 import { getSingleProduct } from "../Redux/SingleProduct";
 import Spinner from "../Component/Spinner";
-
+  
 const SingleProduct = () => {
 
   const API = `${config.apiUrl}/api/product/get-product`;
@@ -29,7 +29,7 @@ const SingleProduct = () => {
   const { loading, SingleProduct, error } = SingleProductObj;
   const dispatch = useDispatch();
   
-  useEffect(() => {
+    useEffect(() => {
     dispatch(getSingleProduct(`${API}/${slug}`));
     /* eslint-disable-next-line */
   }, []);
@@ -58,29 +58,7 @@ const SingleProduct = () => {
   if(SingleProduct !== null){
     var {_id,title,specification_property,specification_value,subcategory,subcategory,category,price,brand,quantity} = SingleProduct;
   }
-  console.log(specification_property);
-  console.log(specification_value);
-//
-var originalDescription = SingleProduct && SingleProduct.specification_property ? SingleProduct.specification_property : "";
-    // Replace '/' with '\n' for line breaks
-    var stringWithBreaks = originalDescription.replace(/\//g, '\n');  
 
-  
-    // Split the string into an array based on the newline character
-    var arrayOfStrings = stringWithBreaks.split('\n');
-  
-    // Remove any empty strings from the array
-   var arrayOfStrings = arrayOfStrings.filter((str) => str.trim() !== '');
-
-///////////////////////////////
- var originalValue = SingleProduct && SingleProduct.specification_value ? SingleProduct.specification_value : "";
-    // Replace '/' with '\n' for line breaks
-    var originalValueWithbreak = originalValue.replace(/\//g, '\n'); 
-
-        // Split the string into an array based on the newline character
-        var arrayOfStrings2 = originalValueWithbreak.split('\n');
-
-        var arrayOfStrings2 = arrayOfStrings2.filter((str) => str.trim() !== '');
 
   return (
     <>
@@ -131,24 +109,6 @@ var originalDescription = SingleProduct && SingleProduct.specification_property 
           </div>
         </div> }
 
-      {loading ? <Spinner /> : 
-      <div className="specification">
- <h5>specificantion:</h5>
-
-        <table>
-          <tbody> 
-           {arrayOfStrings.map((a,i)=>{
-            return <tr key={i}>
-              <td>{a}</td>
-              <td>{arrayOfStrings2[i]}</td>
-            </tr>
-           })}
-          </tbody>
-        </table>
-        </div>
-
-
-  }
     </>
   );
 };
