@@ -69,7 +69,7 @@ const Header = () => {
       <section id={`${scrolling ? HeaderCSS.sticky : HeaderCSS.header}`}  >
 
       <div className={HeaderCSS.logo}>
-          <a className={HeaderCSS.brand} href="/">A-Z.com</a>
+          <a className={HeaderCSS.brand} href="/">SHOPEE</a>
           {scrolling && <div className={HeaderCSS.scrolling_menu} 
            onClick={()=>{setOnSrollMenuBar(!onScrollMenuBar)}} >
           {onScrollMenuBar ? <FontAwesomeIcon icon={faChevronUp} />  : 

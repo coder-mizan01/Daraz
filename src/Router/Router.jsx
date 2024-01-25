@@ -62,39 +62,24 @@ const dynamicComponents = {
   //compute_items subpages  
   mouse: React.lazy(() => import('../Pages/SubMenuPages/Computer_Items/Mouse')),
   keyboard : React.lazy(()=> import('../Pages/SubMenuPages/Computer_Items/Keyboard')),
-  mouse_pad : React.lazy(()=>import('../Pages/SubMenuPages/Computer_Items/Mouse_pad')),
-  computer_glass : React.lazy(()=>import('../Pages/SubMenuPages/Computer_Items/ComputerGlass')),
-  gaming_controller : React.lazy(()=>import('../Pages/SubMenuPages/Computer_Items/GamingContrller')),
-  laptop_stands : React.lazy(()=>import('../Pages/SubMenuPages/Computer_Items/LaptopStand')),
-  laptop_table : React.lazy(()=>import('../Pages/SubMenuPages/Computer_Items/LaptopTable')),
-  pend_drive : React.lazy(()=>import('../Pages/SubMenuPages/Computer_Items/PenDrive')),
 
   //mobile accessories subpages
-  charger : React.lazy(()=>import('../Pages/SubMenuPages/Mobile_Accessories/Charger')),
-  wireless_charger : React.lazy(()=>import('../Pages/SubMenuPages/Mobile_Accessories/Wireless_charger')),
-  memory_card : React.lazy(()=>import('../Pages/SubMenuPages/Mobile_Accessories/Memory_Card')),
-  mobile_holder : React.lazy(()=>import('../Pages/SubMenuPages/Mobile_Accessories/Mobile_Holder')),
-  ring_light : React.lazy(()=>import('../Pages/SubMenuPages/Mobile_Accessories/Ring_Light')),
+  charger : React.lazy(()=>import('../Pages/SubMenuPages/Mobile_Accessories/Charger')), 
   selfie_stick : React.lazy(()=>import('../Pages/SubMenuPages/Mobile_Accessories/Selfie_Stick')),
   battery : React.lazy(()=> import("../Pages/SubMenuPages/Mobile_Accessories/Battery")),
   power_bank : React.lazy(()=> import("../Pages/SubMenuPages/Mobile_Accessories/Power_Bank")),
-  power_charger : React.lazy(()=> import("../Pages/SubMenuPages/Mobile_Accessories/Power_Charger")),
- 
+
  //Trimmer & Shaver subpages
  electric_trimmer : React.lazy(()=> import("../Pages/SubMenuPages/Trimmer_Shaver/Electric_Trimmer")),
  electric_shaver : React.lazy(()=> import("../Pages/SubMenuPages/Trimmer_Shaver/Electric_Shaver")),
  
  //speaker & microphone subpages
- speaker : React.lazy(()=>import('../Pages/SubMenuPages/Speaker_Microphone/Speaker')),
  bluetooth_speaker : React.lazy(()=>import('../Pages/SubMenuPages/Speaker_Microphone/Bluethooth_Speaker')),
  microphone : React.lazy(()=>import('../Pages/SubMenuPages/Speaker_Microphone/Microphone')),
- karaoke_speaker : React.lazy(()=>import('../Pages/SubMenuPages/Speaker_Microphone/Karoke_Speaker')),
-  
+   
  //light & lamp subpages
  rgb_light : React.lazy(()=>import("../Pages/SubMenuPages/Light_Lamps/RGB_Light")),
  led_light : React.lazy(()=>import("../Pages/SubMenuPages/Light_Lamps/LED_Light")),
- emergency_light : React.lazy(()=>import("../Pages/SubMenuPages/Light_Lamps/Emergency_Light")),
- torch_light : React.lazy(()=>import("../Pages/SubMenuPages/Light_Lamps/Torch_Light")),
  
  //other items subpages
  calculator : React.lazy(()=>import('../Pages/SubMenuPages/Other_Item/Calculator')),
@@ -104,13 +89,9 @@ const dynamicComponents = {
 
  //home appliances subpages
  dry_iron : React.lazy(()=>import("../Pages/SubMenuPages/Home_Appliances/Dry_Iron")),
- water_heater : React.lazy(()=>import("../Pages/SubMenuPages/Home_Appliances/Water_Heater")),
- room_heater : React.lazy(()=>import("../Pages/SubMenuPages/Home_Appliances/Room_Heater")),
  electric_kettle : React.lazy(()=>import("../Pages/SubMenuPages/Home_Appliances/Electric_Kettle")),
  juicer : React.lazy(()=>import("../Pages/SubMenuPages/Home_Appliances/Juicer")),
  vacuum_cleaner : React.lazy(()=>import("../Pages/SubMenuPages/Home_Appliances/Vaccum_Cleaner")),
- vacuum_flask : React.lazy(()=>import("../Pages/SubMenuPages/Home_Appliances/Vaccum_Flask")),
- rechargeablefan : React.lazy(()=>import("../Pages/SubMenuPages/Home_Appliances/Rechargeable_Fan")),
 
  //smart watche subpages
  smart_watch : React.lazy(()=>import("../Pages/SubMenuPages/Smart_Watches/Smart_Watch")),
@@ -118,10 +99,8 @@ const dynamicComponents = {
 
  //headphone subpages
  gaming_headphone : React.lazy(()=>import('../Pages/SubMenuPages/Headphone_Items/Gaming_Headphone')),
- bluetooth_headphone : React.lazy(()=>import('../Pages/SubMenuPages/Headphone_Items/Bluthooth_Headphone')),
  in_ear_headphone : React.lazy(()=>import('../Pages/SubMenuPages/Headphone_Items/In_Ear_Headphone')),
  earbuds : React.lazy(()=>import('../Pages/SubMenuPages/Headphone_Items/Earbuds')),
- neckbands : React.lazy(()=>import('../Pages/SubMenuPages/Headphone_Items/Neckbands')),
 
  //routers collection subpages
  wifi_router: React.lazy(()=>import('../Pages/SubMenuPages/Routers_Collection/Wifi_Router')),

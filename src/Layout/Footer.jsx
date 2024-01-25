@@ -15,7 +15,7 @@ const Footer = () => {
       <section id="footer">
 
         <div className="brand-details">
-          <Link className="logo">A-Z.com</Link>
+          <Link className="logo">SHOPEE</Link>
 
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia magni modi quo nostrum dolorum quae ullam rerum amet quis odit adipisicing elit.</p>
            
@@ -29,12 +29,12 @@ const Footer = () => {
         <div className="about-section">
           <h3>About us</h3>
           <Link to="/">About us</Link>
-          <Link to="/">A-Z Blogs</Link>
+          <Link to="/">Shopee Blogs</Link>
           <Link to="/">contact with us</Link>
-          <Link to="/">A-Z demo</Link>
+          <Link to="/">Shopee demo</Link>
           <Link to="/">privacy condition</Link>
           <Link to="/">contact with us</Link>
-          <Link to="/">A-Z demo</Link>
+          <Link to="/">shopee demo</Link>
           
 
         </div>
