@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Islamic_Book = () => {
+const Voucher = () => {
   return (
     <div style={{textAlign:'center'}}>
-      <h1>sorry there is no Book</h1>
+      <h1>sorry there is no voucher</h1>
     </div>
   )
 }
 
-export default Islamic_Book
+export default Voucher

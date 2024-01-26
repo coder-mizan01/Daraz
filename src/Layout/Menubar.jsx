@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 //css
-import styles from  "../CSS/Menubar.module.css";
+import styles from "../CSS/Menubar.module.css";
 
 //component
 import { categories } from "../Component/Categories";
 
 //icons
 import { IoIosArrowForward } from "react-icons/io";
-
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -27,9 +26,8 @@ import {
   faGift,
 } from "@fortawesome/free-solid-svg-icons";
 
-
+console.log(categories);
 const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
- 
   const iconArr = [
     faLaptop,
     faMobileScreen,
@@ -42,7 +40,8 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
     faVolumeHigh,
     faBook,
     faCircle,
-    faGift,]
+    faGift,
+  ];
 
   const [isHovered, setIsHovered] = useState({
     fashion: false,
@@ -86,34 +85,47 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
     }));
   };
 
-
   return (
     <>
-      <div className={onScrollMenuBar ? styles.scroll : styles.menubar} onClick={onClickMenuBar} >
+      <div
+        className={onScrollMenuBar ? styles.scroll : styles.menubar}
+        onClick={onClickMenuBar}
+      >
         <div className={styles.side_nav}>
           <ul>
-            {Object.keys(categories).map((category,i)=>{
-             
-             return  <li key={i}>
-              <NavLink to={`/${category}`}>
-                <FontAwesomeIcon icon={iconArr[i]}/>{category}{" "}
-              </NavLink>
-              <ul className={styles.dropdown}>
-              {categories[category].map((subcategory) => (
-                        
-              <li key={subcategory}>
-              <NavLink to={`/${category}/${subcategory}`}>
-                {subcategory}
-              </NavLink>
-            </li>
-          ))}
-              </ul>
-            </li>
+            {Object.keys(categories).map((category, i) => {
+              // replace the underline with space
+              let categoryWithUnderLine = category.replace(/_/g, " ");
+
+              return (
+                <li key={i}>
+                  <NavLink to={`/${category}`}>
+                    <FontAwesomeIcon icon={iconArr[i]} />
+                    {categoryWithUnderLine}{" "}
+                  </NavLink>
+                  <ul className={styles.dropdown}>
+                    {categories[category].map((subcategory) => {
+                      // replace the underline with space
+                      let subcategoryWithUnderLine = subcategory.replace(
+                        /_/g,
+                        " "
+                      );
+
+                      return (
+                        <li key={subcategory}>
+                          <NavLink to={`/${category}/${subcategory}`}>
+                            {subcategoryWithUnderLine}
+                          </NavLink>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </li>
+              );
             })}
           </ul>
         </div>
       </div>
-
     </>
   );
 };

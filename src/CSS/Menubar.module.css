@@ -38,10 +38,15 @@
     display: block;
     padding: 5px 10px;
     font-size: 1rem;
+    font-weight:600;
+    opacity: 0.8;
+    text-transform: capitalize;
     text-align: start;
     text-decoration: none;
     color: black;
-  
+   &:hover{
+    opacity:1;
+   }
   }
 
 

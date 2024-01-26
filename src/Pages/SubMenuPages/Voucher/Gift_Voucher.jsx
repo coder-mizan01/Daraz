@@ -6,7 +6,9 @@ import CategoryPage from '../../../Component/CategoryPage';
 
 const Gift_Voucher = () => {
   return (
-    <div>Gift_Voucher</div>
+    <div style={{textAlign:'center'}}>
+      <h1>sorry there is no Gift Voucher</h1>
+    </div>
   )
 }
 

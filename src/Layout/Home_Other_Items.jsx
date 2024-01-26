@@ -142,14 +142,11 @@ const Home_Other_Items = () => {
 
   //destructure property from object
    const {loading , products , error} = productsObj;
-  
-   //declare productquantity variable
-  let productQuantity;
 
   //filter other_items from products
   let other_items;
   other_items = products.filter((pro) => {
-    return pro.category === "other_items";
+    return pro.category === "smart_watches";
   });
 
   //destructure the values

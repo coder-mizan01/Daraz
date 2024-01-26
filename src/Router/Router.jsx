@@ -53,7 +53,7 @@ const dynamicComponents = {
   routers_collection : React.lazy(()=>import('../Pages/MenuPages/Routers_Collection')),
   other_items : React.lazy(()=>import('../Pages/MenuPages/Other_Items')),
   home_appliances : React.lazy(()=>import('../Pages/MenuPages/Home_Appliances')),
-  voucher : React.lazy(()=>import('../Pages/MenuPages/Home_Appliances')),
+  voucher : React.lazy(()=>import('../Pages/MenuPages/Voucher')),
   speaker_microphone : React.lazy(()=>import('../Pages/MenuPages/Speaker_Microphone')),
   trimmer_shaver : React.lazy(()=>import('../Pages/MenuPages/Trimmer_Shaver')),
   smart_watches :  React.lazy(()=>import('../Pages/MenuPages/Smart_Watches')),
@@ -78,7 +78,6 @@ const dynamicComponents = {
  microphone : React.lazy(()=>import('../Pages/SubMenuPages/Speaker_Microphone/Microphone')),
    
  //light & lamp subpages
- rgb_light : React.lazy(()=>import("../Pages/SubMenuPages/Light_Lamps/RGB_Light")),
  led_light : React.lazy(()=>import("../Pages/SubMenuPages/Light_Lamps/LED_Light")),
  
  //other items subpages
@@ -88,10 +87,7 @@ const dynamicComponents = {
  smart_tv_box : React.lazy(()=>import('../Pages/SubMenuPages/Other_Item/Smart_TV_Box')),
 
  //home appliances subpages
- dry_iron : React.lazy(()=>import("../Pages/SubMenuPages/Home_Appliances/Dry_Iron")),
  electric_kettle : React.lazy(()=>import("../Pages/SubMenuPages/Home_Appliances/Electric_Kettle")),
- juicer : React.lazy(()=>import("../Pages/SubMenuPages/Home_Appliances/Juicer")),
- vacuum_cleaner : React.lazy(()=>import("../Pages/SubMenuPages/Home_Appliances/Vaccum_Cleaner")),
 
  //smart watche subpages
  smart_watch : React.lazy(()=>import("../Pages/SubMenuPages/Smart_Watches/Smart_Watch")),
@@ -109,13 +105,12 @@ const dynamicComponents = {
 
  //books subpages
  self_motivation : React.lazy(()=>import('../Pages/SubMenuPages/Books/Self_Motivation')),
- academic_book : React.lazy(()=>import('../Pages/SubMenuPages/Books/Academic_Book')),
  islamic_book : React.lazy(()=>import('../Pages/SubMenuPages/Books/Islamic_Book')),
 
  //voucher subpages
  gift_voucher : React.lazy(()=>import('../Pages/SubMenuPages/Voucher/Gift_Voucher')),
  wedding_voucher : React.lazy(()=>import('../Pages/SubMenuPages/Voucher/Weeding_Voucher')),
- love_voucher : React.lazy(()=>import('../Pages/SubMenuPages/Voucher/Love_Voucher')),
+
 };
 
 const LazyComponent = ({ componentName }) => {
@@ -162,7 +157,7 @@ const Router = () => {
         return <Route key={i} path={`/computer_items/${Item}`}  element={<LazyComponent componentName={Item} />}/>
         })}
 
-        {categories.mobile_accessories.map((Item,i)=>{
+        {categories.mobile_items.map((Item,i)=>{
           return <Route key={i} path={`/mobile_accessories/${Item}`} element={<LazyComponent componentName={Item}/>} />
         })}
 
@@ -175,8 +170,8 @@ const Router = () => {
           return <Route key={i} path={`/smart_watches/${Item}`} element={<LazyComponent componentName={Item}/> } />
         })}
 
-       {categories.routers_collection.map((Item,i)=>{
-          return <Route key={i} path={`/routers_collection/${Item}`} element={<LazyComponent componentName={Item}/> } />
+       {categories.router_items.map((Item,i)=>{
+          return <Route key={i} path={`/router_collection/${Item}`} element={<LazyComponent componentName={Item}/> } />
         })}
         
        {categories.light_lamp.map((Item,i)=>{
@@ -191,7 +186,7 @@ const Router = () => {
           return <Route key={i} path={`/trimmer_shaver/${Item}`} element={<LazyComponent componentName={Item}/> } />
         })}
 
-      {categories.speaker_microphone.map((Item,i)=>{
+      {categories.microphone.map((Item,i)=>{
           return <Route key={i} path={`/speaker_microphone/${Item}`} element={<LazyComponent componentName={Item}/> } />
         })}
 
@@ -204,7 +199,7 @@ const Router = () => {
         })}  
 
       
-{categories.voucher.map((Item,i)=>{
+      {categories.voucher.map((Item,i)=>{
           return <Route key={i} path={`/voucher/${Item}`} element={<LazyComponent componentName={Item}/> } />
         })}    
 

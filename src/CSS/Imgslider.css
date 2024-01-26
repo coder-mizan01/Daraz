@@ -20,6 +20,7 @@
   object-fit: cover;
   object-position: center;
   margin: 0px;
+  border-radius: .4em;
 }
 
 

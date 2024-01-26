@@ -2,7 +2,9 @@ import React from 'react'
 
 const Self_Motivation = () => {
   return (
-    <div>Self_Motivation</div>
+    <div style={{textAlign:'center'}}>
+      <h1>sorry there is no Book</h1>
+    </div>
   )
 }
 

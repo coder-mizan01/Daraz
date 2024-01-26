@@ -62,9 +62,9 @@ const Footer = () => {
           </div>
 
           <ul className="footer-icons">
-            <li> <Link target="_blank" to='https://www.facebook.com/a.to.z.bd.shop/'> <FaFacebookF className="icon" /> </Link> </li>
+            <li> <Link to='/'> <FaFacebookF className="icon" /> </Link> </li>
             <li><Link to='/'>  <FaYoutube className="icon" /></Link> </li>
-            <li><Link target="_blank" to='mailto:atoz60678@gmail.com'>  <FaGoogle className="icon" /></Link> </li>
+            <li><Link  to=''>  <FaGoogle className="icon" /></Link> </li>
             <li><Link to='/'>  <AiFillInstagram className="icon" /></Link> </li>
             <li> <Link to='/'> <FaTwitter className="icon" /></Link> </li>
            </ul>

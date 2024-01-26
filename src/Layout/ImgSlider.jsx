@@ -18,7 +18,7 @@ const Imgslidersr = () => {
   <div className="carousel-inner">
 
     <div className="carousel-item active">
-    <Link to={`/mobile_accessories`}>
+    <Link to={`/`}>
       <img src="electronics.jpg" className="img-fluid" alt="..." />
       </Link>
     </div>

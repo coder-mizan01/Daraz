@@ -6,7 +6,9 @@ import CategoryPage from '../../../Component/CategoryPage';
 
 const Weeding_Voucher = () => {
   return (
-    <div>Weeding_Voucher</div>
+    <div style={{textAlign:'center'}}>
+      <h1>sorry there is no Weeding_Voucher Voucher</h1>
+    </div>
   )
 }
 
