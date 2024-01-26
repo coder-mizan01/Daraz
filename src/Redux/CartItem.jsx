@@ -28,7 +28,13 @@
             let updatedCart;
             updatedCart = state.Cart.filter((item)=> item._id !== action.payload)
             state.Cart = updatedCart;
-        },  
+        },    
+           
+         ResetCart : (state,action) =>{
+            state.Cart = [];
+        }
+
+
     }
  })
 

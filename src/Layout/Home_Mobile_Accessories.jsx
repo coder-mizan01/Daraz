@@ -137,7 +137,10 @@ const Mobile_Accessories = () => {
       },
     ],
   };
-     
+
+  //product quantity state
+  const QuantityofProduct = useSelector((state) => state.productquantitycounter.count);
+  const {count} = QuantityofProduct;
 
    //receive productsObj from allproducts by useSelector
    const productsObj = useSelector((state)=> state.allproduct);
@@ -150,8 +153,7 @@ const Mobile_Accessories = () => {
          return pro.category === "mobile_accessories"
      })
   
-   //declare productquantity variable
-   let productQuantity;
+  
 
  //destructure the value 
   const {category} = mobile_accessories[0] !== undefined && mobile_accessories[0]
@@ -185,9 +187,9 @@ const Mobile_Accessories = () => {
                 <div className="addcart">
                 <p className="price">Tk.{price}</p>
                   <AddToCart
-                    product={pro}
+                    product={{title, slug, price, _id ,count }}
                     name={"+add"}
-                    quantity={productQuantity}
+                    quantity={QuantityofProduct}
                   />
                 </div>
               </div>

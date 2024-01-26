@@ -1,7 +1,7 @@
 import React,{useEffect} from "react";
 
 //packages
-import {Link} from "react-router-dom";
+import {Link,useNavigate} from "react-router-dom";
 
 //css
 import "../CSS/Cart.css";
@@ -15,6 +15,9 @@ import { useSelector} from "react-redux";
 
 const Cart = () => {
 
+  //
+  const navigate = useNavigate();
+
     const Cart = useSelector((state)=> state.cart.Cart)
     console.log(Cart);
 
@@ -26,9 +29,9 @@ const Cart = () => {
 
 
   //calculate the total price
-  let totalprice = 0;
+  let subtotal = 0;
   Cart.forEach((curElm) => {
-    totalprice += curElm.price * curElm.quantity;
+    subtotal += curElm.price * curElm.quantity;
   });
 
   return (
@@ -58,11 +61,11 @@ const Cart = () => {
  
           <div className="cart-total-value">
             <div className="cart-total"> 
-              <div className="SubTotal">Product Price: {totalprice}</div> 
+              <div className="SubTotal">Product Price: {subtotal}</div> 
 
               {/*<div className="total"> total :{totalprice + Shipping}</div> */}
               <div className="place_order"> 
-                <Link to='/confirm-order' className="place_order_btn">Select Your Area</Link>
+                <button onClick={()=>{navigate(`/confirm-order`,{state:{subtotal}})}}  className="" >Select Your Area</button>
               </div>
             </div>
           </div>
