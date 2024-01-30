@@ -26,7 +26,7 @@ import {
   faGift,
 } from "@fortawesome/free-solid-svg-icons";
 
-console.log(categories);
+
 const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
   const iconArr = [
     faLaptop,
@@ -44,45 +44,52 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
   ];
 
   const [isHovered, setIsHovered] = useState({
-    fashion: false,
-    health: false,
-    electronics: false,
-    kids: false,
-    groceries: false,
-    mens: false,
-    baby: false,
-    electronicDevice: false,
-    tv: false,
-    home: false,
-    sports: false,
+    computer: false,
+    mobile: false,
+    headohone: false,
+    smart_watch: false,
+    routers: false,
+    light_lamp: false,
+    home_appliances: false,
+    trimmer_shaver: false,
+    microphone: false,
+    books: false,
+    other: false,
     gifts: false,
   });
 
-  const {
-    fashion,
-    health,
-    electronics,
-    kids,
-    groceries,
-    mens,
-    baby,
-    electronicDevice,
-    home,
-    sports,
-    gifts,
+    const {
+      computer,
+      mobile,
+      headohone,
+      smart_watch,
+      routers,
+      light_lamp,
+      home_appliances,
+      trimmer_shaver,
+      microphone,
+    books,
+    others,
+    gifts
   } = isHovered;
-  const handleMouseOver = (item) => {
+
+
+//const [isHovered , setIsHovered] = useState(false);
+
+  const handleMouseOver = (i) => {
     setIsHovered((prev) => ({
       ...prev,
-      [item]: true,
-    }));
+      [i]: true,
+    }));  
+
   };
 
-  const handleMouseLeave = (item) => {
+  const handleMouseLeave = (i) => {
     setIsHovered((prev) => ({
       ...prev,
-      [item]: false,
+      [i]: false,
     }));
+
   };
 
   return (
@@ -97,11 +104,12 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
               // replace the underline with space
               let categoryWithUnderLine = category.replace(/_/g, " ");
 
-              return (
-                <li key={i}>
+              return (    
+                <li key={i} onMouseOver={()=>{handleMouseOver(i)}}  onMouseLeave={()=>{handleMouseLeave(i)}} >
                   <NavLink to={`/${category}`}>
-                    <FontAwesomeIcon icon={iconArr[i]} />
+                    <FontAwesomeIcon icon={iconArr[i]} className={styles.menu_icon} />
                     {categoryWithUnderLine}{" "}
+                    {isHovered[i] && <IoIosArrowForward className={styles.arrow} /> } 
                   </NavLink>
                   <ul className={styles.dropdown}>
                     {categories[category].map((subcategory) => {
