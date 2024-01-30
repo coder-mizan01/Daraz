@@ -74,17 +74,17 @@ const SingleProduct = () => {
                 brand: {brand} | more product from{" "}
 
               </p>
-              <p>see more: <Link to={`/${category}/${subcategory}`}>{subcategory}</Link></p>
+              <p>see more: <Link to={`/${category}/${subcategory}`}>{category }||{ subcategory}</Link></p>
 
               <p> in stock : {quantity} pice</p>
-              <p className="star">
+            <p className="star">
                 {" "}
                 <AiFillStar />
                 <AiFillStar /> <AiFillStar />
                 <AiFillStar />
                 <AiOutlineStar />{" "}
               </p>
-              <p className="discount-price">TK. {price}</p>
+              <p className="discount-price">$ {price}</p>
 
               <hr />
               <div className="quantity">

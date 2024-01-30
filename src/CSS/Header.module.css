@@ -204,12 +204,13 @@ z-index: 1;
 @media only screen and (max-width: 1115px) {
   #header{
     padding: 10px 0px 10px 0px;
+    margin: 0px 0px 5px 0px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   #header{
-    padding: 10px 10px 10px 10px;
+    padding: 0px 10px 5px 0px;
   }
   .logo{
     display: none;

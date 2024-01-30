@@ -42,7 +42,7 @@ const SearchBar = () => {
       <div className={HeaderCSS.searchBar}>
         <input
           type="text"
-          placeholder="Search in A-Z"
+          placeholder="Search in Shopee"
           value={searchValue}
           onChange={handleSearch}
         />

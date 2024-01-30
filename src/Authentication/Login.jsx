@@ -1,32 +1,37 @@
 import React, { useState } from "react";
 //packages
 import axios from "axios";
-import config from "../../config.json";
+import config from "../config.json";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import {setUser} from "../../Redux/Authentication";
+import {setUser} from "../Redux/Authentication";
 import { Link } from "react-router-dom";
 
-//global hook
-
 //css
-import "../../CSS/Login.css";
+import "../CSS/Login.css";
 
 //icons
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 
-const Register = () => {
+const Login = () => {
+
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
 
+  // State for storing email input
   const [email, setEmail] = useState("");
+
+  // State for storing password input
   const [password, setPassword] = useState("");
 
+  //state for handling click event
   const [click, setClick] = useState(false);
 
-  const handleRegistration = async (e) => {
+
+  //decalre handleLogin for login a user
+  const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(`${config.apiUrl}/api/auth/login`, {
@@ -67,7 +72,7 @@ const Register = () => {
   return (
     <div className="login">
 
-      <form onSubmit={handleRegistration} className="login-form">
+      <form onSubmit={handleLogin} className="login-form">
         <div className="mb-3">
           <label htmlFor="">Email</label>
           <input
@@ -120,4 +125,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

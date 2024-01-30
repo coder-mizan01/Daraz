@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 //components
 import CategoryPage from '../../Component/CategoryPage';
 
-const Mobile_Accessories = () => {
+const Mobile_Items = () => {
        //receive productsObj from allproducts by useSelector
        const productsObj = useSelector((state) => state.allproduct);
 
@@ -20,4 +20,4 @@ const Mobile_Accessories = () => {
   )
 }
 
-export default Mobile_Accessories
+export default Mobile_Items

@@ -17,8 +17,8 @@ import Users from '../Pages/Admin/Users';
 
 
 //auth
-import Register from '../Pages/auth/Register';
-import Login from '../Pages/auth/Login';
+import Register from '../Authentication/Register';
+import Login from '../Authentication/Login';
 import Dashboard from '../Pages/User/Dashboard';
 
 
@@ -47,14 +47,14 @@ const dynamicComponents = {
   
   //menu pages
   computer_items : React.lazy(()=>import('../Pages/MenuPages/Computer_Items')),
-  mobile_accessories : React.lazy(()=>import('../Pages/MenuPages/Mobile_Accessories')),
+  mobile_accessories : React.lazy(()=>import('../Pages/MenuPages/Mobile_Items')),
   headphone_items : React.lazy(()=>import('../Pages/MenuPages/Headphone_Items')),
-  light_lamp : React.lazy(()=>import('../Pages/MenuPages/Light_Lapms')),
-  routers_collection : React.lazy(()=>import('../Pages/MenuPages/Routers_Collection')),
+  light_lamp : React.lazy(()=>import('../Pages/MenuPages/Light_Lamp')),
+  router_collection : React.lazy(()=>import('../Pages/MenuPages/Routers_Collection')),
   other_items : React.lazy(()=>import('../Pages/MenuPages/Other_Items')),
   home_appliances : React.lazy(()=>import('../Pages/MenuPages/Home_Appliances')),
   voucher : React.lazy(()=>import('../Pages/MenuPages/Voucher')),
-  speaker_microphone : React.lazy(()=>import('../Pages/MenuPages/Speaker_Microphone')),
+  speakers : React.lazy(()=>import('../Pages/MenuPages/Speaker_Microphone')),
   trimmer_shaver : React.lazy(()=>import('../Pages/MenuPages/Trimmer_Shaver')),
   smart_watches :  React.lazy(()=>import('../Pages/MenuPages/Smart_Watches')),
   books : React.lazy(()=>import('../Pages/MenuPages/Books')),
@@ -157,7 +157,7 @@ const Router = () => {
         return <Route key={i} path={`/computer_items/${Item}`}  element={<LazyComponent componentName={Item} />}/>
         })}
 
-        {categories.mobile_items.map((Item,i)=>{
+        {categories.mobile_accessories.map((Item,i)=>{
           return <Route key={i} path={`/mobile_accessories/${Item}`} element={<LazyComponent componentName={Item}/>} />
         })}
 
@@ -170,7 +170,7 @@ const Router = () => {
           return <Route key={i} path={`/smart_watches/${Item}`} element={<LazyComponent componentName={Item}/> } />
         })}
 
-       {categories.router_items.map((Item,i)=>{
+       {categories.router_collection.map((Item,i)=>{
           return <Route key={i} path={`/router_collection/${Item}`} element={<LazyComponent componentName={Item}/> } />
         })}
         
@@ -186,8 +186,8 @@ const Router = () => {
           return <Route key={i} path={`/trimmer_shaver/${Item}`} element={<LazyComponent componentName={Item}/> } />
         })}
 
-      {categories.microphone.map((Item,i)=>{
-          return <Route key={i} path={`/speaker_microphone/${Item}`} element={<LazyComponent componentName={Item}/> } />
+      {categories.speakers.map((Item,i)=>{
+          return <Route key={i} path={`/speakers/${Item}`} element={<LazyComponent componentName={Item}/> } />
         })}
 
       {categories.books.map((Item,i)=>{

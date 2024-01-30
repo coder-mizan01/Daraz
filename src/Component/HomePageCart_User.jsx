@@ -10,6 +10,9 @@ import { NavLink,Link } from 'react-router-dom';
 //icons
 import { HiOutlineUser } from "react-icons/hi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+
+
+
 const HomePageCart_User = () => {
 
     const Cart = useSelector((state)=> state.cart.Cart)
@@ -25,11 +28,14 @@ const HomePageCart_User = () => {
             </NavLink>
           </div>
 
-          <div className={HeaderCSS.user}>
-              <Link to={Authentication.email && Authentication.password !== null ? '/dashboard' : '/login'}>
+          <div className={HeaderCSS.user} onClick={()=>setUser(true)} >
+              <Link to={Authentication.email && Authentication.password !== null ? '/dashboard' : ''}>
                 <HiOutlineUser className={HeaderCSS.user_icon} />{" "}
+              
               </Link>
           </div>
+
+
         </div>
     </>
   )

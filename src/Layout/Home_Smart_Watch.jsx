@@ -22,7 +22,7 @@ import { faStar,faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from "react-redux";
 import Spinner from "../Component/Spinner";
 
-const Home_Other_Items = () => {
+const Home_Smart_Watch = () => {
 
   //make custone next arrow
   function SampleNextArrow(props) {
@@ -144,24 +144,29 @@ const Home_Other_Items = () => {
    const {loading , products , error} = productsObj;
 
   //filter other_items from products
-  let other_items;
-  other_items = products.filter((pro) => {
+  let smart_watches;
+  smart_watches = products.filter((pro) => {
     return pro.category === "smart_watches";
   });
 
-  //destructure the values
-  let {category} = other_items[0] !== undefined && other_items[0]
+//destructure the value 
+const {category} = smart_watches[0] !== undefined && smart_watches[0];
+
+//remove the undesquare from string
+let category_Withouth_underSquare = category !== undefined ? category.replace(/_/g," ") : "";
+
+
   return (
     <>
       <div className="slide-header">
-         <h2>{category}</h2>
+         <h2>{category_Withouth_underSquare}</h2>
          <Link  to={`/${category}`} className="button buttontext">See All</Link>
       </div>
 
       <Slider {...settings} className="">
    
-        {other_items.length > 0 ? (
-          other_items.map((pro) => {
+        {smart_watches.length > 0 ? (
+          smart_watches.map((pro) => {
             const { title, slug, price, _id } = pro;
    
             return (
@@ -182,7 +187,7 @@ const Home_Other_Items = () => {
                 </Link>
 
                 <div className="addcart">
-                  <p className="price">Tk.{price}</p>
+                  <p className="price">${price}</p>
                   <AddToCart
                     product={{title, slug, price, _id ,count }}
                     name={"+add"}
@@ -203,4 +208,4 @@ const Home_Other_Items = () => {
   );
 };
 
-export default Home_Other_Items;
+export default Home_Smart_Watch;

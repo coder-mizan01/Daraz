@@ -12,7 +12,6 @@ const Cover = () => {
     <>
       <section id="cover">
         <Menubar />
-        
         <ImgSlider />
       </section>
     </>

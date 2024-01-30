@@ -26,14 +26,23 @@
 
 .carousel-control-prev,.carousel-control-next{
   width: 33px;
+  opacity: 1;
 }
 
 .carouselprev-icon,.carouselnext-icon{
-  background-color: rgba(0,0,0);
+  background-color: rgba(0,0,0,.3);
   width: 33px;
   color:#fff;
   height: 65px;
+  transition: .5s;
+
+  &:hover{
+    transition: .5s ease-in-out;
+  }
+
 }
+
+
 
 .carousel-control-prev .visually-hidden{
   color: rebeccapurple;
@@ -55,6 +64,7 @@
  
   .img-fluid{
     height: auto;
+    border-radius: 0;
   }
   
 }

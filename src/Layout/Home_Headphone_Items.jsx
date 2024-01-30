@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import config from "../config.json";
@@ -151,13 +151,16 @@ const Headphone_Items = () => {
     return pro.category === "headphone_items" ;
   });
 
-
+  //destructure the category name 
   let {category} = headphone_items[0] !== undefined && headphone_items[0];
+
+  //remove the undesquare from string
+  let category_Withouth_underSquare = category !== undefined ? category.replace(/_/g," ") : "";
 
   return (
     <>
       <div className="slide-header">
-         <h2>{category}</h2>
+         <h2>{category_Withouth_underSquare}</h2>
          <Link  to={`/${category}`} className="button buttontext">See All</Link>
       </div>
 
@@ -185,7 +188,7 @@ const Headphone_Items = () => {
                 </Link>
 
                 <div className="addcart">
-                  <p className="price">Tk.{price}</p>
+                  <p className="price">${price}</p>
                   <AddToCart
                     product={{title, slug, price, _id ,count }}
                     name={"+add"}

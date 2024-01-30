@@ -4,7 +4,7 @@ import Cover from "../Layout/Cover";
 //Layout
 import Home_Headphone_Items from "../Layout/Home_Headphone_Items";
 import Home_Mobile_Accessories from "../Layout/Home_Mobile_Accessories";
-import Home_Other_Items from "../Layout/Home_Other_Items";
+import Home_Smart_Watch from "../Layout/Home_Smart_Watch";
 
 const Home = () => {
   return (
@@ -13,7 +13,7 @@ const Home = () => {
 
   <Home_Headphone_Items />
   <Home_Mobile_Accessories />
-  <Home_Other_Items />
+  <Home_Smart_Watch />
 
   </> 
 

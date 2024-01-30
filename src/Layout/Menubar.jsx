@@ -9,7 +9,6 @@ import { categories } from "../Component/Categories";
 
 //icons
 import { IoIosArrowForward } from "react-icons/io";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLightbulb,
@@ -26,8 +25,9 @@ import {
   faGift,
 } from "@fortawesome/free-solid-svg-icons";
 
-
 const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
+
+  //Make the array of icons 
   const iconArr = [
     faLaptop,
     faMobileScreen,
@@ -43,6 +43,7 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
     faGift,
   ];
 
+  //declare a state and store icon array
   const [isHovered, setIsHovered] = useState({
     computer: false,
     mobile: false,
@@ -58,38 +59,20 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
     gifts: false,
   });
 
-    const {
-      computer,
-      mobile,
-      headohone,
-      smart_watch,
-      routers,
-      light_lamp,
-      home_appliances,
-      trimmer_shaver,
-      microphone,
-    books,
-    others,
-    gifts
-  } = isHovered;
-
-
-//const [isHovered , setIsHovered] = useState(false);
-
+  //set the single value as true when the mouseover
   const handleMouseOver = (i) => {
     setIsHovered((prev) => ({
       ...prev,
       [i]: true,
-    }));  
-
+    }));
   };
 
+  //set the  value as false after mouseleave
   const handleMouseLeave = (i) => {
     setIsHovered((prev) => ({
       ...prev,
       [i]: false,
     }));
-
   };
 
   return (
@@ -102,19 +85,32 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
           <ul>
             {Object.keys(categories).map((category, i) => {
               // replace the underline with space
-              let categoryWithUnderLine = category.replace(/_/g, " ");
+              let category_Withouth_UnderSquare = category.replace(/_/g, " ");
 
-              return (    
-                <li key={i} onMouseOver={()=>{handleMouseOver(i)}}  onMouseLeave={()=>{handleMouseLeave(i)}} >
+              return (
+                <li
+                  key={i}
+                  onMouseOver={() => {
+                    handleMouseOver(i);
+                  }}
+                  onMouseLeave={() => {
+                    handleMouseLeave(i);
+                  }}
+                >
                   <NavLink to={`/${category}`}>
-                    <FontAwesomeIcon icon={iconArr[i]} className={styles.menu_icon} />
-                    {categoryWithUnderLine}{" "}
-                    {isHovered[i] && <IoIosArrowForward className={styles.arrow} /> } 
+                    <FontAwesomeIcon
+                      icon={iconArr[i]}
+                      className={styles.menu_icon}
+                    />
+                    {category_Withouth_UnderSquare}{" "}
+                    {isHovered[i] && (
+                      <IoIosArrowForward className={styles.arrow} />
+                    )}
                   </NavLink>
                   <ul className={styles.dropdown}>
                     {categories[category].map((subcategory) => {
                       // replace the underline with space
-                      let subcategoryWithUnderLine = subcategory.replace(
+                      let subcategory_Withouth_Undersquare = subcategory.replace(
                         /_/g,
                         " "
                       );
@@ -122,7 +118,7 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
                       return (
                         <li key={subcategory}>
                           <NavLink to={`/${category}/${subcategory}`}>
-                            {subcategoryWithUnderLine}
+                            {subcategory_Withouth_Undersquare}
                           </NavLink>
                         </li>
                       );

@@ -154,16 +154,20 @@ const Mobile_Accessories = () => {
      })
   
   
-
  //destructure the value 
-  const {category} = mobile_accessories[0] !== undefined && mobile_accessories[0]
+  const {category} = mobile_accessories[0] !== undefined && mobile_accessories[0];
+
+  //remove the undesquare from string
+  let category_Withouth_underSquare = category !== undefined ? category.replace(/_/g," ") : "";
+
+
   return (
     <>
           <div className="slide-header">
-         <h2>{category}</h2>
+         <h2>{category_Withouth_underSquare}</h2>
          <Link className="button buttontext" to={`/${category}`}>See All</Link>
       </div>
-  <Slider {...settings} className="">
+     <Slider {...settings} className="">
         {mobile_accessories.length > 0 ? (
           mobile_accessories.map((pro) => {
             const { title, slug, price, _id } = pro;
@@ -185,7 +189,7 @@ const Mobile_Accessories = () => {
                 </Link>
 
                 <div className="addcart">
-                <p className="price">Tk.{price}</p>
+                <p className="price">${price}</p>
                   <AddToCart
                     product={{title, slug, price, _id ,count }}
                     name={"+add"}

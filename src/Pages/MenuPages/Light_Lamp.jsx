@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 //components
 import CategoryPage from '../../Component/CategoryPage';
 
-const Light_Lapms = () => {
+const Light_Lamp = () => {
      //receive productsObj from allproducts by useSelector
      const productsObj = useSelector((state) => state.allproduct);
 
@@ -20,4 +20,4 @@ const Light_Lapms = () => {
   )
 }
 
-export default Light_Lapms
+export default Light_Lamp
