@@ -9,8 +9,8 @@ import Home_Smart_Watch from "../Layout/Home_Smart_Watch";
 const Home = () => {
   return (
    <>
-  <Cover />
 
+  <Cover />
   <Home_Headphone_Items />
   <Home_Mobile_Accessories />
   <Home_Smart_Watch />

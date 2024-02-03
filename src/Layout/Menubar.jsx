@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 //css
-import styles from "../CSS/Menubar.module.css";
+import "../CSS/Menubar.css";
 
 //component
 import { categories } from "../Component/Categories";
@@ -26,8 +26,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
-
-  //Make the array of icons 
+  //Make the array of icons
   const iconArr = [
     faLaptop,
     faMobileScreen,
@@ -78,10 +77,10 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
   return (
     <>
       <div
-        className={onScrollMenuBar ? styles.scroll : styles.menubar}
+        className={`${onScrollMenuBar == undefined ? "menubar" : "scroll"} `}
         onClick={onClickMenuBar}
       >
-        <div className={styles.side_nav}>
+        <div className={`side_nav`}>
           <ul>
             {Object.keys(categories).map((category, i) => {
               // replace the underline with space
@@ -100,20 +99,16 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
                   <NavLink to={`/${category}`}>
                     <FontAwesomeIcon
                       icon={iconArr[i]}
-                      className={styles.menu_icon}
+                      className={`menu_icon`}
                     />
                     {category_Withouth_UnderSquare}{" "}
-                    {isHovered[i] && (
-                      <IoIosArrowForward className={styles.arrow} />
-                    )}
+                    {isHovered[i] && <IoIosArrowForward className={`arrow`} />}
                   </NavLink>
-                  <ul className={styles.dropdown}>
+                  <ul className={`dropdown`}>
                     {categories[category].map((subcategory) => {
                       // replace the underline with space
-                      let subcategory_Withouth_Undersquare = subcategory.replace(
-                        /_/g,
-                        " "
-                      );
+                      let subcategory_Withouth_Undersquare =
+                        subcategory.replace(/_/g, " ");
 
                       return (
                         <li key={subcategory}>

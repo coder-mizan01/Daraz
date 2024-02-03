@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import SideFilterCSS from "../CSS/SideFilters.module.css";
+import "../CSS/SideFilters.css";
 
 //icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -26,7 +26,7 @@ const BrandFilter = ({ products }) => {
   const [NestleChecked , setNestleChecked] = useState(false);
   const [TreatChecked,setTreatChecked] = useState(false);
   const [pranChecked,setPranchecked] = useState(false)
-  const [showbrand, setShowbrand] = useState(false);
+  const [showbrand, setShowbrand] = useState(true);
    
 
   const dispatch = useDispatch();  
@@ -74,14 +74,15 @@ const BrandFilter = ({ products }) => {
   return (
     <>
       <div
-        className={`${SideFilterCSS.filter_by_brands} ${
-          showbrand && `${SideFilterCSS.brands_collapse}`
+        className={`filter_by_brands ${
+          showbrand && `${`brands_collapse`}`
         }`}  
       >
-        <div className={SideFilterCSS.toggle_div} onClick={() => {
+
+        <div className={`toggle_div`} onClick={() => {
           setShowbrand(!showbrand);
         }}>
-          <h5>Brands</h5>
+          <h5 className='mt-2'>Brands</h5>
           {showbrand ? (
             <FontAwesomeIcon
               icon={faChevronUp}
@@ -93,10 +94,11 @@ const BrandFilter = ({ products }) => {
             />
           )}
         </div>
+        <hr className='hr' />
 
 
         {[...new Set(products.map((product) => product.brand))].map((uniqueBrand,index)=>{
-           return <div className={SideFilterCSS.brand} key={index}>
+           return <div className={`brand`} key={index}>
             <input
              type="checkbox"
               checked={
@@ -107,7 +109,7 @@ const BrandFilter = ({ products }) => {
               (uniqueBrand === "Treate" && TreatChecked) || 
               (uniqueBrand === "pran" && pranChecked)
             }
-             className={SideFilterCSS.brand_checkbox}
+             className={`brand_checkbox`}
              onChange={() => handleBrand(uniqueBrand)}
            />
            <label htmlFor="">{uniqueBrand}</label>

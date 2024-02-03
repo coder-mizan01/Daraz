@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 
 
-import SideFilterCSS from "../CSS/SideFilters.module.css";
+import "../CSS/SideFilters.css";
 
 //icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,8 +35,8 @@ const PriceFilter = ({products}) => {
 
   return (
     <>
-          <div className={`${SideFilterCSS.filter_by_price} ${
-            showPrice && `${SideFilterCSS.price_collapse}`
+          <div className={`filter_by_price ${
+            showPrice && `${`price_collapse`}`
           }`}  >
 
         <div className={SideFilterCSS.toggle_div}>

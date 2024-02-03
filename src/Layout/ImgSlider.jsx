@@ -14,7 +14,7 @@ const Imgslidersr = () => {
     <>
   
 
-<div id="carouselExampleFade" className="carousel slide carousel-fade">
+<div id="carouselExampleFade" className="carousel slide carousel-fade ">
   <div className="carousel-inner">
 
     <div className="carousel-item active">

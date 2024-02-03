@@ -1,4 +1,6 @@
 import React from 'react';
+//packages
+import { Link } from 'react-router-dom';
 //icons
 import { ImArrowRight2 } from "react-icons/im";
 
@@ -6,11 +8,12 @@ import { ImArrowRight2 } from "react-icons/im";
 import "../CSS/Pagination.css"
 
 const Pagination = ({Products}) => {
+  
 
   return (
     <>
     {Products !== undefined ? <div className="pagination">
-            <a href="/">{Products.subcategory}</a>
+            <p to='' >{Products.category}</p>
           </div> : ""  }
      
     </>

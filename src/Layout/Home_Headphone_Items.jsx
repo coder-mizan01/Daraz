@@ -160,11 +160,11 @@ const Headphone_Items = () => {
   return (
     <>
       <div className="slide-header">
-         <h2>{category_Withouth_underSquare}</h2>
+         <p>{category_Withouth_underSquare}</p>
          <Link  to={`/${category}`} className="button buttontext">See All</Link>
       </div>
 
-      <Slider {...settings} className="">
+      <Slider {...settings} className="col-lg-5 col-md-4 col-sm-2 col-xs-1"  >
    
         {headphone_items.length > 0 ? (
           headphone_items.slice(0,14).map((pro) => {

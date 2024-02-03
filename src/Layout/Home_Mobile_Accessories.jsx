@@ -164,7 +164,7 @@ const Mobile_Accessories = () => {
   return (
     <>
           <div className="slide-header">
-         <h2>{category_Withouth_underSquare}</h2>
+         <p>{category_Withouth_underSquare}</p>
          <Link className="button buttontext" to={`/${category}`}>See All</Link>
       </div>
      <Slider {...settings} className="">

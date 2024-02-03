@@ -159,7 +159,7 @@ let category_Withouth_underSquare = category !== undefined ? category.replace(/_
   return (
     <>
       <div className="slide-header">
-         <h2>{category_Withouth_underSquare}</h2>
+         <p>{category_Withouth_underSquare}</p>
          <Link  to={`/${category}`} className="button buttontext">See All</Link>
       </div>
 

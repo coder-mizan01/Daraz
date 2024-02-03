@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import classes from "../CSS/SideFilters.module.css";
+import "../CSS/SideFilters.css";
 
 //icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,13 +14,13 @@ const RatingFilter = () => {
   return (
     <>
  
-   <div className={classes.filter_by_rating}>
-      <div className={classes.toggle_div}>
+   <div className={`filter_by_rating`}>
+      <div className={`toggle_div`} onClick={()=>alert('the function will be update')}>
         <h5>Rating</h5>
         <FontAwesomeIcon  icon={faChevronDown} />
       </div>
 
-      <div className={classes}>
+      <div className={``}>
           
       </div>
    </div>

@@ -74,7 +74,7 @@ const SingleProduct = () => {
                 brand: {brand} | more product from{" "}
 
               </p>
-              <p>see more: <Link to={`/${category}/${subcategory}`}>{category }||{ subcategory}</Link></p>
+              <p>see more: <Link to={`/${category}/${subcategory}`}>{ subcategory}</Link></p>
 
               <p> in stock : {quantity} pice</p>
             <p className="star">

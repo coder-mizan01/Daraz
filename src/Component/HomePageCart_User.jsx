@@ -11,6 +11,9 @@ import { NavLink,Link } from 'react-router-dom';
 import { HiOutlineUser } from "react-icons/hi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
+//authentication
+import Login from "../Authentication/Login"
+
 
 
 const HomePageCart_User = () => {
@@ -29,10 +32,11 @@ const HomePageCart_User = () => {
           </div>
 
           <div className={HeaderCSS.user} onClick={()=>setUser(true)} >
-              <Link to={Authentication.email && Authentication.password !== null ? '/dashboard' : ''}>
+              <Link to={Authentication.email && Authentication.password !== null ? '/dashboard' : '/login'}>
                 <HiOutlineUser className={HeaderCSS.user_icon} />{" "}
               
               </Link>
+    
           </div>
 
 
