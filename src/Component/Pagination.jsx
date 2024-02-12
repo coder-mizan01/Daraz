@@ -1,9 +1,4 @@
 import React from 'react';
-//packages
-import { Link } from 'react-router-dom';
-//icons
-import { ImArrowRight2 } from "react-icons/im";
-
 //css
 import "../CSS/Pagination.css"
 

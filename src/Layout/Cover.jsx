@@ -1,7 +1,7 @@
 import React from "react";
 
 //css
-import   "../CSS/Cover.css";
+import"../CSS/Cover.css";
 
 //Layout
 import Menubar from "./Menubar";

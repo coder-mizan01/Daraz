@@ -12,7 +12,6 @@ import "../CSS/CategoryPage.css";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 
-
 //component
 import Pagination from "./Pagination";
 import SideFilters from "./SideFilters";
@@ -139,7 +138,7 @@ const CategoryPage = ({ products }) => {
                     <AiFillStar />
                     <AiOutlineStar />
                   </p>
-                  <p className="price">${price}</p>
+                  <p className="price">{price}</p>
                 </div>
               </div>
             );

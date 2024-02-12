@@ -151,12 +151,12 @@ const Headphone_Items = () => {
     return pro.category === "headphone_items" ;
   });
 
-  //destructure the category name 
-  let {category} = headphone_items[0] !== undefined && headphone_items[0];
+//destructure the category name 
+let {category} = headphone_items[0] !== undefined && headphone_items[0];
 
-  //remove the undesquare from string
-  let category_Withouth_underSquare = category !== undefined ? category.replace(/_/g," ") : "";
-
+//remove the undesquare from string
+let category_Withouth_underSquare = category !== undefined ? category.replace(/_/g," ") : "";
+ console.log(category_Withouth_underSquare);
   return (
     <>
       <div className="slide-header">
