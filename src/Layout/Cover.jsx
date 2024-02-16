@@ -10,7 +10,7 @@ import ImgSlider from "./ImgSlider";
 const Cover = () => {
   return (
     <>
-        <div className="cover">
+        <div id="cover">
         <Menubar />
         <ImgSlider />
         </div>
