@@ -1,18 +1,20 @@
 
 .category_page_topbar{
+  background-color: #fff;
+  margin: 15px 10px 10px 10px;
+  padding: 0px 8px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.topbar_content{
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   width: 98%;
   height: 70px;
-  background-color: #fff;
-  margin: 15px 10px 10px 10px;
-  padding: 0px 8px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-.category_page_topbar select {
+.topbar_content select {
   width: 180px;
   height: 30px;
   margin: 0px 20px 0px 0px;
@@ -26,18 +28,18 @@
   }
 }
 
-.category_page_topbar select option {
+.topbar_content select option {
   text-align: start;
   font-size: 0.9rem;
 }
 
-.category_page_container {
+.category_page_container{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin: 30px 0px 20px 0px;
+  width: 99%;
+  margin: 30px auto 20px auto;
   padding: 0px 10px 0px 10px;
-
 
 }
 
@@ -87,7 +89,21 @@
 }
 
 
+@media(min-width:1367px){
+  .category_page_container{
+    max-width: 1366px;
+    margin: 25px auto;
+  }
+  .topbar_content{
+    max-width: 1366px;
+    margin: 0 auto;
+  }
+}
+
 @media only screen and (max-width: 1080px){
+  .category_page_container{
+    width: 100%;
+  }
   .pro{
     width: 500px;
     max-width: 31%;
@@ -141,22 +157,22 @@
  }
 
 @media only screen and (max-width: 768px){
-.category_page_topbar{
+.topbar_content{
   height: 60px;
   padding: 0px 5px;
 }
 
-.category_page_topbar select {
+.topbar_content select {
   margin: 0px 5px 0px 0px;
 }
 }
 
 
 @media(max-width:489px){
-.category_page_topbar {
+.topbar_content {
    width:95%;
   }
-  .category_page_topbar select {
+  .topbar_content select {
     width:140px;
   }
 }

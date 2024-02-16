@@ -88,6 +88,7 @@ const CategoryPage = ({ products }) => {
   return (
     <>
       <div className="category_page_topbar">
+        <div className="topbar_content">
        {show_filter_icon ? <Filter_Offcanvas products={products}  /> : <Pagination Products={SingleProduct} />} 
         <select
           name=""
@@ -102,6 +103,7 @@ const CategoryPage = ({ products }) => {
           <option value="highest">Price (highest-lowest)</option>
           <option value="lowest">Price (lowest-highest) </option>
         </select>
+        </div>
       </div>
 
     
@@ -138,7 +140,7 @@ const CategoryPage = ({ products }) => {
                     <AiFillStar />
                     <AiOutlineStar />
                   </p>
-                  <p className="price">{price}</p>
+                  <p className="price">${price}</p>
                 </div>
               </div>
             );

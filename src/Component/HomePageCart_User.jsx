@@ -11,8 +11,7 @@ import { NavLink,Link } from 'react-router-dom';
 import { HiOutlineUser } from "react-icons/hi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
-//authentication
-import Login from "../Authentication/Login"
+
 
 
 

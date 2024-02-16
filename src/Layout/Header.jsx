@@ -66,25 +66,30 @@ const Header = () => {
 
   return (
     <>
-      <section id={`${scrolling ? HeaderCSS.sticky : HeaderCSS.header}`}  >
+      
+      <div id={`${scrolling ? HeaderCSS.sticky : HeaderCSS.header}`}  >
+         <div className={HeaderCSS.header_sections}>
 
+        
       <div className={HeaderCSS.logo}>
           <a className={HeaderCSS.brand} href="/">SHOPEE</a>
           {scrolling && <div className={HeaderCSS.scrolling_menu} 
-           onClick={()=>{setOnSrollMenuBar(!onScrollMenuBar)}} >
+          onClick={()=>{setOnSrollMenuBar(!onScrollMenuBar)}} >
           {onScrollMenuBar ? <FontAwesomeIcon icon={faChevronUp} />  : 
           <FontAwesomeIcon icon={faChevronDown} /> } categories
             </div>}
         </div>
         
-        {onScrollMenuBar && <Menubar onScrollMenuBar={onScrollMenuBar} 
-          onClickMenuBar={handleMenuBarClick} /> }
+        {onScrollMenuBar && <Menubar  onScrollMenuBar={onScrollMenuBar} 
+          onClickMenuBar={handleMenuBarClick} 
+          onMouseLeave={()=>{setOnSrollMenuBar(!onScrollMenuBar)}}
+          />}
    
        <SearchBar />
 
       <HomePageCart_User />
- 
-      </section>
+  </div>
+      </div>
 
     </>
   );

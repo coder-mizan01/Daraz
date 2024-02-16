@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;
+    height: 100vh;
     flex-direction: column;
     background-color: #EFF0F5;
 
@@ -14,16 +14,22 @@
     flex-direction: column;
     justify-content: center;
     background-color: #FFFFFF;
-    width: 700px;
+    width: 550px;
+    height: 500px;
     box-sizing: border-box;
     padding: 10px 20px;
     margin-top: 50px;
+    text-align: center;
+    border-radius: .5rem;
 }
 
 .register-form label {
     display: block;
     font-size: 16px;
     padding-left: 4px;
+    text-align: start;
+    text-indent: 24px;
+    margin-bottom: 5px;
 }
 
 .register-form div {
@@ -37,6 +43,9 @@
     border: 1px solid rgba(215,215,215,0.9);
     border-radius: 5px;
     padding: 8px 10px;
+    &:focus{
+        border : 1px solid #000  
+    }
 }
 
 .password .input-field{
@@ -55,21 +64,32 @@
 
 
 
-.sign-up-btn {
-    width: 120px;
+.sign-up-btn{
+    width: 92%;
     margin: 10px 0px 0px 10px;
-    background: #222836;
+    background-color: #222836;
     border: none;
     border-radius: 5px;
     color: #FFFFFF;
     font-weight: 600;
     padding: 10px 0px;
+    transition: .2s;
+    &:hover{
+        background-color: #000;
+        transition: .2s;
+    }
 }
 
 .register p{
     margin-top: 10px;
 }
 
+@media(min-width:1367px){
+    .register{
+        height: 20vh;
+        margin: 130px 0px 170px 0px;
+    }
+}
 
 @media(max-width:768px) {
     .register-form {

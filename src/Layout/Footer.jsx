@@ -14,6 +14,8 @@ const Footer = () => {
     <>
       <section id="footer">
 
+        <div className="container">
+
         <div className="brand-details">
           <Link className="logo">SHOPEE</Link>
 
@@ -71,7 +73,7 @@ const Footer = () => {
         </div>
 
 
-
+        </div>
       </section>
     </>
   );

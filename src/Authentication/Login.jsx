@@ -73,6 +73,8 @@ const Login = () => {
     <div className="login">
 
       <form onSubmit={handleLogin} className="login-form">
+        <h2>Login</h2>
+        <p>Login with your email and password</p>
         <div className="mb-3">
           <label htmlFor="">Email</label>
           <input
@@ -110,17 +112,22 @@ const Login = () => {
               <FaRegEyeSlash className="dont-see" />
             )}{" "}
           </button>
+          
         </div>
-
-        <button type="submit" className="sign-in-btn">
-          Sign in
+        <p className="forgot-password" onClick={()=>alert('Forget password function will be update')}>Forgot Password</p>
+         <div>
+         <button type="submit" className="sign-in-btn">
+          Login
         </button>
+         </div>
+
+        <p className="mt-4">
+        not have a account ? 
+        <Link to="/Register"> Register</Link>
+      </p>
       </form>
 
-      <p className="">
-        not a member please
-        <Link to="/Register">Register</Link>
-      </p>
+   
     </div>
   );
 };

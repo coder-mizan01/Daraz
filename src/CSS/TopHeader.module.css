@@ -2,7 +2,7 @@
   /*background-color: #0F3460;*/
   background-color: #0F3460;
   display: flex;
-  justify-content:space-between;
+  justify-content:end;
   margin: 0;
   padding: 5px 40px 5px 40px;
   @media(max-width:1115px){

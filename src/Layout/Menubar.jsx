@@ -78,8 +78,8 @@ const Menubar = ({ onScrollMenuBar, onClickMenuBar }) => {
     <>
       <div
         className={`${onScrollMenuBar == undefined ? "menubar" : "scroll"} `}
-        onClick={onClickMenuBar}
-      >
+        onClick={onClickMenuBar}>
+          
         <div className={`side_nav`}>
           <ul>
             {Object.keys(categories).map((category, i) => {

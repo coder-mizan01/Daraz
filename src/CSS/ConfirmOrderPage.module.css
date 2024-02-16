@@ -181,3 +181,12 @@
         padding: 0px 20px;
     }
     
+
+    @media(min-width:1367px){
+        .confirm_order{
+            max-width: 1366px;
+        }
+        .confirm_order2{
+            max-width: 1366px;
+        }
+    }

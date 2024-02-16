@@ -36,13 +36,13 @@ const CartItems = ({_id,price,title,slug,quantity}) => {
           </div>
          
 
-          <div className='cart-price'>{price}.TK</div>
+          <div className='cart-price'>{price}$</div>
           <div className='cart-quantity'>
          
             <p>{quantity}</p>
 
           </div>
-          <div className='cart-subtotal'>{price*quantity}</div>
+          <div className='cart-subtotal'>{price*quantity}$</div>
           </div>
 
 

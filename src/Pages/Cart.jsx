@@ -64,7 +64,7 @@ const Cart = () => {
  
           <div className="cart-total-value">
             <div className="cart-total"> 
-              <div className="SubTotal">Product Price: {subtotal}</div> 
+              <div className="SubTotal">Product Price= {subtotal}$</div> 
               <div className="place_order"> 
                 <button  onClick={()=>navigate('/confirm-order',{state : {subtotal}})}  
                  className="place_order_btn">Select Your Area</button>

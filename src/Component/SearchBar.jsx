@@ -4,11 +4,11 @@ import HeaderCSS from "../CSS/Header.module.css";
 
 import { useSelector } from "react-redux";
 
-import { Link,useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 import config from "../config.json";
 
-import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineSearch } from "react-icons/ai";
 const SearchBar = () => {
   //receive productsObj from allproducts by useSelector
   const productsObj = useSelector((state) => state.allproduct);
@@ -42,7 +42,7 @@ const SearchBar = () => {
       <div className={HeaderCSS.searchBar}>
         <input
           type="text"
-          placeholder="Search in Shopee"
+          placeholder="Search headphone or smartwatch"
           value={searchValue}
           onChange={handleSearch}
         />

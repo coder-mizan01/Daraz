@@ -98,7 +98,7 @@ const SingleProduct = () => {
                   </Link>
                 ) : (
                   <AddToCart 
-                  product={{_id,title,subcategory,category,price,brand,quantity}}
+                  product={{_id,title,subcategory,category,price,brand,quantity,slug}}
                   quantity={QuantityofProduct}
                   name={"Add To Cart"}
                 />

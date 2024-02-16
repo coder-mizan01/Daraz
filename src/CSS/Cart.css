@@ -13,6 +13,10 @@
   color: black;
 }
 
+.cart{
+  width: 95%;
+  margin: 25px auto;
+}
 
 .cart-heading {
   display: grid;
@@ -91,7 +95,7 @@
 .cart-total-value{
   display: flex;
   justify-content: flex-end;
-  width: 95%;
+
 }
 
 .cart-total {
@@ -117,7 +121,19 @@
 }
 
 
+
+
+@media(min-width:1367px){
+  .cart{
+   max-width: 1366px;
+   margin: 25px auto;
+ }
+}
+
 @media (max-width:990px){
+  .cart{
+     width: 100%;
+  }
    .cart-product{
     flex-direction: column;
    }

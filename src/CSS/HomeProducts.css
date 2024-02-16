@@ -17,7 +17,6 @@
 
 .button{
     color: #fff;
-
     width: 80px;
     text-align: center;
     padding: 4px 4px;
@@ -39,7 +38,7 @@
     border: 1px solid #0F3460;
     border-radius: 5px;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     z-index: 1;
     @media(max-width:500px){
         font-size: 0.9rem;

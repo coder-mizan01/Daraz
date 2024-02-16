@@ -99,16 +99,19 @@ const Register = () => {
           <button type="button" className="hide-show-password" onClick={()=>setSeePassword(!seePassword)} >{seePassword ?<FaRegEye />:<FaRegEyeSlash />  } </button>
         </div>
 
-        <button type="submit" className="sign-up-btn">
+         <div>
+         <button type="submit" className="sign-up-btn">
           Signup
         </button>
+         </div>
+
+         <p className="mt-4">
+        have a account ? 
+        <Link to="/login"> Login</Link>
+      </p>
       </form>
 
-        <p className="">Already member
-        <Link to='/Login'>
-          login
-        </Link>
-        </p>
+
 
     </div>
   );
