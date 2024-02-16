@@ -7,7 +7,7 @@ import config from "../config.json";
 import Slider from "react-slick";
 
 //css
-import "../CSS/Products.css";
+import "../CSS/HomeProducts.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

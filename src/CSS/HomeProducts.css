@@ -14,6 +14,7 @@
     }
 }
 
+
 .button{
     color: #fff;
 
@@ -336,3 +337,14 @@ background-color: #FFFFFF
     color: rgb(255, 205, 78);
 }
 
+
+
+@media(min-width:1367px){
+    .slide-header{
+        max-width:1414px;
+    }
+    
+    .slick-slider{
+        max-width:1414px;
+    }
+}
