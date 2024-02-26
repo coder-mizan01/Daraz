@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import config from "../config.json"
-import Dashboard from "../Pages/User/Dashboard"
+import Dashboard from "../Dashboard/UserDashboard"
 import Login from "../Authentication/Login"
 import axios from 'axios';
 

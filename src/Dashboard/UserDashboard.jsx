@@ -1,13 +1,13 @@
 import React from "react";
 
 import { useSelector , useDispatch} from "react-redux";
-import {removeUser} from "../../Redux/Authentication";
+import {removeUser} from "../Redux/Authentication";
 
 import { useNavigate ,Link } from "react-router-dom";
 
-import "../../CSS/Dashboard.css"
+import "../CSS/Dashboard.css"
 
-const Dashboard = () => {
+const UserDashboard = () => {
   
   const Authentication = useSelector((state)=> state.authentication);
   const dispatch = useDispatch();
@@ -19,7 +19,8 @@ const Dashboard = () => {
     dispatch(removeUser())
     localStorage.removeItem("email");
     localStorage.removeItem("token");
-    localStorage.removeItem("password")
+    localStorage.removeItem("password");
+    localStorage.removeItem('role');
     navigate('/')
   }
 
@@ -89,4 +90,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default UserDashboard;

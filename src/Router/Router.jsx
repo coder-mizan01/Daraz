@@ -19,7 +19,7 @@ import Users from '../Pages/Admin/Users';
 //auth
 import Register from '../Authentication/Register';
 import Login from '../Authentication/Login';
-import Dashboard from '../Pages/User/Dashboard';
+import Dashboard from '../Dashboard/UserDashboard';
 
 
 
