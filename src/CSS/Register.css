@@ -6,6 +6,7 @@
     height: 100vh;
     flex-direction: column;
     background-color: #EFF0F5;
+    margin-top: 0px;
 
 }
 
@@ -15,10 +16,9 @@
     justify-content: center;
     background-color: #FFFFFF;
     width: 550px;
-    height: 500px;
+    height: auto;
     box-sizing: border-box;
-    padding: 10px 20px;
-    margin-top: 50px;
+    padding: 20px 25px;
     text-align: center;
     border-radius: .5rem;
 }
@@ -28,17 +28,17 @@
     font-size: 16px;
     padding-left: 4px;
     text-align: start;
-    text-indent: 24px;
+    text-indent: 47px;
     margin-bottom: 5px;
 }
 
 .register-form div {
-    margin: 0px 0px 10px 10px;
+    margin: 10px 0px 10px 10px;
     text-indent: 0px;
 }
 
-.input-field{
-    width: 450px;
+.register-form .input-field{
+    width: 400px;
     outline: none;
     border: 1px solid rgba(215,215,215,0.9);
     border-radius: 5px;
@@ -48,25 +48,27 @@
     }
 }
 
-.password .input-field{
-   border-right: none;
-   border-top-right-radius: none;
-   border-bottom-right-radius: none;
-   width: 418px;
+.register-form .password{
+    position: relative;
+}
+.register-form .password .input-field{
+   width: 400px;
 }
 
-.password .hide-show-password{
+.register-form .password .hide-show-password{
+    background: transparent;
     border: none;
     padding: 9px 15px;
-    margin: 0px -8px;
-    
+    position: absolute;
+    top: 28px;
+    right: 48px;
 }
 
 
 
-.sign-up-btn{
-    width: 92%;
-    margin: 10px 0px 0px 10px;
+.register-form .sign-up-btn{
+    width: 80%;
+    margin: 10px 0px 0px 55px;
     background-color: #222836;
     border: none;
     border-radius: 5px;
@@ -91,32 +93,29 @@
     }
 }
 
-@media(max-width:768px) {
-    .register-form {
-        width: 500px;
-    }
-
-    .input-field{
-        width: 350px;
-    }
-
-    .password .input-field{
-        width: 316px;
-     }
-
+@media(max-width:570px) {
+    
+.register {
+    height: 60vh;
 }
-
-@media(max-width:490px) {
     .register-form {
-        width: 300px;
+        width: 380px;
     }
-    .input-field{
-        width: 250px;
+    .register-form div label{
+        text-indent: 11px;
+    }
+    .register-form .input-field {
+        width: 300px;
         outline: none;
     }
 
-    .password .input-field{
-        width: 220px;
+    .register-form .password .input-field {
+        width: 300px;
+     }
+
+     .register-form .sign-up-btn{
+        width: 90%;
+        margin: 10px 0px 0px 22px;
      }
 
 }

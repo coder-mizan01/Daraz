@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import config from "../config.json";
 import { useNavigate, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
+//actions
+import { ShowModalFun , CloseModalFun } from "../Redux/Variable";
 
 //icons
 import { FaRegEye } from "react-icons/fa";
@@ -27,8 +31,6 @@ const Register = () => {
         { name, email, password, phone }
       );
       if (res.data.success) {
-
-        toast.success('user is created')
         navigate('/Login')
       } else {
         console.log(res.data.message)
@@ -37,6 +39,10 @@ const Register = () => {
       console.log(error);
     }
   };
+  const dispatch = useDispatch()
+
+  const handleShow = () =>  dispatch(ShowModalFun())
+  
 
   return (
     <div className="register">
@@ -99,15 +105,15 @@ const Register = () => {
           <button type="button" className="hide-show-password" onClick={()=>setSeePassword(!seePassword)} >{seePassword ?<FaRegEye />:<FaRegEyeSlash />  } </button>
         </div>
 
-         <div>
+
          <button type="submit" className="sign-up-btn">
           Signup
         </button>
-         </div>
+
 
          <p className="mt-4">
         have a account ? 
-        <Link to="/login"> Login</Link>
+        <Link to="/" onClick={handleShow}> Login</Link>
       </p>
       </form>
 
