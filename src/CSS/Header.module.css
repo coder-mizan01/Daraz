@@ -6,11 +6,11 @@
   box-shadow: 0px 1px 5px rgba(0,0,0,.4);
   transition: top 0.5s ease;
   margin:0px 0px 0px 0px;
-
+  
   
 }
 
-#sticky {
+#sticky{
   padding: 10px 30px 10px 30px;
   margin:0px 0px 0px 0px;
   background-color: #ffffff;
@@ -18,7 +18,7 @@
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 100; 
   transition: top 0.5s ease;
   max-height: 90px;
   @media(max-width:1115px){
@@ -46,7 +46,7 @@
   height: auto;
   font-size: 1.8rem;
   font-weight: 800;
-  color: #0F3460;
+  color: #09274A;
   text-decoration: none;
 }
 
@@ -95,9 +95,8 @@
   width: 50px;
   height: 47px;
   border: none;
-  border-radius: 5px;
-  border-bottom-left-radius: 0px;
-  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
   right: 1px;
   top: 0px;
   position: absolute;
@@ -105,7 +104,7 @@
 
 .searchIcon {
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .search_value{
@@ -154,7 +153,7 @@
 }
 
 .cart{
-background-color: #F3F5F9;
+background-color: var(--alpha-bg-color);
 position: relative;
 padding: 8px;
 border-radius: 50%;
@@ -170,8 +169,7 @@ z-index: 1;
 
 .cart span{
   display: flex;
-  background-color: #0F3460;
- /* padding: 0px 8px;*/
+  background-color: var(--main-bg-color);
   color: white;
   position: absolute;
   border-radius: 50%;
@@ -181,26 +179,41 @@ z-index: 1;
   top: -5px;
   overflow: visible;
   z-index: 1;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  font-size: 0.9rem;
+  font-weight: 500;
   justify-content: center;
   align-items: center;
   
 }
 
-.user{
-  background-color: #F3F5F9;
-  position: relative;
-  padding: 8px;
+.cart_user_div .user{
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  background-color: var(--main-bg-color);
   border-radius: 50%;
-  overflow: visible;
-  z-index: 1;
-  margin: 0px 15px 0px 15px ;
+  margin: 0px 15px;
+}
+.cart_user_div .user div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  color: #FFF;
+  text-decoration: none;
+  margin-top: 0px;
 }
 
-.user_icon{
+
+.user_name{
+  color: #000;
   font-size: 1.6rem;
-  color: black;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 
