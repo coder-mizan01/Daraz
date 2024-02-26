@@ -6,7 +6,7 @@
 
 .Single-Product{
     display: grid;
-    width: 90%;
+    width: 92%;
     margin: 0px auto 30px auto;
     padding: 10px;
     background-color: #FFFFFF;
@@ -52,7 +52,7 @@
 
 .Single-Product-Details .star{
     font-size: 1rem;
-    color:black;
+    color:#0F3460;
 }
 
 .Single-Product-Details .star span{
@@ -101,9 +101,14 @@ hr{
 
 #Single-Product-Page .Single-Product-Details .Single-Product-buttons .add-to-cart{
     padding: 8px 80px;
-    color: #EFF0F5;
+    color: #FFF;
     border: none;
-    background-color: #000;
+    border-radius:.3em;
+    background-color:  var(--main-bg-color);
+    &:hover{
+
+        background-color: #09274A;
+    }
   }
 
 
