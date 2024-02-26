@@ -1,24 +1,21 @@
- 
-  import { configureStore  } from "@reduxjs/toolkit";
+ import { configureStore  } from "@reduxjs/toolkit";
 
-
-  //authentication file 
-  import Authentication from "./Redux/Authentication";
-
-  //product file
-  import FetchAllProduct from "./Redux/FetchAllProduct";
-
-  //single product
-  import SingleProduct from "./Redux/SingleProduct";
-
-
+//authentication file 
+import Authentication from "./Redux/Authentication";
+//product file
+import FetchAllProduct from "./Redux/FetchAllProduct";
+//single product
+import SingleProduct from "./Redux/SingleProduct";
+//
 import ProductQuantity from "./Redux/ProductQuantity";
+//
 import FilterProduct from "./Redux/FilterProduct";
-
+//
 import Fetch_Computer_Items from "./Redux/Fetch_Computer_Items";
-
-//cart Item
+//
 import CartItem from "./Redux/CartItem";
+//
+import Variable from "./Redux/Variable";
 
 
   const store = configureStore({
@@ -30,6 +27,7 @@ import CartItem from "./Redux/CartItem";
       cart : CartItem,
       productquantitycounter : ProductQuantity,
       filterproduct : FilterProduct,
+      variables : Variable,
     },
   });
 
