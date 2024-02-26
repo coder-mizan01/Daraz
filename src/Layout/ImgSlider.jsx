@@ -19,13 +19,13 @@ const Imgslidersr = () => {
 
     <div className="carousel-item active">
     <Link to={`/`}>
-      <img src="electronics.jpg" className="img-fluid" alt="..." />
+      <img src="cover4.png" className="img-fluid" alt="..." />
       </Link>
     </div>
 
     <div className="carousel-item">
     <Link to={`/`}>
-      <img src="fashioncover3.jpg " className="img-fluid" alt="..." />
+      <img src="cover3.png " className="img-fluid" alt="..." />
       </Link>
     </div>
 

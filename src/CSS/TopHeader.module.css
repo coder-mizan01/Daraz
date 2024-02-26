@@ -1,6 +1,6 @@
 #topheader{
   /*background-color: #0F3460;*/
-  background-color: #0F3460;
+  background-color:var(--main-bg-color);
   display: flex;
   justify-content:end;
   margin: 0;
