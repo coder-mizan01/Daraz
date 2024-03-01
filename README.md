@@ -4,7 +4,7 @@ i am deploying a website whichs UI is like Daraz and strong backend functionalit
 
 ## live site at 
 
-[https://daraz-5pko.onrender.com/](https://shopee01.netlify.app/#/)
+https://shopee01.netlify.app/
 
 
 ##feauters
