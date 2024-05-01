@@ -1,7 +1,3 @@
-## Project Description
-
-i am deploying a website whichs UI is like Daraz and strong backend functionality .
-
 ## live site at 
 
 https://shopee01.netlify.app/
